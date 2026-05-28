@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeyKnox Electronic Key Management System | Meclix Mechatronix</title>
+  <meta name="description" content="KeyKnox by Meclix is an advanced Electronic Key Management System. Biometric authentication, key usage tracking, audit-ready logs, and multi-site management.">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <div class="logo-icon">M</div>
+        <span class="logo-text">MECLIX<span>MECHATRONIX</span></span>
+      </a>
+      
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="lockers.html" class="nav-link">Smart Locker</a>
+        <a href="keyknox.html" class="nav-link active">KeyKnox System</a>
+        <a href="software.html" class="nav-link">Software & Specs</a>
+        <div class="nav-cta">
+          <button class="btn btn-primary btn-sm btn-consultation-trigger">Book Consultation</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      
+      <!-- Product Hero -->
+      <div class="hero-wrapper" style="min-height: auto; margin-bottom: 80px; margin-top: 20px;">
+        <div class="hero-content">
+          <span class="eyebrow">KeyKnox Security System</span>
+          <h2>India's Most Intelligent Electronic Key Cabinet</h2>
+          <p>KeyKnox by Meclix is an advanced Electronic Key Management System for enterprises — combining secure access control, cloud-based system configuration, and audit capabilities to reduce key loss and eliminate manual logbooks.</p>
+          <button class="btn btn-primary btn-consultation-trigger">Request Cabinet Quote</button>
+        </div>
+        <div class="hero-visual">
+          <div class="tech-grid-bg"></div>
+          <div class="floating-box">
+            <div class="floating-box-header">
+              <div class="circle-indicators">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="live-badge">
+                <span class="live-dot"></span>KeyKnox Shield Live
+              </div>
+            </div>
+            <div class="floating-box-body">
+              <div class="cabinet-sim">
+                <div class="key-hook active-key in"><span class="key-tag">K01</span><span class="led"></span></div>
+                <div class="key-hook active-key out"><span class="key-tag">K02</span><span class="led"></span></div>
+                <div class="key-hook active-key in"><span class="key-tag">K03</span><span class="led"></span></div>
+                <div class="key-hook"><span class="key-tag">---</span><span class="led"></span></div>
+                
+                <div class="key-hook active-key in"><span class="key-tag">K05</span><span class="led"></span></div>
+                <div class="key-hook"><span class="key-tag">---</span><span class="led"></span></div>
+                <div class="key-hook active-key out"><span class="key-tag">K07</span><span class="led"></span></div>
+                <div class="key-hook active-key in"><span class="key-tag">K08</span><span class="led"></span></div>
+                
+                <div class="key-hook"><span class="key-tag">---</span><span class="led"></span></div>
+                <div class="key-hook active-key in"><span class="key-tag">K10</span><span class="led"></span></div>
+                <div class="key-hook active-key in"><span class="key-tag">K11</span><span class="led"></span></div>
+                <div class="key-hook active-key out"><span class="key-tag">K12</span><span class="led"></span></div>
+              </div>
+              <div class="sim-events" id="sim-events-list">
+                <div class="sim-event-line">> <span class="cyan">05:40:12</span> Cabinet connection stable</div>
+                <div class="sim-event-line">> <span class="cyan">05:42:01</span> Key #02 <span class="red">OUT</span> by User #14</div>
+                <div class="sim-event-line">> <span class="cyan">05:45:15</span> Key #07 <span class="red">OUT</span> by User #28</div>
+                <div class="sim-event-line">> <span class="cyan">05:51:30</span> Key #02 <span class="green">IN</span> by User #14</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Problem Comparison -->
+      <div class="problem-grid">
+        <div class="problem-compare-card card-panel bad">
+          <h3>Manual Key Boards</h3>
+          <ul class="problem-bullets">
+            <li>Untracked key collections leading to security risks</li>
+            <li>Manual registers that are prone to handwriting errors or loss</li>
+            <li>No alerts when critical keys are taken home or misplaced</li>
+            <li>Facility managers wasting hours tracking down keyholders</li>
+            <li>Difficult audit preparation with untraceable logs</li>
+          </ul>
+        </div>
+        
+        <div class="problem-compare-card card-panel good">
+          <h3>KeyKnox Cabinets</h3>
+          <ul class="problem-bullets">
+            <li>Individual hook-level locks and positional sensors</li>
+            <li>2FA authentication (Fingerprint + Card + PIN options)</li>
+            <li>Real-time automated SMS and email overdue reminders</li>
+            <li>Centralized control panel displaying key status (In/Out/User)</li>
+            <li>One-click export of audit-ready compliance reports</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="features-container-grid">
+        <div class="feature-block-card card-panel">
+          <h4>Positional Tracking</h4>
+          <p>Unlike basic cabinet entry logs, KeyKnox tracks the exact hook position of each key. KeyKnox Shield detects the moment a key is returned to the wrong slot and updates the database instantly.</p>
+        </div>
+        <div class="feature-block-card card-panel">
+          <h4>Time-Bounded Permissions</h4>
+          <p>Define precise windows when specific keys can be accessed. Perfect for contractors, cleaning staff, or shift workers. Permissions expire automatically without manual intervention.</p>
+        </div>
+        <div class="feature-block-card card-panel">
+          <h4>Overdue Return Alerts</h4>
+          <p>Set return deadlines for critical keys. If a key is not returned on time, the cabinet triggers local alerts and sends automated emails and SMS notifications to administrators.</p>
+        </div>
+      </div>
+
+      <!-- Tabbed Industry Use Cases -->
+      <div class="key-use-cases-tabs">
+        <div class="section-header">
+          <span class="eyebrow">Applications</span>
+          <h2>Sector-Specific Key Governance</h2>
+          <p>See how KeyKnox adapts to security requirements across specialized enterprise environments.</p>
+        </div>
+        
+        <div class="use-case-tab-nav" id="key-usecase-nav">
+          <button class="active" data-keyuse="fleet">Fleet & Vehicles</button>
+          <button data-keyuse="servers">Server Racks</button>
+          <button data-keyuse="workplace">Premise & Offices</button>
+          <button data-keyuse="plant">Plant & Maintenance</button>
+        </div>
+        
+        <div class="use-case-tab-content">
+          
+          <!-- Fleet & Vehicles -->
+          <div class="use-case-pane active" id="key-usecase-fleet">
+            <div class="use-case-left">
+              <h3>Electronic Key Management for Fleet Management</h3>
+              <p style="margin: 16px 0;">Are lost keys, vehicle downtime, and limited visibility impacting your fleet operations? Manual logbooks leave assets vulnerable. KeyKnox records every vehicle key checkout, assigned driver, and return activity.</p>
+              
+              <h5 style="color: var(--color-primary); margin-bottom: 12px; font-family: var(--font-body);">Key Benefits for Fleet Teams</h5>
+              <ul class="benefits-list">
+                <li><strong>Drivers:</strong> Instant, authenticated retrieval, eliminating shift delays.</li>
+                <li><strong>Security:</strong> Restricts access to authorized drivers with PIN, Card, or Biometrics.</li>
+                <li><strong>Managers:</strong> Complete visibility of vehicle usage, minimizing missing keys.</li>
+                <li><strong>Finance:</strong> Reduced vehicle damage and elimination of rekeying costs.</li>
+              </ul>
+              <p style="margin-top: 16px; font-size: 0.9rem; color: var(--color-text-muted);"><strong>Applicable for:</strong> Automobile Showrooms, Logistics Operations, Corporate Pools, Parking Facilities.</p>
+            </div>
+            <div class="use-case-right card-panel" style="padding: 24px;">
+              <h5 style="font-family: var(--font-body); color: var(--color-text-headings); margin-bottom: 16px;">System Software Control</h5>
+              <p style="font-size: 0.9rem; margin-bottom: 16px;">KeyKnox Shield platform maps key IDs to vehicle registers and tracks reservation logs automatically, optimizing vehicle rotation cycles.</p>
+              <div style="background: var(--bg-body); padding:16px; border: 1px solid var(--border-light); border-radius:8px; font-family: var(--font-mono); font-size:0.75rem;">
+                <span style="color:var(--color-primary);">[Fleet Reserve Monitor]</span><br>
+                - MH-12-QX-4015: OUT (Driver #12)<br>
+                - DL-01-AW-8890: IN (Reserved #05)<br>
+                - KA-51-MM-0012: OUT (Driver #19)
+              </div>
+            </div>
+          </div>
+
+          <!-- Server Racks -->
+          <div class="use-case-pane" id="key-usecase-servers">
+            <div class="use-case-left">
+              <h3>Electronic Key Management for Server Racks</h3>
+              <p style="margin: 16px 0;">Server racks contain networking hardware, business-critical database backups, and applications. Unmanaged rack keys increase risk. KeyKnox controls and logs access to critical IT cabinets, maintaining compliance logs for datacenters.</p>
+              
+              <h5 style="color: var(--color-primary); margin-bottom: 12px; font-family: var(--font-body);">Key Benefits for Datacenter Teams</h5>
+              <ul class="benefits-list">
+                <li><strong>IT Admins:</strong> Fast access during hardware swap, troubleshooting, or emergencies.</li>
+                <li><strong>Security Teams:</strong> Restricts access to sensitive zones based on shift rules.</li>
+                <li><strong>Compliance:</strong> Verifiable audit-ready trails, supporting SOC2 and ISO certifications.</li>
+                <li><strong>Operations:</strong> Ensures third-party contractors can only access designated racks.</li>
+              </ul>
+              <p style="margin-top: 16px; font-size: 0.9rem; color: var(--color-text-muted);"><strong>Applicable for:</strong> Data Centres, Server Rooms, Telecom Closets, BFSI Server Facilities.</p>
+            </div>
+            <div class="use-case-right card-panel" style="padding: 24px;">
+              <h5 style="font-family: var(--font-body); color: var(--color-text-headings); margin-bottom: 16px;">Compliance Verification</h5>
+              <p style="font-size: 0.9rem; margin-bottom: 16px;">Positional tracking records precisely which rack keys are removed, closing audit gaps in server room environments.</p>
+              <div style="background: var(--bg-body); padding:16px; border: 1px solid var(--border-light); border-radius:8px; font-family: var(--font-mono); font-size:0.75rem;">
+                <span style="color:var(--color-primary);">[SOC2 Audit Trail Active]</span><br>
+                - Hook #14 (Server Rack C2): Verified<br>
+                - Removed: 05:40:12<br>
+                - Returned: 06:12:45<br>
+                - User: Admin #24 (Biometric Verified)
+              </div>
+            </div>
+          </div>
+
+          <!-- Premise / Workplace -->
+          <div class="use-case-pane" id="key-usecase-workplace">
+            <div class="use-case-left">
+              <h3>Electronic Key Management for Premises & Offices</h3>
+              <p style="margin: 16px 0;">The missing server room key that delays technicians for an hour. The resigned employee whose drawer key was never recovered. KeyKnox closes the physical security gaps in corporate environments, replacing insecure hook boards.</p>
+              
+              <h5 style="color: var(--color-primary); margin-bottom: 12px; font-family: var(--font-body);">Key Benefits for Corporate Offices</h5>
+              <ul class="benefits-list">
+                <li><strong>Facilities:</strong> Reduced administrative time spent tracking keys across departments.</li>
+                <li><strong>HR:</strong> Integrates with onboarding/offboarding workflows via HRMS database.</li>
+                <li><strong>Security:</strong> Restricts master keys to designated security personnel.</li>
+                <li><strong>Vendors:</strong> Limits contractors to temporary, self-expiring access schedules.</li>
+              </ul>
+              <p style="margin-top: 16px; font-size: 0.9rem; color: var(--color-text-muted);"><strong>Applicable for:</strong> Corporate Headquarters, Co-Working Facilities, Institutional Campus Premises.</p>
+            </div>
+            <div class="use-case-right card-panel" style="padding: 24px;">
+              <h5 style="font-family: var(--font-body); color: var(--color-text-headings); margin-bottom: 16px;">Office Key Lifecycle</h5>
+              <p style="font-size: 0.9rem; margin-bottom: 16px;">Link cabinet configuration with office directories. Revoke vendor access profiles instantly on exit.</p>
+            </div>
+          </div>
+
+          <!-- Plant & Maintenance -->
+          <div class="use-case-pane" id="key-usecase-plant">
+            <div class="use-case-left">
+              <h3>Plant & Maintenance Key Custody Control</h3>
+              <p style="margin: 16px 0;">Keys to critical isolation points, restricted chemical stores, or high-voltage panels are often shared across shifts. Lost keys lead to safety hazards and operational delays. KeyKnox enforces structured key custody across shifts.</p>
+              
+              <h5 style="color: var(--color-primary); margin-bottom: 12px; font-family: var(--font-body);">Key Benefits for Industrial Sites</h5>
+              <ul class="benefits-list">
+                <li><strong>Technicians:</strong> Keys issued based on roles, ensuring correct equipment access.</li>
+                <li><strong>Supervisors:</strong> Shift-end dashboard reveals outstanding keys instantly.</li>
+                <li><strong>EHS Teams:</strong> High-risk keys configured to require dual-authorisation approval.</li>
+                <li><strong>Contractors:</strong> Activity logged against contractor profiles for safety tracking.</li>
+              </ul>
+              <p style="margin-top: 16px; font-size: 0.9rem; color: var(--color-text-muted);"><strong>Applicable for:</strong> Industrial Plants, Pharma Manufacturing, Refineries, Utilities.</p>
+            </div>
+            <div class="use-case-right card-panel" style="padding: 24px;">
+              <h5 style="font-family: var(--font-body); color: var(--color-text-headings); margin-bottom: 16px;">Dual-Authorisation Rules</h5>
+              <p style="font-size: 0.9rem; margin-bottom: 16px;">For high-risk zones (e.g. electrical substations), the cabinet only unlocks when both a technician and a supervisor scan their credentials.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Page CTA -->
+      <div class="global-page-cta">
+        <div class="cta-box">
+          <div class="tech-grid-bg"></div>
+          <h2>Ready to Strengthen your Access Control?</h2>
+          <p>Connect with a Meclix specialist to define a solution tailored to your specific environment.</p>
+          <button class="btn btn-primary btn-consultation-trigger">Schedule a Free Consultation</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-link">
+            <div class="logo-icon">M</div>
+            <span class="logo-text">MECLIX<span>MECHATRONIX</span></span>
+          </div>
+          <p>Advanced security engineering, physical key tracking systems, and secure smart lockers for modern industrial and corporate spaces.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Product Lines</h5>
+          <ul class="footer-links">
+            <li><a href="lockers.html">ArcaKnox Smart Locker</a></li>
+            <li><a href="keyknox.html">KeyKnox Key Cabinets</a></li>
+            <li><a href="software.html">Shield Software Platforms</a></li>
+            <li><a href="software.html">Technical Specifications</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#mission-vision">Mission & Values</a></li>
+            <li><a href="about.html#best-practices">Best Practices</a></li>
+            <li><a href="index.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Get In Touch</h5>
+          <ul class="footer-links">
+            <li><a href="#" class="btn-consultation-trigger">Schedule Consultation</a></li>
+            <li><a href="#">Submit Support Ticket</a></li>
+            <li><a href="about.html#smarti-backing">Corporate Legacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Meclix Mechatronix. All rights reserved. Backed by Smarti Electronics Systems Pvt. Ltd.</p>
+        <p>India-First · SEO Optimised · AI Optimised</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CONSULTATION BOOKING DIALOG (MODAL)
+       ========================================================================== -->
+  <div class="modal-overlay" id="consultation-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+      <div id="booking-form-container">
+        <div class="modal-header">
+          <h3>Schedule a Consultation</h3>
+          <p>Book a free technical consultation with a Meclix solutions specialist.</p>
+        </div>
+        
+        <form id="consultation-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="booking-name">Full Name *</label>
+              <input type="text" id="booking-name" class="form-input" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="booking-company">Company *</label>
+              <input type="text" id="booking-company" class="form-input" required placeholder="Enterprise Corp">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="booking-email">Work Email *</label>
+              <input type="email" id="booking-email" class="form-input" required placeholder="john@company.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="booking-phone">Phone Number *</label>
+              <input type="tel" id="booking-phone" class="form-input" required placeholder="+91 99999 99999">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="booking-product">Product of Interest *</label>
+            <select id="booking-product" class="form-input" required>
+              <option value="" disabled selected>Select a product...</option>
+              <option value="keyknox">KeyKnox (Electronic Key Management System)</option>
+              <option value="arcaknox">ArcaKnox (Smart Locker Systems)</option>
+              <option value="both">Both Product Lines</option>
+              <option value="software">Shield Software / Integrations</option>
+            </select>
+          </div>
+
+          
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-primary" id="booking-submit-btn">Book Consultation Session</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="booking-success-container" class="booking-success-message">
+        <div class="success-icon">✓</div>
+        <h4>Consultation Scheduled!</h4>
+        <p>Thank you for reaching out. A Meclix Mechatronix security specialist will review your request and contact you shortly.</p>
+        <button class="btn btn-primary" id="success-done-btn">Back to Website</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

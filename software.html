@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArcaKnox Shield & KeyKnox Shield Software | Meclix Mechatronix</title>
+  <meta name="description" content="Centralised software platform by Meclix for Smart Locker and Key Management Systems. Control access, manage users, track usage, and generate reports across locations.">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <div class="logo-icon">M</div>
+        <span class="logo-text">MECLIX<span>MECHATRONIX</span></span>
+      </a>
+      
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="lockers.html" class="nav-link">Smart Locker</a>
+        <a href="keyknox.html" class="nav-link">KeyKnox System</a>
+        <a href="software.html" class="nav-link active">Software & Specs</a>
+        <div class="nav-cta">
+          <button class="btn btn-primary btn-sm btn-consultation-trigger">Book Consultation</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      
+      <!-- Software Intro -->
+      <div class="software-hero text-center" style="margin-bottom: 80px; text-align: center; margin-top: 40px;">
+        <span class="eyebrow">Enterprise Software System</span>
+        <h2>Two Platforms. Complete Control. Total Visibility.</h2>
+        <p style="max-width: 700px; margin: 20px auto 0 auto; font-size:1.1rem; line-height: 1.6;"><strong>ArcaKnox Shield</strong> and <strong>KeyKnox Shield</strong> form the intelligent software backbone of Meclix systems — replacing fragmented spreadsheets with centralized database control and compliance logs.</p>
+      </div>
+
+      <!-- Software Showcase Grid -->
+      <div class="software-grid-showcase">
+        
+        <div class="software-card-showcase card-panel">
+          <h3><span>🛡️</span> ArcaKnox Shield (Smart Locker Software)</h3>
+          <p style="margin: 12px 0 20px 0;">Centralized locker management platform used to configure, manage, and monitor locker operations across facilities and locations.</p>
+          <ul class="software-bullets">
+            <li><strong>Layout Builder:</strong> Configure cabinet sections, size groupings, and location maps.</li>
+            <li><strong>User Rules:</strong> Allocate lockers automatically based on employee shift schedules.</li>
+            <li><strong>Role-Based Access:</strong> Deployment Admin, Facility Manager, and Service Desk roles.</li>
+            <li><strong>Active Audits:</strong> Export detailed occupancy and entry files to Excel and PDF.</li>
+          </ul>
+        </div>
+
+        <div class="software-card-showcase card-panel">
+          <h3><span>🔑</span> KeyKnox Shield (Key Cabinet Software)</h3>
+          <p style="margin: 12px 0 20px 0;">Centralized key control platform mapping physical key hook matrices and monitoring connectivity status across sites.</p>
+          <ul class="software-bullets">
+            <li><strong>Matrix Configurator:</strong> Map key tags to specific row/column slots in cabinets.</li>
+            <li><strong>Key Status Dashboard:</strong> View "Key In", "Key Out", "Lost", or "Disabled" statuses.</li>
+            <li><strong>Overdue Monitor:</strong> Real-time tracker flags keys held past designated return shifts.</li>
+            <li><strong>System Logs:</strong> Records user IDs, biometric verification states, and access events.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Mobile Apps Showcase -->
+      <div class="phone-simulators-row">
+        
+        <!-- App 1: ArcaKnox Mobile -->
+        <div class="simulator-box">
+          <h4>ArcaKnox Mobile App</h4>
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-header">
+                <div class="phone-logo">ARCA<span>KNOX</span></div>
+                <div class="live-dot"></div>
+              </div>
+              <div class="phone-content">
+                <div class="phone-card">
+                  <h6>Active Locker</h6>
+                  <p style="color: var(--color-primary); font-weight:700;">Locker #12 (Sector B)</p>
+                  <p>Assigned via: Dynamic Auto Allocation</p>
+                </div>
+                <div class="phone-qr-placeholder">
+                  <div class="qr-scanner-line"></div>
+                </div>
+                <div style="text-align: center;">
+                  <p style="font-size: 0.7rem; color: var(--color-text-muted);">Scan QR at terminal HMI to unlock locker</p>
+                </div>
+              </div>
+              <div class="phone-footer">
+                <div class="phone-footer-item active"></div>
+                <div class="phone-footer-item"></div>
+                <div class="phone-footer-item"></div>
+              </div>
+            </div>
+          </div>
+          <p style="margin-top: 16px; font-size: 0.9rem; text-align: center; max-width: 280px; color: var(--color-text-muted);">Provides self-service locker booking, QR-based terminal authentication, and status visibility for Android and iOS.</p>
+        </div>
+
+        <!-- App 2: KeyKnox Mobile -->
+        <div class="simulator-box">
+          <h4>KeyKnox Mobile App</h4>
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-header">
+                <div class="phone-logo">KEY<span>KNOX</span></div>
+                <div class="live-dot" style="background:#ffbd2e;"></div>
+              </div>
+              <div class="phone-content">
+                <div class="phone-card">
+                  <h6>Assigned Key</h6>
+                  <p style="color: var(--color-primary); font-weight:700;">Server Room C2 Key</p>
+                  <p style="color: var(--color-secondary); font-size: 0.65rem;">Overdue in 15 mins</p>
+                </div>
+                <div class="phone-card" style="background: #ffffff; border: 1px solid var(--border-light); margin-top: 4px;">
+                  <h6>Recent Key Event</h6>
+                  <p>Key #08 returned at Cabinet 1</p>
+                  <p style="font-size: 0.6rem; color: var(--color-text-muted);">Today, 14:20</p>
+                </div>
+              </div>
+              <div class="phone-footer">
+                <div class="phone-footer-item"></div>
+                <div class="phone-footer-item active"></div>
+                <div class="phone-footer-item"></div>
+              </div>
+            </div>
+          </div>
+          <p style="margin-top: 16px; font-size: 0.9rem; text-align: center; max-width: 280px; color: var(--color-text-muted);">Enables users to check assigned key status and view alerts on active checkouts directly on mobile devices.</p>
+        </div>
+
+      </div>
+
+      <!-- Technical Specifications Tabbed Sheets -->
+      <div class="specs-panel">
+        <div class="section-header">
+          <span class="eyebrow">Data Sheet</span>
+          <h2>Technical Specifications</h2>
+          <p>Select a product system below to view full hardware and electrical ratings.</p>
+        </div>
+        
+        <div class="specs-panel-nav" id="specs-panel-nav">
+          <button class="matrix-btn active" data-spec="locker">ArcaKnox Smart Locker System</button>
+          <button class="matrix-btn" data-spec="cabinet">KeyKnox Cabinet System</button>
+        </div>
+        
+        <div class="specs-panes">
+          
+          <!-- Specs Tab 1: Locker System -->
+          <div class="specs-pane active" id="spec-sheet-locker">
+            <div class="specs-tables-grid">
+              
+              <div class="specs-block card-panel" style="padding: 24px;">
+                <h4>ArcaKnox Core & HMI Hardware</h4>
+                <table class="specs-table">
+                  <tr>
+                    <td>Lock Mechanism</td>
+                    <td>Push-to-open handle-free operation</td>
+                  </tr>
+                  <tr>
+                    <td>LED Indicators</td>
+                    <td>Multi-colour LED status bands</td>
+                  </tr>
+                  <tr>
+                    <td>Input Voltage</td>
+                    <td>24V DC</td>
+                  </tr>
+                  <tr>
+                    <td>Idle Power</td>
+                    <td>0.4W</td>
+                  </tr>
+                  <tr>
+                    <td>Max Power</td>
+                    <td>7.6W (with USB charge load)</td>
+                  </tr>
+                  <tr>
+                    <td>USB Charging Output</td>
+                    <td>5V DC (up to 250mA) per compartment</td>
+                  </tr>
+                  <tr>
+                    <td>Operating Temperature</td>
+                    <td>0°C to +50°C (20% to 85% RH non-condensing)</td>
+                  </tr>
+                  <tr>
+                    <td>HMI Terminal Screen</td>
+                    <td>Touchscreen panel (135.98 × 191.85 × 37.88 mm)</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="specs-block card-panel" style="padding: 24px;">
+                <h4>ArcaKnox HUB & System Software</h4>
+                <table class="specs-table">
+                  <tr>
+                    <td>HUB Model</td>
+                    <td>ArcaKnox Lynq System HUB</td>
+                  </tr>
+                  <tr>
+                    <td>Capacity per HUB</td>
+                    <td>Up to 16 electronic locks per HUB unit</td>
+                  </tr>
+                  <tr>
+                    <td>HUB Dimensions</td>
+                    <td>305 × 112 × 31.6 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Compliance Certifications</td>
+                    <td>BIS, CE, RoHS</td>
+                  </tr>
+                  <tr>
+                    <td>Management Platform</td>
+                    <td>ArcaKnox Shield Server Software</td>
+                  </tr>
+                  <tr>
+                    <td>Database Integrations</td>
+                    <td>ITSM platforms (CMDB sync), HRMS databases</td>
+                  </tr>
+                  <tr>
+                    <td>Export Formats</td>
+                    <td>Excel, PDF active logs</td>
+                  </tr>
+                  <tr>
+                    <td>Mobile OS Support</td>
+                    <td>Android (Google Play) & iOS (Apple App Store)</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Specs Tab 2: Cabinet System -->
+          <div class="specs-pane" id="spec-sheet-cabinet">
+            <div class="specs-tables-grid">
+              
+              <div class="specs-block card-panel" style="padding: 24px;">
+                <h4>KeyKnox Cabinet Hardware</h4>
+                <table class="specs-table">
+                  <tr>
+                    <td>Base Configurations</td>
+                    <td>16-key and 32-key base layouts</td>
+                  </tr>
+                  <tr>
+                    <td>Expandability</td>
+                    <td>Expandable in modular 32-key blocks</td>
+                  </tr>
+                  <tr>
+                    <td>Max Key Capacity</td>
+                    <td>Up to 128 keys per connected cabinet group</td>
+                  </tr>
+                  <tr>
+                    <td>Display Screen</td>
+                    <td>2.4-inch TFT menu display</td>
+                  </tr>
+                  <tr>
+                    <td>Cabinet Material</td>
+                    <td>Powder-coated mild steel (1 mm)</td>
+                  </tr>
+                  <tr>
+                    <td>Cabinet Door</td>
+                    <td>Transparent polycarbonate door, metal support frame</td>
+                  </tr>
+                  <tr>
+                    <td>Cabinet Dimensions</td>
+                    <td>745 × 614 × 175 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Base Weight</td>
+                    <td>21 kg (excluding additional expander blocks)</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="specs-block card-panel" style="padding: 24px;">
+                <h4>Electrical & Software Specifications</h4>
+                <table class="specs-table">
+                  <tr>
+                    <td>Input Power Rating</td>
+                    <td>110V – 240V AC input (15V DC internal cabinet rail)</td>
+                  </tr>
+                  <tr>
+                    <td>Power Consumption</td>
+                    <td>Approx. 20W power draw per active 32 keys</td>
+                  </tr>
+                  <tr>
+                    <td>Local Event Cache</td>
+                    <td>Internal memory storage up to 50,000 events</td>
+                  </tr>
+                  <tr>
+                    <td>User Capacity</td>
+                    <td>Up to 500 credentials saved per cabinet</td>
+                  </tr>
+                  <tr>
+                    <td>Communication protocols</td>
+                    <td>TCP/IP Ethernet terminal network link</td>
+                  </tr>
+                  <tr>
+                    <td>RFID Standards</td>
+                    <td>125kHz / 13.56MHz contactless tags</td>
+                  </tr>
+                  <tr>
+                    <td>Authentication Support</td>
+                    <td>RFID cards, PIN pad, Biometric fingerprint module</td>
+                  </tr>
+                  <tr>
+                    <td>Compliance Ratings</td>
+                    <td>BIS, CE Certified</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Page CTA -->
+      <div class="global-page-cta">
+        <div class="cta-box">
+          <div class="tech-grid-bg"></div>
+          <h2>Ready to Strengthen your Access Control?</h2>
+          <p>Connect with a Meclix specialist to define a solution tailored to your specific environment.</p>
+          <button class="btn btn-primary btn-consultation-trigger">Schedule a Free Consultation</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-link">
+            <div class="logo-icon">M</div>
+            <span class="logo-text">MECLIX<span>MECHATRONIX</span></span>
+          </div>
+          <p>Advanced security engineering, physical key tracking systems, and secure smart lockers for modern industrial and corporate spaces.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Product Lines</h5>
+          <ul class="footer-links">
+            <li><a href="lockers.html">ArcaKnox Smart Locker</a></li>
+            <li><a href="keyknox.html">KeyKnox Key Cabinets</a></li>
+            <li><a href="software.html">Shield Software Platforms</a></li>
+            <li><a href="software.html">Technical Specifications</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#mission-vision">Mission & Values</a></li>
+            <li><a href="about.html#best-practices">Best Practices</a></li>
+            <li><a href="index.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Get In Touch</h5>
+          <ul class="footer-links">
+            <li><a href="#" class="btn-consultation-trigger">Schedule Consultation</a></li>
+            <li><a href="#">Submit Support Ticket</a></li>
+            <li><a href="about.html#smarti-backing">Corporate Legacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Meclix Mechatronix. All rights reserved. Backed by Smarti Electronics Systems Pvt. Ltd.</p>
+        <p>India-First · SEO Optimised · AI Optimised</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CONSULTATION BOOKING DIALOG (MODAL)
+       ========================================================================== -->
+  <div class="modal-overlay" id="consultation-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+      <div id="booking-form-container">
+        <div class="modal-header">
+          <h3>Schedule a Consultation</h3>
+          <p>Book a free technical consultation with a Meclix solutions specialist.</p>
+        </div>
+        
+        <form id="consultation-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="booking-name">Full Name *</label>
+              <input type="text" id="booking-name" class="form-input" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="booking-company">Company *</label>
+              <input type="text" id="booking-company" class="form-input" required placeholder="Enterprise Corp">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="booking-email">Work Email *</label>
+              <input type="email" id="booking-email" class="form-input" required placeholder="john@company.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="booking-phone">Phone Number *</label>
+              <input type="tel" id="booking-phone" class="form-input" required placeholder="+91 99999 99999">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="booking-product">Product of Interest *</label>
+            <select id="booking-product" class="form-input" required>
+              <option value="" disabled selected>Select a product...</option>
+              <option value="keyknox">KeyKnox (Electronic Key Management System)</option>
+              <option value="arcaknox">ArcaKnox (Smart Locker Systems)</option>
+              <option value="both">Both Product Lines</option>
+              <option value="software">Shield Software / Integrations</option>
+            </select>
+          </div>
+
+          
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-primary" id="booking-submit-btn">Book Consultation Session</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="booking-success-container" class="booking-success-message">
+        <div class="success-icon">✓</div>
+        <h4>Consultation Scheduled!</h4>
+        <p>Thank you for reaching out. A Meclix Mechatronix security specialist will review your request and contact you shortly.</p>
+        <button class="btn btn-primary" id="success-done-btn">Back to Website</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

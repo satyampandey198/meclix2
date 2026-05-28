@@ -1,0 +1,3479 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<script>
+		// Define global consultation modal functions at the very top to prevent any race conditions or ReferenceErrors
+		window.openConsultationModal = function(e) {
+			if (e) {
+				e.preventDefault();
+				e.stopPropagation();
+			}
+			const modal = document.getElementById('consultation-modal');
+			const formContainer = document.getElementById('booking-form-container');
+			const successContainer = document.getElementById('booking-success-container');
+			const form = document.getElementById('consultation-form');
+			
+			if (modal) modal.classList.add('open');
+			if (formContainer) formContainer.style.display = 'block';
+			if (successContainer) successContainer.style.display = 'none';
+			if (form) form.reset();
+		};
+
+		window.closeConsultationModal = function(e) {
+			if (e) {
+				e.preventDefault();
+				e.stopPropagation();
+			}
+			const modal = document.getElementById('consultation-modal');
+			if (modal) modal.classList.remove('open');
+		};
+	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<title>Meclix Mechatronix — Electronic Key Management System & Smart Locker</title>
+	<meta name="description"
+		content="Meclix Mechatronix delivers most advanced Electronic Key Management System (KeyKnox) and Smart Locker (ArcaKnox) — built for Corporates, Datacenter, Government, IT Sector, Automobile Showrooms, and Visitor Management.">
+	<meta name='robots' content='max-image-preview:large' />
+	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+
+	<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+		img:is([sizes=auto i], [sizes^="auto," i]) {
+			contain-intrinsic-size: 3000px 1500px
+		}
+
+		/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+	</style>
+
+	<link rel='stylesheet' id='techwix-core-css' href='assets/css/techwix-core.css' type='text/css' media='all' />
+	<style id='wp-emoji-styles-inline-css' type='text/css'>
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 0.07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+
+		/*# sourceURL=wp-emoji-styles-inline-css */
+	</style>
+	<style id='classic-theme-styles-inline-css' type='text/css'>
+		/*! This file is auto-generated */
+		.wp-block-button__link {
+			color: #fff;
+			background-color: #32373c;
+			border-radius: 9999px;
+			box-shadow: none;
+			text-decoration: none;
+			padding: calc(.667em + 2px) calc(1.333em + 2px);
+			font-size: 1.125em
+		}
+
+		.wp-block-file__button {
+			background: #32373c;
+			color: #fff;
+			text-decoration: none
+		}
+
+		/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+	</style>
+	<style id='global-styles-inline-css' type='text/css'>
+		:root {
+			--wp--preset--aspect-ratio--square: 1;
+			--wp--preset--aspect-ratio--4-3: 4/3;
+			--wp--preset--aspect-ratio--3-4: 3/4;
+			--wp--preset--aspect-ratio--3-2: 3/2;
+			--wp--preset--aspect-ratio--2-3: 2/3;
+			--wp--preset--aspect-ratio--16-9: 16/9;
+			--wp--preset--aspect-ratio--9-16: 9/16;
+			--wp--preset--color--black: #000000;
+			--wp--preset--color--cyan-bluish-gray: #abb8c3;
+			--wp--preset--color--white: #ffffff;
+			--wp--preset--color--pale-pink: #f78da7;
+			--wp--preset--color--vivid-red: #cf2e2e;
+			--wp--preset--color--luminous-vivid-orange: #ff6900;
+			--wp--preset--color--luminous-vivid-amber: #fcb900;
+			--wp--preset--color--light-green-cyan: #7bdcb5;
+			--wp--preset--color--vivid-green-cyan: #00d084;
+			--wp--preset--color--pale-cyan-blue: #8ed1fc;
+			--wp--preset--color--vivid-cyan-blue: #0693e3;
+			--wp--preset--color--vivid-purple: #9b51e0;
+			--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgb(6, 147, 227) 0%, rgb(155, 81, 224) 100%);
+			--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+			--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgb(252, 185, 0) 0%, rgb(255, 105, 0) 100%);
+			--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgb(255, 105, 0) 0%, rgb(207, 46, 46) 100%);
+			--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+			--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+			--wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+			--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+			--wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+			--wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+			--wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+			--wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+			--wp--preset--font-size--small: 13px;
+			--wp--preset--font-size--medium: 20px;
+			--wp--preset--font-size--large: 36px;
+			--wp--preset--font-size--x-large: 42px;
+			--wp--preset--spacing--20: 0.44rem;
+			--wp--preset--spacing--30: 0.67rem;
+			--wp--preset--spacing--40: 1rem;
+			--wp--preset--spacing--50: 1.5rem;
+			--wp--preset--spacing--60: 2.25rem;
+			--wp--preset--spacing--70: 3.38rem;
+			--wp--preset--spacing--80: 5.06rem;
+			--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+			--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);
+			--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);
+		}
+
+		:where(.is-layout-flex) {
+			gap: 0.5em;
+		}
+
+		:where(.is-layout-grid) {
+			gap: 0.5em;
+		}
+
+		body .is-layout-flex {
+			display: flex;
+		}
+
+		.is-layout-flex {
+			flex-wrap: wrap;
+			align-items: center;
+		}
+
+		.is-layout-flex> :is(*, div) {
+			margin: 0;
+		}
+
+		body .is-layout-grid {
+			display: grid;
+		}
+
+		.is-layout-grid> :is(*, div) {
+			margin: 0;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		:where(.wp-block-columns.is-layout-grid) {
+			gap: 2em;
+		}
+
+		:where(.wp-block-post-template.is-layout-flex) {
+			gap: 1.25em;
+		}
+
+		:where(.wp-block-post-template.is-layout-grid) {
+			gap: 1.25em;
+		}
+
+		.has-black-color {
+			color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-color {
+			color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-color {
+			color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-color {
+			color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-color {
+			color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-color {
+			color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-color {
+			color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-color {
+			color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-color {
+			color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-color {
+			color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-color {
+			color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-color {
+			color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-background-color {
+			background-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-background-color {
+			background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-background-color {
+			background-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-background-color {
+			background-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-background-color {
+			background-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-background-color {
+			background-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-background-color {
+			background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-background-color {
+			background-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-border-color {
+			border-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-border-color {
+			border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-border-color {
+			border-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-border-color {
+			border-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-border-color {
+			border-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-border-color {
+			border-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-border-color {
+			border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-border-color {
+			border-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+			background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+		}
+
+		.has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+			background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+		}
+
+		.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-orange-to-vivid-red-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+		}
+
+		.has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+			background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+		}
+
+		.has-cool-to-warm-spectrum-gradient-background {
+			background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+		}
+
+		.has-blush-light-purple-gradient-background {
+			background: var(--wp--preset--gradient--blush-light-purple) !important;
+		}
+
+		.has-blush-bordeaux-gradient-background {
+			background: var(--wp--preset--gradient--blush-bordeaux) !important;
+		}
+
+		.has-luminous-dusk-gradient-background {
+			background: var(--wp--preset--gradient--luminous-dusk) !important;
+		}
+
+		.has-pale-ocean-gradient-background {
+			background: var(--wp--preset--gradient--pale-ocean) !important;
+		}
+
+		.has-electric-grass-gradient-background {
+			background: var(--wp--preset--gradient--electric-grass) !important;
+		}
+
+		.has-midnight-gradient-background {
+			background: var(--wp--preset--gradient--midnight) !important;
+		}
+
+		.has-small-font-size {
+			font-size: var(--wp--preset--font-size--small) !important;
+		}
+
+		.has-medium-font-size {
+			font-size: var(--wp--preset--font-size--medium) !important;
+		}
+
+		.has-large-font-size {
+			font-size: var(--wp--preset--font-size--large) !important;
+		}
+
+		.has-x-large-font-size {
+			font-size: var(--wp--preset--font-size--x-large) !important;
+		}
+
+		:where(.wp-block-post-template.is-layout-flex) {
+			gap: 1.25em;
+		}
+
+		:where(.wp-block-post-template.is-layout-grid) {
+			gap: 1.25em;
+		}
+
+		:where(.wp-block-term-template.is-layout-flex) {
+			gap: 1.25em;
+		}
+
+		:where(.wp-block-term-template.is-layout-grid) {
+			gap: 1.25em;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		:where(.wp-block-columns.is-layout-grid) {
+			gap: 2em;
+		}
+
+		:root :where(.wp-block-pullquote) {
+			font-size: 1.5em;
+			line-height: 1.6;
+		}
+		/*# sourceURL=global-styles-inline-css */
+	</style>
+	<link rel='stylesheet' id='woocommerce-layout-css' href='assets/css/woocommerce-layout.css' type='text/css' media='all' /><link rel='stylesheet' id='woocommerce-smallscreen-css' href='assets/css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)' /><link rel='stylesheet' id='woocommerce-general-css' href='assets/css/woocommerce.css' type='text/css' media='all' /><style id='woocommerce-inline-inline-css' type='text/css'>.woocommerce form .form-row .required {
+			visibility: visible;
+		}
+
+		/*# sourceURL=woocommerce-inline-inline-css */
+	</style>
+	<link rel='stylesheet' id='elementor-frontend-css' href='assets/css/custom-frontend.min.css' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='elementor-post-3317-css' href='assets/css/post-3317.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='techwix-main-fonts-css'
+		href='https://fonts.googleapis.com/css?family=Jost%3A300%2C400%2C500%2C600%2C700%2C800%7CBarlow%3A300%2C400%2C500%2C600%2C700%2C800&#038;subset=latin%2Clatin-ext&#038;ver=1.1.6'
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='techwix-flaticon-css' href='assets/css/flaticon_techwix.css' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='techwix-swiper-css' href='assets/css/swiper-bundle.min.css' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='techwix-main-css' href='assets/css/main.css' type='text/css' media='all' />
+	<style id='techwix-main-inline-css' type='text/css'>
+		:root {
+			--techwix-elementor-container-width: 1270px;
+			;
+			--techwix-primary-color: #086ad8;
+			--techwix-primary-color-alt: #ff4830;
+			--techwix-color-secondary: #021e40;
+			--techwix-color-thirty: #0e0e0e;
+			--techwix-color-01: #ff4830;
+			--techwix-color-02: #6cbd7f;
+			--techwix-color-03: #8e56ff;
+			--techwix-color-04: #17b8c1;
+			--techwix-color-05: #3BBC9B;
+			--techwix-color-06: #0071dc;
+
+			--techwix-color-btn-bg: #086ad8;
+			--techwix-color-btn-border: #086ad8;
+			--techwix-color-btn-text: #fff;
+
+			--techwix-color-btn-bg-hover: #021e40;
+			--techwix-color-btn-border-hover: #021e40;
+			--techwix-color-btn-text-hover: #ffffff;
+
+			--techwix-color-placeholder: #CCCCCC;
+			--techwix-shadow-01: 0 0 30px rgb(0 0 0 / 5%);
+			--techwix-color-tertiary: #f8b81f;
+			--techwix-color-dark: #231F40;
+			--techwix-color-body: #4c4d56;
+			--techwix-heading-color: #0e0e0e;
+			--techwix-color-white: #ffffff;
+			--techwix-color-shade: #F5F5F5;
+			--techwix-color-border: #ebebeb;
+			--techwix-color-black: #000000;
+			--techwix-p-regular: 400;
+			--techwix-p-medium: 500;
+			--techwix-p-semi-bold: 600;
+			--techwix-p-bold: 700;
+			--techwix-p-extra-bold: 800;
+			--techwix-p-black: 900;
+			--techwix-shadow-darker: 0px 10px 50px 0px rgba(26, 46, 85, 0.1);
+			--techwix-shadow-dark: 0px 10px 30px 0px rgba(20, 36, 66, 0.15);
+			--techwix-shadow-darkest: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
+			--techwix-transition: 0.3s;
+			--techwix-font-primary: 'Jost', sans-serif;
+			--techwix-font-secondary: 'Barlow', sans-serif;
+			--techwix-font-size-b1: 16px;
+			--techwix-font-size-b2: 13px;
+			--techwix-font-size-b3: 14px;
+			--techwix-font-size-b4: 12px;
+			--techwix-line-height-b1: 1.73;
+			--techwix-h1: 50px;
+			--techwix-h2: 36px;
+			--techwix-h3: 28px;
+			--techwix-h4: 20px;
+			--techwix-h5: 18px;
+			--techwix-h6: 16px;
+			--techwix-h1-lineHeight: 1.2;
+			--techwix-h2-lineHeight: 1.39;
+			--techwix-h3-lineHeight: 1.43;
+			--techwix-h4-lineHeight: 1.4;
+			--techwix-h5-lineHeight: 1.45;
+			--techwix-h6-lineHeight: 1.62;
+		}
+
+		@media only screen and (max-width: 991px) {
+			.header-top-phone {
+				display: none;
+			}
+
+			.header-top-email {
+				display: none;
+			}
+
+			.header-top-message {
+				display: none;
+			}
+
+			.header-top-login-register {
+				display: none;
+			}
+
+			.header-top-profile {
+				display: none;
+			}
+		}
+
+		body.elementor-page:not(.techwix-page-breadcrumb-disable) .tpc-site-content {
+			padding: 95px 0;
+		}
+
+		#preloader_two .preloader_two span {
+			background: #086ad8;
+		}
+
+		/*# sourceURL=techwix-main-inline-css */
+	</style>
+	<link rel='stylesheet' id='techwix-woocommerce-style-css' href='assets/css/woocommerce.css' type='text/css'
+		media='all' />
+	<style id='techwix-woocommerce-style-inline-css' type='text/css'>
+		@font-face {
+			font-family: "star";
+			src: url("assets/fonts/star.woff") format("woff"),
+				url("assets/fonts/star.ttf") format("truetype");
+			font-weight: normal;
+			font-style: normal;
+		}
+
+		/*# sourceURL=techwix-woocommerce-style-inline-css */
+	</style>
+	<link rel='stylesheet' id='elementor-post-8-css' href='assets/css/post-8.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='widget-image-css' href='assets/css/widget-image.min.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='widget-progress-css' href='assets/css/custom-widget-progress.min.css' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='swiper-css' href='assets/css/swiper.min.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='e-swiper-css' href='assets/css/e-swiper.min.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='widget-image-carousel-css' href='assets/css/widget-image-carousel.min.css'
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='elementor-post-22-css' href='assets/css/post-22.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='techwix-custom-css' href='assets/css/custom.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='elementor-gf-local-barlow-css' href='assets/css/barlow.css' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='elementor-icons-techwix-custom-icons-css' href='assets/css/flaticon_techwix.css'
+		type='text/css' media='all' />
+	<script type="text/javascript" src="assets/js/jquery.min.js" id="jquery-core-js"></script>
+	<script type="text/javascript" src="assets/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+	<script type="text/javascript" src="assets/js/jquery.blockUI.min.js" id="wc-jquery-blockui-js" defer="defer"
+		data-wp-strategy="defer"></script>
+	<script type="text/javascript" id="wc-add-to-cart-js-extra">
+		/* <![CDATA[ */
+		var wc_add_to_cart_params = { "ajax_url": "/wp/techwix/wp-admin/admin-ajax.php", "wc_ajax_url": "/wp/techwix/?wc-ajax=%%endpoint%%", "i18n_view_cart": "View cart", "cart_url": "https://thepixelcurve.com/wp/techwix/cart/", "is_cart": "", "cart_redirect_after_add": "no" };
+		//# sourceURL=wc-add-to-cart-js-extra
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="assets/js/add-to-cart.min.js" id="wc-add-to-cart-js" defer="defer"
+		data-wp-strategy="defer"></script>
+	<script type="text/javascript" src="assets/js/js.cookie.min.js" id="wc-js-cookie-js" defer="defer"
+		data-wp-strategy="defer"></script>
+	<script type="text/javascript" id="woocommerce-js-extra">
+		/* <![CDATA[ */
+		var woocommerce_params = { "ajax_url": "/wp/techwix/wp-admin/admin-ajax.php", "wc_ajax_url": "/wp/techwix/?wc-ajax=%%endpoint%%", "i18n_password_show": "Show password", "i18n_password_hide": "Hide password" };
+		//# sourceURL=woocommerce-js-extra
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="assets/js/woocommerce.min.js" id="woocommerce-js" defer="defer"
+		data-wp-strategy="defer"></script>
+	<noscript>
+		<style>
+			.woocommerce-product-gallery {
+				opacity: 1 !important;
+			}
+		</style>
+	</noscript>
+	<meta name="generator"
+		content="Elementor 4.0.1; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+	<style>
+		.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+		.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+			background-image: none !important;
+		}
+
+		@media screen and (max-height: 1024px) {
+
+			.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+			.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+				background-image: none !important;
+			}
+		}
+
+		@media screen and (max-height: 640px) {
+
+			.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+			.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+				background-image: none !important;
+			}
+		}
+	</style>
+	<link rel="icon" href="assets/images/cropped-TECW0142-32x32.png" sizes="32x32" />
+	<link rel="icon" href="assets/images/cropped-TECW0142-192x192.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="assets/images/cropped-TECW0142-180x180.png" />
+	<meta name="msapplication-TileImage" content="assets/images/cropped-TECW0142-270x270.png" />
+	<style type="text/css" id="wp-custom-css">
+		body.page.page-id-2246 .elementor-15117 .elementor-element.elementor-element-9639ad5 header.techwix-elementor-header-wrapper.header-get-sticky.elementor-header-02-15117.headroom.headroom--not-bottom.headroom--pinned.madartank {
+			display: none
+		}
+
+		body.page.page-id-2246 header.techwix-elementor-header-wrapper.header-get-sticky.elementor-header-02-15117.headroom.headroom--not-bottom.headroom--pinned.headroom--top.madartank {
+			display: none
+		}
+
+		body.page.page-id-2246 header.techwix-elementor-header-wrapper.header-get-sticky.elementor-header-02-15117.headroom.headroom--not-bottom.madartank.headroom--not-top.headroom--pinned {
+			display: none;
+		}
+
+		body.page.page-id-2246 header.techwix-elementor-header-wrapper.header-get-sticky.elementor-header-02-15117.headroom.headroom--not-bottom.headroom--pinned.headroom--not-top {
+			display: none;
+		}
+
+		body.page.page-id-2246 header.techwix-elementor-header-wrapper.header-get-sticky.elementor-header-02-15117.headroom.headroom--top.headroom--not-bottom.madartank {
+			display: none;
+		}
+
+		header.techwix-elementor-header-wrapper.header-get-sticky.demo-landing-header-15695.headroom.headroom--not-bottom.headroom--pinned.headroom--top.madartank .elementor-15695 .elementor-element.elementor-element-3202a1f .main-navigation a {
+			color: #000;
+		}
+
+		header.techwix-elementor-header-wrapper.header-get-sticky.demo-landing-header-15695.headroom.headroom--top.headroom--not-bottom.madartank .elementor-15695 .elementor-element.elementor-element-3202a1f .main-navigation a {
+			color: #000;
+
+		}
+
+		header.techwix-elementor-header-wrapper.header-get-sticky.demo-landing-header-15695.headroom.headroom--not-top.madartank.headroom--bottom.headroom--pinned .elementor-15695 .elementor-element.elementor-element-3202a1f .main-navigation a {
+			color: #000;
+
+		}
+
+		.tpc-single-demo .demo-content .demo-title a {
+			font-weight: 600;
+		}
+
+		#primary-menu-custom-id {
+			display: flex !important;
+			flex-wrap: nowrap !important;
+			justify-content: flex-end !important;
+			align-items: center !important;
+		}
+
+		.techwix-header-area ul.techwix-navbar-nav>li>a {
+			padding: 10px 16px !important;
+		}
+
+		@media only screen and (max-width: 1200px) {
+			.techwix-header-area ul.techwix-navbar-nav>li>a {
+				padding: 10px 10px !important;
+				font-size: 14px !important;
+			}
+		}
+
+		/* Active menu item underline styling */
+		.techwix-header-area ul.techwix-navbar-nav>li.active>a {
+			position: relative;
+			color: var(--techwix-primary-color) !important;
+		}
+
+		.techwix-header-area ul.techwix-navbar-nav>li.active>a::after {
+			content: '';
+			position: absolute;
+			bottom: -5px;
+			/* Position the underline below the text link */
+			left: 16px;
+			/* Align with text padding */
+			right: 16px;
+			/* Align with text padding */
+			height: 2px;
+			background-color: var(--techwix-primary-color);
+			transition: all 0.3s ease;
+		}
+
+		@media only screen and (max-width: 1200px) {
+			.techwix-header-area ul.techwix-navbar-nav>li.active>a::after {
+				left: 10px;
+				right: 10px;
+			}
+		}
+
+		/* Hover link underline styling */
+		.techwix-header-area ul.techwix-navbar-nav>li>a:hover::after {
+			content: '';
+			position: absolute;
+			bottom: -5px;
+			left: 16px;
+			right: 16px;
+			height: 2px;
+			background-color: var(--techwix-primary-color);
+		}
+
+		@media only screen and (max-width: 1200px) {
+			.techwix-header-area ul.techwix-navbar-nav>li>a:hover::after {
+				left: 10px;
+				right: 10px;
+			}
+		}
+
+
+		body.page-id-15460 .elementor-15117 .elementor-element.elementor-element-9639ad5 header.techwix-elementor-header-wrapper.header-get-sticky.headroom.headroom--not-bottom.headroom--pinned.madartank {
+			display: none
+		}
+
+		body.page-id-15460 header.techwix-elementor-header-wrapper.header-get-sticky.headroom.headroom--not-bottom.headroom--pinned.headroom--top.madartank {
+			display: none
+		}
+
+		body.page-id-15460 header.techwix-elementor-header-wrapper.header-get-sticky.headroom.headroom--not-bottom.madartank.headroom--not-top.headroom--pinned {
+			display: none;
+		}
+
+		body.page-id-15460 header.techwix-elementor-header-wrapper.header-get-stickyheadroom.headroom--not-bottom.headroom--pinned.headroom--not-top {
+			display: none;
+		}
+
+		body.page-id-15460 header.techwix-elementor-header-wrapper.header-get-sticky.demo-landing-header-15695.headroom.headroom--not-bottom.madartank.headroom--top {
+			display: none;
+		}
+	</style>
+	<style id="kirki-inline-styles">
+		body {
+			font-family: Jost;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		.widget .widget-title,
+		.tribe-common--breakpoint-medium.tribe-common .tribe-common-h6--min-medium {
+			font-family: Barlow;
+			font-weight: 600;
+			letter-spacing: inherit;
+			text-transform: none;
+		}
+
+		.techwix-header-area.techwix-navbar-expand-lg ul.techwix-navbar-nav>li>a.nav-link,
+		.techwix-header-area ul.techwix-navbar-nav>li>a {
+			font-family: Barlow;
+			font-weight: 600;
+			letter-spacing: inherit;
+			text-transform: none;
+		}
+
+		.techwix-header-area ul.techwix-navbar-nav .dropdown ul.techwix-dropdown-menu li a {
+			font-family: Barlow;
+			font-weight: 600;
+			letter-spacing: inherit;
+			text-transform: none;
+		}
+
+		.site-branding img.site-logo {
+			max-width: 180px;
+		}
+
+		.techwix-page-title-area {
+			min-height: 580px;
+			padding-top: 85px;
+			padding-bottom: 85px;
+		}
+
+		.techwix-breadcrumb-wrapper ul li span.active {
+			color: #ffffff;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/92zPtBhPNqw79Ij1E865zBUv7myjJTVFNIg8mg.woff2) format('woff2');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/92zPtBhPNqw79Ij1E865zBUv7myjJTVPNIg8mg.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/92zPtBhPNqw79Ij1E865zBUv7myjJTVBNIg.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 300;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3p-ks6FospT4.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 300;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3p-ks6VospT4.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 300;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3p-ks51os.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/7cHpv4kjgoGqM7E_A8s52Hs.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/7cHpv4kjgoGqM7E_Ass52Hs.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/7cHpv4kjgoGqM7E_DMs5.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3_-gs6FospT4.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3_-gs6VospT4.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3_-gs51os.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 600;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E30-8s6FospT4.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 600;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E30-8s6VospT4.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 600;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E30-8s51os.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3t-4s6FospT4.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3t-4s6VospT4.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3t-4s51os.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/92zPtBhPNqw79Ij1E865zBUv7myjJTVFNIg8mg.woff2) format('woff2');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/92zPtBhPNqw79Ij1E865zBUv7myjJTVPNIg8mg.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/92zPtBhPNqw79Ij1E865zBUv7myjJTVBNIg.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 300;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3p-ks6FospT4.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 300;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3p-ks6VospT4.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 300;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3p-ks51os.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/7cHpv4kjgoGqM7E_A8s52Hs.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/7cHpv4kjgoGqM7E_Ass52Hs.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/7cHpv4kjgoGqM7E_DMs5.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3_-gs6FospT4.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3_-gs6VospT4.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3_-gs51os.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 600;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E30-8s6FospT4.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 600;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E30-8s6VospT4.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 600;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E30-8s51os.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3t-4s6FospT4.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3t-4s6VospT4.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3t-4s51os.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/92zPtBhPNqw79Ij1E865zBUv7myjJTVFNIg8mg.woff2) format('woff2');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/92zPtBhPNqw79Ij1E865zBUv7myjJTVPNIg8mg.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/92zPtBhPNqw79Ij1E865zBUv7myjJTVBNIg.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 300;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3p-ks6FospT4.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 300;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3p-ks6VospT4.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 300;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3p-ks51os.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/7cHpv4kjgoGqM7E_A8s52Hs.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/7cHpv4kjgoGqM7E_Ass52Hs.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(assets/fonts/7cHpv4kjgoGqM7E_DMs5.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3_-gs6FospT4.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3_-gs6VospT4.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3_-gs51os.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 600;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E30-8s6FospT4.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 600;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E30-8s6VospT4.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 600;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E30-8s51os.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3t-4s6FospT4.woff2) format('woff2');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3t-4s6VospT4.woff2) format('woff2');
+			unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Barlow';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(assets/fonts/7cHqv4kjgoGqM7E3t-4s51os.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+	</style>
+</head>
+
+<body
+	class="home wp-singular page-template-default page page-id-22 wp-custom-logo wp-embed-responsive wp-theme-techwix theme-techwix woocommerce-no-js techwix-smart-sticky techwix-header-transparent-disable techwix-page-content techwix-page-breadcrumb-disable techwix-page-boxed techwix-page-sidebar-disable theme-name-techwix woocommerce woocommerce-active elementor-default elementor-kit-8 elementor-page elementor-page-22">
+
+
+	<div id="preloader_two">
+		<div class="preloader_two">
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<div id="page" class="site"><a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+		<header id="masthead" class="site-header theme-default-header header-get-sticky">
+			<div class="techwix-header-area techwix-navbar techwix-navbar-expand-lg">
+				<div class="techwix-container">
+					<div class="tpc-header-navbar techwix-align-items-center">
+						<div class="site-branding site-logo-info">
+							<div class="logo-wrapper" itemscope itemtype="http://schema.org/Brand"><a href="index.html"
+									class="navbar-brand site-main-logo" rel="home" aria-current="page"
+									style="padding: 5px 0; display: inline-block;"><img src="assets/images/new_logo.png"
+										alt="Meclix Mechatronix"
+										style="height: 48px; width: auto; max-height: 100%; display: block;"></a><a
+									href="index.html" class="navbar-brand site-white-logo"
+									style="padding: 5px 0; display: inline-block;"><img src="assets/images/new_logo.png"
+										alt="Meclix Mechatronix"
+										style="height: 48px; width: auto; max-height: 100%; display: block; filter: brightness(0) invert(1);"></a>
+							</div>
+						</div>
+						<div class="techwix-theme-header-nav techwix-d-none techwix-d-xl-block">
+							<nav id="site-navigation" class="main-navigation techwix-theme-nav techwix-navbar-collapse">
+								<div class="techwix-navbar-primary-menu">
+									<div id="primary-menu-container-id" class="primary-menu-container-class">
+										<ul id="primary-menu-custom-id"
+											class="techwix-default-header-navbar techwix-navbar-nav techwix-navbar-right">
+											<li itemscope="itemscope"
+												itemtype="https://www.schema.org/SiteNavigationElement"
+												class="menu-item nav-item active"><a class="nav-link"
+													href="index.html">Home</a></li>
+											<li itemscope="itemscope"
+												itemtype="https://www.schema.org/SiteNavigationElement"
+												class="menu-item nav-item"><a class="nav-link" href="about.html">About
+													Us</a></li>
+											<li itemscope="itemscope"
+												itemtype="https://www.schema.org/SiteNavigationElement"
+												class="menu-item nav-item"><a class="nav-link" href="lockers.html">Smart
+													Locker</a></li>
+											<li itemscope="itemscope"
+												itemtype="https://www.schema.org/SiteNavigationElement"
+												class="menu-item nav-item"><a class="nav-link" href="keyknox.html">KeyKnox
+													System</a></li>
+											<li itemscope="itemscope"
+												itemtype="https://www.schema.org/SiteNavigationElement"
+												class="menu-item nav-item"><a class="nav-link"
+													href="software.html">Software & Specs</a></li>
+										</ul>
+									</div>
+								</div>
+							</nav>
+						</div>
+						<div class="techwix-header-right-side"><a href="javascript:void(0);" onclick="openConsultationModal(event)"
+								class="main-header-btn techwix-btn btn-small btn-consultation-trigger">Book Consultation</a>
+							<div class="quote-icon techwix-theme-nav-responsive hamburger-icon">
+								<div class="techwix-mobile-hamburger-menu"><a href="javascript:void(0);"><i
+											class="flaticon-menu"></i></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="techwix-mobile-menu">
+			<div class="techwix-mobile-menu-overlay"></div>
+			<div class="techwix-mobile-menu-nav-wrapper">
+				<div class="responsive-header-top">
+					<div class="responsive-header-logo">
+						<div class="logo-wrapper" itemscope itemtype="http://schema.org/Brand"><a href="index.html"
+								class="navbar-brand site-main-logo" rel="home" aria-current="page"
+								style="padding: 5px 0; display: inline-block;"><img src="assets/images/new_logo.png"
+									alt="Meclix Mechatronix"
+									style="height: 40px; width: auto; max-height: 100%; display: block;"></a><a
+								href="index.html" class="navbar-brand site-white-logo"
+								style="padding: 5px 0; display: inline-block;"><img src="assets/images/new_logo.png"
+									alt="Meclix Mechatronix"
+									style="height: 40px; width: auto; max-height: 100%; display: block; filter: brightness(0) invert(1);"></a>
+						</div>
+					</div>
+					<div class="techwix-mobile-menu-close"><a href="javascript:void(0);"><i
+								class="flaticon-cancel"></i></a></div>
+				</div>
+				<ul id="techwix-mobile-menu-item" class="techwix-mobile-menu-item">
+					<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
+						class="menu-item nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+					<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
+						class="menu-item nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+					<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
+						class="menu-item nav-item"><a class="nav-link" href="lockers.html">Smart Locker</a></li>
+					<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
+						class="menu-item nav-item"><a class="nav-link" href="keyknox.html">KeyKnox System</a></li>
+					<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
+						class="menu-item nav-item"><a class="nav-link" href="software.html">Software & Specs</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="content" class="tpc-site-content">
+			<div class="tpc-site-content-inner techwix-page-container techwix-container">
+				<div class="techwix-main-content-inner techwix-row">
+					<div id="primary" class="content-area techwix-col-lg-12">
+						<main id="main" class="site-main">
+							<article id="post-22"
+								class="techwix-single-page post-22 page type-page status-publish hentry">
+
+
+								<div class="entry-content">
+									<div data-elementor-type="wp-page" data-elementor-id="22"
+										class="elementor elementor-22">
+										<div class="elementor-element elementor-element-fe2a346 e-flex e-con-boxed e-con e-parent"
+											data-id="fe2a346" data-element_type="container" data-e-type="container"
+											data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+											<div class="e-con-inner">
+												<div class="elementor-element elementor-element-ebc7aa3 elementor-absolute e-transform e-transform elementor-invisible elementor-widget elementor-widget-techwix-animation"
+													data-id="ebc7aa3" data-element_type="widget" data-e-type="widget"
+													data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_transform_rotateZ_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:-40,&quot;sizes&quot;:[]},&quot;_transform_skewX_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;_animation&quot;:&quot;techwix--slide-right&quot;,&quot;_transform_rotateZ_effect_tablet_extra&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_tablet&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_mobile&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewX_effect_tablet_extra&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewX_effect_tablet&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewX_effect_mobile&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewY_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewY_effect_tablet_extra&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewY_effect_tablet&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewY_effect_mobile&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
+													data-widget_type="techwix-animation.default">
+													<div class="elementor-widget-container">
+														<div class="techwix-animation-widget techwix-animation-display-type-mouse-track techwix-animation-content-type-color techwix-mouse-track-item"
+															id="ebc7aa3"><span data-depth="0.2"><span
+																	class="techwix-animation-widget-color"></span></span>
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-f7faba0 elementor-absolute e-transform elementor-invisible elementor-widget elementor-widget-techwix-animation"
+													data-id="f7faba0" data-element_type="widget" data-e-type="widget"
+													data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_transform_rotateZ_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:45,&quot;sizes&quot;:[]},&quot;_animation&quot;:&quot;techwix--slide-up&quot;,&quot;_transform_rotateZ_effect_tablet_extra&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_tablet&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_mobile&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
+													data-widget_type="techwix-animation.default">
+													<div class="elementor-widget-container">
+														<div class="techwix-animation-widget techwix-animation-display-type-mouse-track techwix-animation-content-type-color techwix-mouse-track-item"
+															id="f7faba0"><span data-depth="0.2"><span
+																	class="techwix-animation-widget-color"></span></span>
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-dc77d22 elementor-absolute e-transform e-transform elementor-invisible elementor-widget elementor-widget-techwix-animation"
+													data-id="dc77d22" data-element_type="widget" data-e-type="widget"
+													data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_transform_rotateZ_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:-40,&quot;sizes&quot;:[]},&quot;_transform_skewX_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;_animation&quot;:&quot;techwix--slide-down&quot;,&quot;_transform_rotateZ_effect_tablet_extra&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_tablet&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_mobile&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewX_effect_tablet_extra&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewX_effect_tablet&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewX_effect_mobile&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewY_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewY_effect_tablet_extra&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewY_effect_tablet&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_skewY_effect_mobile&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
+													data-widget_type="techwix-animation.default">
+													<div class="elementor-widget-container">
+														<div class="techwix-animation-widget techwix-animation-display-type-mouse-track techwix-animation-content-type-color techwix-mouse-track-item"
+															id="dc77d22"><span data-depth="-0.2"><span
+																	class="techwix-animation-widget-color"></span></span>
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-6e2d37e elementor-absolute e-transform elementor-invisible elementor-widget elementor-widget-techwix-animation"
+													data-id="6e2d37e" data-element_type="widget" data-e-type="widget"
+													data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_transform_rotateZ_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:45,&quot;sizes&quot;:[]},&quot;_animation&quot;:&quot;techwix--slide-left&quot;,&quot;_transform_rotateZ_effect_tablet_extra&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_tablet&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_mobile&quot;:{&quot;unit&quot;:&quot;deg&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
+													data-widget_type="techwix-animation.default">
+													<div class="elementor-widget-container">
+														<div class="techwix-animation-widget techwix-animation-display-type-mouse-track techwix-animation-content-type-color techwix-mouse-track-item"
+															id="6e2d37e"><span data-depth="-0.2"><span
+																	class="techwix-animation-widget-color"></span></span>
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-5706665 e-con-full e-flex e-con e-child"
+													data-id="5706665" data-element_type="container"
+													data-e-type="container">
+													<div class="elementor-element elementor-element-af935fd elementor-invisible elementor-widget elementor-widget-custom-title-addons"
+														data-id="af935fd" data-element_type="widget"
+														data-e-type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;}"
+														data-widget_type="custom-title-addons.default">
+														<div class="elementor-widget-container">
+															<div class="tpc-double_heading">
+																<div class="dbl__subtitle"><span
+																		style="color: #ff4830; font-weight: 700;">— MADE
+																		IN INDIA · BUILT FOR SCALE</span></div>
+																<h1 class="dbl__title-wrapper"
+																	style="font-size: var(--techwix-h1); line-height: var(--techwix-h1-lineHeight); font-family: var(--techwix-font-secondary); font-weight: 800; margin: 0 0 20px;">
+																	<span class="dbl__title dbl-title_1">Smarter
+																		Control<br>Over Every Key and<br>Every
+																		Locker</span>
+																</h1>
+															</div>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-47a2cc8 elementor-invisible elementor-widget elementor-widget-text-editor"
+														data-id="47a2cc8" data-element_type="widget"
+														data-e-type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;,&quot;_animation_delay&quot;:100}"
+														data-widget_type="text-editor.default">
+														<div class="elementor-widget-container"
+															style="font-size: 18px; line-height: 1.6; margin-bottom: 30px;">
+															Meclix designs advanced Electronic Key Management Systems
+															and Smart Lockers that give organisations complete
+															visibility, accountability, and security – across every site
+															and shift. </div>
+													</div>
+													<div class="elementor-element elementor-element-3f122ab elementor-invisible elementor-widget elementor-widget-techwix-button"
+														data-id="3f122ab" data-element_type="widget"
+														data-e-type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;,&quot;_animation_delay&quot;:200}"
+														data-widget_type="techwix-button.default">
+														<div class="elementor-widget-container">
+															<div style="display: flex; gap: 15px; flex-wrap: wrap;"><a
+																	class="techwix-btn techwix-btn-size-custom style-1 btn-consultation-trigger"
+																	href="javascript:void(0);" onclick="openConsultationModal(event)">Schedule
+																	Consultation</a></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-f648f74 e-flex e-con-boxed e-con e-parent"
+											data-id="f648f74" data-element_type="container" data-e-type="container"
+											data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+											<div class="e-con-inner">
+												<style>
+													.elementor-element-714c56d .elementor-widget-techwix-service-addons,
+													.elementor-element-714c56d .elementor-widget-container,
+													.elementor-element-714c56d .techwix-service {
+														height: 100% !important;
+													}
+
+													.elementor-element-714c56d .techwix-service {
+														display: flex !important;
+														flex-direction: column !important;
+														justify-content: space-between !important;
+													}
+
+													.elementor-element-714c56d .service-content {
+														display: flex !important;
+														flex-direction: column !important;
+														flex-grow: 1 !important;
+														justify-content: space-between !important;
+													}
+
+													.elementor-element-714c56d .description {
+														flex-grow: 1 !important;
+														margin-bottom: 20px !important;
+													}
+												</style>
+												<div class="elementor-element elementor-element-714c56d e-grid e-con-boxed e-con e-child"
+													data-id="714c56d" data-element_type="container"
+													data-e-type="container">
+													<div class="e-con-inner">
+														<div class="elementor-element elementor-element-7c4cbb7 elementor-invisible elementor-widget elementor-widget-techwix-service-addons"
+															data-id="7c4cbb7" data-element_type="widget"
+															data-e-type="widget"
+															data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;,&quot;_animation_delay&quot;:100}"
+															data-widget_type="techwix-service-addons.default">
+															<div class="elementor-widget-container">
+																<div
+																	class="techwix-service service-style-1 lift-top-hover">
+																	<div class="service-img"><img decoding="async"
+																			src="assets/images/TECW0002.png"
+																			title="TECW0002" alt="TECW0002"
+																			loading="lazy" /></div>
+																	<div class="service-content">
+																		<h3 class="service-title"><a
+																				href="#about-us">Focused Design</a></h3>
+																		<p class="description">Operations, support, and
+																			hardware designed for enterprise
+																			environments</p>
+																		<div class="read-more"><a href="#about-us"><i
+																					class="flaticon-plus-sign"></i>
+																				Learn More</a></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="elementor-element elementor-element-2637000 elementor-invisible elementor-widget elementor-widget-techwix-service-addons"
+															data-id="2637000" data-element_type="widget"
+															data-e-type="widget"
+															data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;,&quot;_animation_delay&quot;:200}"
+															data-widget_type="techwix-service-addons.default">
+															<div class="elementor-widget-container">
+																<div
+																	class="techwix-service service-style-1 lift-top-hover">
+																	<div class="service-img"><img decoding="async"
+																			src="assets/images/TECW0003.png"
+																			title="TECW0003" alt="TECW0003"
+																			loading="lazy" /></div>
+																	<div class="service-content">
+																		<h3 class="service-title"><a
+																				href="#products">Real-Time
+																				Monitoring</a></h3>
+																		<p class="description">Audit trails that never
+																			sleep — every access event logged instantly
+																		</p>
+																		<div class="read-more"><a href="#products"><i
+																					class="flaticon-plus-sign"></i>
+																				Learn More</a></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="elementor-element elementor-element-6ba61b5 elementor-invisible elementor-widget elementor-widget-techwix-service-addons"
+															data-id="6ba61b5" data-element_type="widget"
+															data-e-type="widget"
+															data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;,&quot;_animation_delay&quot;:300}"
+															data-widget_type="techwix-service-addons.default">
+															<div class="elementor-widget-container">
+																<div
+																	class="techwix-service service-style-1 lift-top-hover">
+																	<div class="service-img"><img decoding="async"
+																			src="assets/images/TECW0004.png"
+																			title="TECW0004" alt="TECW0004"
+																			loading="lazy" /></div>
+																	<div class="service-content">
+																		<h3 class="service-title"><a
+																				href="#products">Solution Portfolio</a>
+																		</h3>
+																		<p class="description">KeyKnox (Electronic Key
+																			Management System) and ArcaKnox (Smart
+																			Locker)</p>
+																		<div class="read-more"><a href="#products"><i
+																					class="flaticon-plus-sign"></i>
+																				Learn More</a></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="elementor-element elementor-element-3861e6c elementor-invisible elementor-widget elementor-widget-techwix-service-addons"
+															data-id="3861e6c" data-element_type="widget"
+															data-e-type="widget"
+															data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;,&quot;_animation_delay&quot;:400}"
+															data-widget_type="techwix-service-addons.default">
+															<div class="elementor-widget-container">
+																<div
+																	class="techwix-service service-style-1 lift-top-hover">
+																	<div class="service-img"><img decoding="async"
+																			src="assets/images/TECW0014.png"
+																			title="TECW0014" alt="TECW0014"
+																			loading="lazy" /></div>
+																	<div class="service-content">
+																		<h3 class="service-title"><a
+																				href="#products">Complete Event
+																				Traceability</a></h3>
+																		<p class="description">Every key removed, every
+																			locker opened — fully accounted for</p>
+																		<div class="read-more"><a href="#products"><i
+																					class="flaticon-plus-sign"></i>
+																				Learn More</a></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div id="about-us"
+											class="elementor-element elementor-element-6c31a24 e-flex e-con-boxed e-con e-parent"
+											data-id="6c31a24" data-element_type="container" data-e-type="container">
+											<div class="e-con-inner">
+												<div class="elementor-element elementor-element-3ca7c0a e-con-full e-flex e-con e-child"
+													data-id="3ca7c0a" data-element_type="container"
+													data-e-type="container">
+													<div class="elementor-element elementor-element-f915672 elementor-invisible elementor-widget elementor-widget-custom-title-addons"
+														data-id="f915672" data-element_type="widget"
+														data-e-type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;}"
+														data-widget_type="custom-title-addons.default">
+														<div class="elementor-widget-container">
+															<div class="tpc-double_heading">
+																<div class="dbl__subtitle"><span>Why Meclix</span></div>
+																<h3 class="dbl__title-wrapper"><span
+																		class="dbl__title dbl-title_1">Organisation’s
+																		Access Security Gap Is Closing — Fast</span>
+																</h3>
+															</div>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-45d6be9 elementor-invisible elementor-widget elementor-widget-text-editor"
+														data-id="45d6be9" data-element_type="widget"
+														data-e-type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;}"
+														data-widget_type="text-editor.default">
+														<div class="elementor-widget-container">
+															From hospital emergency rooms to manufacturing shopfloors,
+															untracked keys and unmanaged lockers are a leading cause of
+															asset loss, compliance failures, and security breaches.
+															Meclix exists to fix that — with hardware and software
+															purpose-built for enterprise environments. </div>
+													</div>
+													<div class="elementor-element elementor-widget elementor-widget-techwix-button" style="margin-top: 35px;">
+														<div class="elementor-widget-container">
+															<a class="techwix-btn style-1" href="about.html" style="padding: 16px 40px; font-size: 16px; font-weight: 600; border-radius: 6px; display: inline-block;">Learn More About Us</a>
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-368df2c e-con-full e-flex e-con e-child"
+													data-id="368df2c" data-element_type="container"
+													data-e-type="container">
+													<div class="elementor-element elementor-element-80f4d80 e-con-full e-flex e-con e-child"
+														data-id="80f4d80" data-element_type="container"
+														data-e-type="container">
+														<div class="elementor-element elementor-element-21ec5b0 elementor-invisible elementor-widget elementor-widget-techwix-video-popup"
+															data-id="21ec5b0" data-element_type="widget"
+															data-e-type="widget"
+															data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;}"
+															data-widget_type="techwix-video-popup.default">
+															<div class="elementor-widget-container">
+																<div class="techwix-video-popup-wrapper style-1"><a
+																		id="21ec5b0" class="bla-2"
+																		href="https://www.youtube.com/watch?v=MLpWrANjFbI&#038;ab_channel=eidelchteinadvogados"><i
+																			class="flaticon-play-button"></i></a></div>
+																<script>
+																	jQuery(document).ready(function () {
+																		jQuery(function () {
+																			jQuery("a.21ec5b0bla-1").YouTubePopUp();
+																			jQuery("a.21ec5b0bla-2").YouTubePopUp({ autoplay: 0 }); // Disable autoplay
+																		});
+																	});
+																</script>
+															</div>
+														</div>
+														<div class="elementor-element elementor-element-1c04628 elementor-invisible elementor-widget elementor-widget-image"
+															data-id="1c04628" data-element_type="widget"
+															data-e-type="widget"
+															data-settings="{&quot;_animation&quot;:&quot;techwix--slide-right&quot;}"
+															data-widget_type="image.default">
+															<div class="elementor-widget-container">
+																<img fetchpriority="high" decoding="async" width="410"
+																	height="296" src="assets/images/TECW0008.jpg"
+																	class="attachment-full size-full wp-image-264"
+																	alt=""
+																	srcset="assets/images/TECW0008.jpg 410w, assets/images/TECW0008-300x217.jpg 300w"
+																	sizes="(max-width: 410px) 100vw, 410px" />
+															</div>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-6756236 e-con-full e-flex elementor-invisible e-con e-child"
+														data-id="6756236" data-element_type="container"
+														data-e-type="container"
+														data-settings="{&quot;animation&quot;:&quot;techwix--slide-up&quot;}">
+														<div class="elementor-element elementor-element-0e03707 elementor-widget elementor-widget-image"
+															data-id="0e03707" data-element_type="widget"
+															data-e-type="widget" data-widget_type="image.default">
+															<div class="elementor-widget-container">
+																<img loading="lazy" decoding="async" width="410"
+																	height="552" src="assets/images/TECW0009.jpg"
+																	class="attachment-full size-full wp-image-265"
+																	alt=""
+																	srcset="assets/images/TECW0009.jpg 410w, assets/images/TECW0009-223x300.jpg 223w"
+																	sizes="(max-width: 410px) 100vw, 410px" />
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+										<!-- Scoped Styles for Landing Products Section -->
+										<style>
+											.landing-products-section {
+												--font-primary: 'Jost', sans-serif;
+												--font-secondary: 'Barlow', sans-serif;
+												--color-primary: var(--techwix-primary-color, #086ad8);
+												--color-secondary: var(--techwix-primary-color-alt, #ff4830);
+												--color-navy: var(--techwix-color-secondary, #021e40);
+												--color-dark: var(--techwix-heading-color, #0e0e0e);
+												--color-body: var(--techwix-color-body, #4c4d56);
+												--border-light: #ebebeb;
+												--shadow-normal: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
+												--transition-normal: 0.3s ease-in-out;
+
+												padding: 80px 0;
+												background: #ffffff;
+												font-family: 'Barlow', sans-serif !important;
+												color: var(--color-body);
+												width: 100%;
+											}
+
+											.landing-products-section .container {
+												max-width: var(--techwix-elementor-container-width, 1270px);
+												margin: 0 auto;
+												padding: 0 15px;
+												box-sizing: border-box;
+											}
+
+											.landing-products-section .section-header {
+												text-align: center;
+												margin-bottom: 50px;
+											}
+
+											.landing-products-section .section-header .tpc-double_heading {
+												text-align: center;
+											}
+
+											.landing-products-section .section-header .dbl__subtitle,
+											.landing-products-section .section-header .dbl__subtitle span {
+												font-family: 'Barlow', sans-serif !important;
+												text-align: center;
+												margin-bottom: 12px;
+											}
+
+											.landing-products-section .section-header .dbl__title-wrapper {
+												text-align: center;
+												margin-bottom: 20px;
+											}
+
+											.landing-products-section .section-header .dbl__title {
+												font-family: 'Jost', sans-serif !important;
+												font-size: 48px !important;
+												font-weight: 600 !important;
+												line-height: 54px !important;
+												text-align: center;
+												margin-bottom: 20px;
+											}
+
+											.landing-products-section .product-tabs-wrapper {
+												display: flex;
+												flex-direction: column;
+											}
+
+											.landing-products-section .tab-nav {
+												display: inline-flex;
+												justify-content: center;
+												align-self: center;
+												gap: 10px;
+												background: #f5f5f5;
+												padding: 6px;
+												border-radius: 6px;
+												border: 1px solid var(--border-light);
+												margin: 0 auto 40px auto;
+											}
+
+											.landing-products-section .tab-btn {
+												background: transparent;
+												border: none;
+												font-family: 'Jost', sans-serif !important;
+												font-size: 16px !important;
+												font-weight: 600 !important;
+												color: var(--color-body);
+												padding: 10px 24px;
+												border-radius: 4px;
+												cursor: pointer;
+												transition: all var(--transition-normal);
+											}
+
+											.landing-products-section .tab-btn:hover {
+												color: var(--color-primary);
+											}
+
+											.landing-products-section .tab-btn.active {
+												background: var(--color-primary);
+												color: #fff;
+											}
+
+											.landing-products-section .tab-content {
+												position: relative;
+											}
+
+											.landing-products-section .tab-pane {
+												display: none;
+												opacity: 0;
+												transform: translateY(15px);
+											}
+
+											.landing-products-section .tab-pane.active {
+												display: grid;
+												grid-template-columns: 1.1fr 0.9fr;
+												gap: 48px;
+												align-items: center;
+												animation: tabFadeIn 0.4s ease forwards;
+											}
+
+											@keyframes tabFadeIn {
+												from {
+													opacity: 0;
+													transform: translateY(15px);
+												}
+
+												to {
+													opacity: 1;
+													transform: translateY(0);
+												}
+											}
+
+											.landing-products-section .tab-text h3 {
+												font-family: 'Jost', sans-serif !important;
+												font-size: 28px !important;
+												margin-bottom: 16px;
+												color: var(--color-dark);
+												font-weight: 600 !important;
+												line-height: 40px !important;
+											}
+
+											.landing-products-section .tab-text p {
+												font-family: 'Barlow', sans-serif !important;
+												margin-bottom: 24px;
+												font-size: 16px !important;
+												color: var(--color-body);
+												line-height: 1.73 !important;
+											}
+
+											.landing-products-section .tab-bullets {
+												list-style: none;
+												margin-bottom: 30px;
+												padding: 0;
+											}
+
+											.landing-products-section .tab-bullets li {
+												display: flex;
+												align-items: flex-start;
+												gap: 10px;
+												margin-bottom: 12px;
+												color: var(--color-body);
+												font-family: 'Barlow', sans-serif !important;
+												font-size: 16px !important;
+												line-height: 1.73 !important;
+											}
+
+											.landing-products-section .tab-bullets li::before {
+												content: '✓';
+												color: var(--color-primary);
+												font-weight: 700;
+											}
+
+											.landing-products-section .tab-image {
+												border-radius: 6px;
+												overflow: hidden;
+												border: 1px solid var(--border-light);
+												box-shadow: var(--shadow-normal);
+											}
+
+											.landing-products-section .tab-image img {
+												width: 100%;
+												display: block;
+												height: auto;
+											}
+
+											.landing-products-section .techwix-btn {
+												font-family: 'Jost', sans-serif !important;
+											}
+
+											/* Responsive styles */
+											@media (max-width: 991px) {
+												.landing-products-section .tab-pane.active {
+													grid-template-columns: 1fr;
+													gap: 30px;
+												}
+
+												.landing-products-section .tab-image {
+													order: -1;
+												}
+											}
+
+											@media (max-width: 767px) {
+												.landing-products-section .section-header .dbl__title {
+													font-size: 32px !important;
+													line-height: 38px !important;
+												}
+											}
+
+											@media (max-width: 575px) {
+												.landing-products-section .tab-nav {
+													flex-direction: column;
+													width: 100%;
+												}
+
+												.landing-products-section .tab-btn {
+													width: 100%;
+													text-align: center;
+												}
+											}
+										</style>
+
+										<!-- Products Catalog Tabs Section -->
+										<div id="products" class="landing-products-section">
+											<div class="container">
+												<div class="section-header">
+													<div class="tpc-double_heading">
+														<div class="dbl__subtitle"><span>OUR PRODUCTS</span></div>
+														<h3 class="dbl__title-wrapper"><span
+																class="dbl__title dbl-title_1">Purpose-Built Solutions.
+																Complete Control.</span></h3>
+														<p
+															style="font-family: var(--techwix-font-secondary, 'Barlow', sans-serif); font-size: 16px; color: var(--techwix-color-body, #4c4d56); max-width: 800px; margin: 15px auto 0; text-align: center; line-height: 1.63;">
+															Whether you need to track and manage critical keys across
+															facilities or enable secure storage of IT assets within a
+															corporate campus, Meclix has the answer.
+														</p>
+													</div>
+												</div>
+
+												<div class="product-tabs-wrapper">
+													<div class="tab-nav">
+														<button class="tab-btn active" data-tab="tab-keyknox">KeyKnox
+															Key Cabinets</button>
+														<button class="tab-btn" data-tab="tab-arcaknox">ArcaKnox Smart
+															Locker</button>
+														<button class="tab-btn" data-tab="tab-unified">Unified
+															Platform</button>
+													</div>
+
+													<div class="tab-content">
+														<div class="tab-pane active" id="tab-keyknox">
+															<div class="tab-text">
+																<h3>KeyKnox — Electronic Key Management System</h3>
+																<p>India's most advanced electronic key cabinet system.
+																	Biometric authentication, real-time tracking, and
+																	comprehensive audit logs for every key in your
+																	organisation. Scales from a single cabinet to
+																	enterprise-wide deployments.</p>
+																<ul class="tab-bullets">
+																	<li>Individually locked smart key slots with
+																		positional tracking</li>
+																	<li>Dual-factor authentication (Biometric
+																		fingerprint + RFID card)</li>
+																	<li>Automatic SMS & email alerts for overdue key
+																		returns</li>
+																</ul>
+																<a class="techwix-btn style-1" href="keyknox.html"
+																	style="padding: 16px 40px; font-size: 16px; font-weight: 600; border-radius: 6px; display: inline-block;">Learn
+																	More about KeyKnox</a>
+															</div>
+															<div class="tab-image">
+																<img src="assets/key_cabinet.png"
+																	alt="KeyKnox Key Management Cabinet">
+															</div>
+														</div>
+
+														<div class="tab-pane" id="tab-arcaknox">
+															<div class="tab-text">
+																<h3>ArcaKnox — Smart Locker Infrastructure</h3>
+																<p>Enterprise-grade smart locker infrastructure for
+																	Employees, IT Assets, Visitors, and Tool Management.
+																	Customisable to your workflows — from reception desk
+																	operations to manufacturing shop floors.</p>
+																<ul class="tab-bullets">
+																	<li>Space-saving modular configuration expanding
+																		vertically</li>
+																	<li>Integrated device charging hubs (optional USB
+																		configuration)</li>
+																	<li>RFID, Biometric fingerprint, PIN, and mobile app
+																		access</li>
+																</ul>
+																<a class="techwix-btn style-1" href="lockers.html"
+																	style="padding: 16px 40px; font-size: 16px; font-weight: 600; border-radius: 6px; display: inline-block;">Learn
+																	More about ArcaKnox</a>
+															</div>
+															<div class="tab-image">
+																<img src="assets/smart_locker.png"
+																	alt="ArcaKnox Smart Locker System">
+															</div>
+														</div>
+
+														<div class="tab-pane" id="tab-unified">
+															<div class="tab-text">
+																<h3>Unified Management Platform</h3>
+																<p>A cloud-based platform to monitor all your Meclix
+																	deployments across locations, shifts, and
+																	departments. Real-time alerts, compliance reports,
+																	management dashboard, usage analytics, and much
+																	more.</p>
+																<ul class="tab-bullets">
+																	<li>Dynamic reports exportable to Excel and PDF
+																		formats</li>
+																	<li>Active configuration mapping and CMDB / HRMS
+																		integrations</li>
+																	<li>System health monitor and real-time connectivity
+																		status</li>
+																</ul>
+																<a class="techwix-btn style-1" href="software.html"
+																	style="padding: 16px 40px; font-size: 16px; font-weight: 600; border-radius: 6px; display: inline-block;">Explore
+																	Software Features</a>
+															</div>
+															<div class="tab-image">
+																<img src="assets/landing_hero.png"
+																	alt="Meclix Unified Control Panel">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Client-side script for premium interactive tabs and anchor behavior -->
+										<script>
+											document.addEventListener('DOMContentLoaded', () => {
+												const tabButtons = document.querySelectorAll('.landing-products-section .tab-btn');
+												const tabPanes = document.querySelectorAll('.landing-products-section .tab-pane');
+
+												function switchTab(tabId) {
+													tabButtons.forEach(btn => {
+														if (btn.getAttribute('data-tab') === tabId) {
+															btn.classList.add('active');
+														} else {
+															btn.classList.remove('active');
+														}
+													});
+													tabPanes.forEach(pane => {
+														if (pane.id === tabId) {
+															pane.classList.add('active');
+														} else {
+															pane.classList.remove('active');
+														}
+													});
+												}
+
+												// Tab navigation click event
+												tabButtons.forEach(btn => {
+													btn.addEventListener('click', () => {
+														const targetTabId = btn.getAttribute('data-tab');
+														switchTab(targetTabId);
+													});
+												});
+
+												// Premium hash anchor handling
+												function handleHashChange() {
+													const hash = window.location.hash;
+													if (hash === '#keyknox') {
+														switchTab('tab-keyknox');
+														scrollToSection();
+													} else if (hash === '#products') {
+														switchTab('tab-arcaknox');
+														scrollToSection();
+													} else if (hash === '#software-specs') {
+														switchTab('tab-unified');
+														scrollToSection();
+													}
+												}
+
+												function scrollToSection() {
+													const section = document.getElementById('products');
+													if (section) {
+														setTimeout(() => {
+															section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+														}, 100);
+													}
+												}
+
+											});
+										</script>
+
+										<!-- Scoped Styles for Sectors Section -->
+										<style>
+											.sectors-section {
+												--font-primary: 'Jost', sans-serif;
+												--font-secondary: 'Barlow', sans-serif;
+												--color-primary: var(--techwix-primary-color, #086ad8);
+												--color-secondary: var(--techwix-primary-color-alt, #ff4830);
+												--color-navy: var(--techwix-color-secondary, #021e40);
+												--color-dark: var(--techwix-heading-color, #0e0e0e);
+												--color-body: var(--techwix-color-body, #4c4d56);
+												--border-light: #ebebeb;
+												--shadow-normal: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
+
+												padding: 100px 0 0 0;
+												background: #ffffff;
+												width: 100%;
+												overflow: hidden;
+												box-sizing: border-box;
+											}
+											.sectors-section .container {
+												max-width: var(--techwix-elementor-container-width, 1270px);
+												margin: 0 auto;
+												padding: 0 15px;
+												box-sizing: border-box;
+											}
+											.sectors-section .section-header {
+												text-align: center;
+												margin-bottom: 50px;
+											}
+											.sectors-section .section-header .sub-title {
+												font-family: 'Jost', sans-serif !important;
+												font-size: 14px;
+												font-weight: 700;
+												text-transform: uppercase;
+												letter-spacing: 2px;
+												color: var(--color-secondary);
+												margin-bottom: 12px;
+												display: inline-block;
+											}
+											.sectors-section .section-header .title {
+												font-family: 'Jost', sans-serif !important;
+												font-size: 48px !important;
+												font-weight: 600 !important;
+												line-height: 54px !important;
+												color: var(--color-dark);
+												margin: 0 0 20px 0;
+											}
+											.sectors-section .section-header .description {
+												font-family: 'Barlow', sans-serif !important;
+												font-size: 16px;
+												color: var(--color-body);
+												max-width: 800px;
+												margin: 0 auto;
+												line-height: 1.63;
+											}
+																						/* Marquee Carousel Styles */
+											.sectors-marquee-container {
+												overflow: hidden;
+												width: 100%;
+												display: flex;
+												position: relative;
+												padding: 30px 0 0 0;
+											}
+											
+											.sectors-marquee-track {
+												display: flex;
+												gap: 30px;
+												width: max-content;
+												animation: sectorsMarqueeAnimation 45s linear infinite;
+											}
+											
+											.sectors-marquee-track:hover {
+												animation-play-state: paused;
+											}
+											
+											@keyframes sectorsMarqueeAnimation {
+												0% {
+													transform: translateX(0);
+												}
+												100% {
+													transform: translateX(-50%);
+												}
+											}
+											
+											.sector-card {
+												width: 310px;
+												flex-shrink: 0;
+												background: #ffffff;
+												border-radius: 8px;
+												overflow: hidden;
+												box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.04);
+												border: 1px solid var(--border-light);
+												transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+												display: flex;
+												flex-direction: column;
+											}
+											
+											.sector-card:hover {
+												transform: translateY(-8px);
+												box-shadow: 0px 20px 45px rgba(0, 0, 0, 0.08);
+												border-color: var(--color-primary);
+											}
+											
+											.sector-img-wrapper {
+												position: relative;
+												overflow: hidden;
+												padding-bottom: 65%; /* 1.5 aspect ratio */
+												width: 100%;
+											}
+											
+											.sector-img-wrapper img {
+												position: absolute;
+												top: 0;
+												left: 0;
+												width: 100%;
+												height: 100%;
+												object-fit: cover;
+												transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+											}
+											
+											.sector-card:hover .sector-img-wrapper img {
+												transform: scale(1.08);
+											}
+											
+											.sector-content {
+												padding: 24px 20px;
+												text-align: center;
+												background: #ffffff;
+												flex-grow: 1;
+												display: flex;
+												align-items: center;
+												justify-content: center;
+											}
+											
+											.sector-content h4 {
+												font-family: 'Jost', sans-serif !important;
+												font-size: 20px;
+												font-weight: 600;
+												color: var(--color-navy);
+												margin: 0;
+												transition: color 0.3s ease;
+											}
+											
+											.sector-card:hover .sector-content h4 {
+												color: var(--color-primary);
+											}
+
+											/* Responsive tweaks & Delivering space adjustments */
+											.elementor-element.elementor-element-6d38999 {
+												padding-top: 30px !important;
+											}
+											
+											@media (max-width: 991px) {
+												.sectors-section .section-header .title {
+													font-size: 38px !important;
+													line-height: 44px !important;
+												}
+											}
+											@media (max-width: 767px) {
+												.sectors-section {
+													padding: 60px 0 0 0;
+												}
+												.sectors-section .section-header .title {
+													font-size: 32px !important;
+													line-height: 38px !important;
+												}
+												.sector-card {
+													width: 270px;
+												}
+												.sectors-marquee-track {
+													gap: 20px;
+												}
+												.elementor-element.elementor-element-6d38999 {
+													padding-top: 20px !important;
+												}
+											}
+										</style>
+
+										<!-- Sectors Section -->
+										<div id="sectors" class="sectors-section">
+											<div class="container">
+												<div class="section-header">
+													<span class="sub-title">— ENTERPRISE READY</span>
+													<h2 class="title">Built for Every Sector That Values Security</h2>
+													<p class="description">
+														Meclix Mechatronics solutions can be deployed across demanding operational environments – from critical infrastructure to manufacturing, from healthcare to IT parks.
+													</p>
+												</div>
+											</div> <!-- closes .container -->
+											
+											<div class="sectors-marquee-container">
+												<div class="sectors-marquee-track">
+													<!-- Sector 1: Healthcare -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_healthcare.png" alt="Hospitals & Healthcare" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Hospitals & Healthcare</h4>
+														</div>
+													</div>
+													
+													<!-- Sector 2: Manufacturing -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_manufacturing.png" alt="Manufacturing Units" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Manufacturing Units</h4>
+														</div>
+													</div>
+													
+													<!-- Sector 3: Hotels & Hospitality -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_hotels.png" alt="Hotels & Hospitality" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Hotels & Hospitality</h4>
+														</div>
+													</div>
+													
+													<!-- Sector 4: Educational Institutions -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_education.png" alt="Educational Institutions" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Educational Institutions</h4>
+														</div>
+													</div>
+
+													<!-- Sector 5: Corporate Offices -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_corporate.png" alt="Corporate Offices" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Corporate Offices</h4>
+														</div>
+													</div>
+
+													<!-- Sector 6: IT Parks & Datacenters -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_it_parks.png" alt="IT Parks & Datacenters" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>IT Parks & Datacenters</h4>
+														</div>
+													</div>
+
+													<!-- Sector 7: Critical Infrastructure -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_infrastructure.png" alt="Critical Infrastructure" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Critical Infrastructure</h4>
+														</div>
+													</div>
+
+													<!-- Sector 8: Banking & Finance -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_banking.png" alt="Banking & Finance" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Banking & Finance</h4>
+														</div>
+													</div>
+
+													<!-- Sector 9: Logistics & Warehouses -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_logistics.png" alt="Logistics & Warehouses" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Logistics & Warehouses</h4>
+														</div>
+													</div>
+
+													<!-- Sector 10: Government & Public Sector -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_government.png" alt="Government & Public Sector" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Government & Public Sector</h4>
+														</div>
+													</div>
+													
+													<!-- ============================================ -->
+													<!-- DUPLICATE SET FOR SEAMLESS INFINITE LOOP -->
+													<!-- ============================================ -->
+													
+													<!-- Sector 1: Healthcare -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_healthcare.png" alt="Hospitals & Healthcare" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Hospitals & Healthcare</h4>
+														</div>
+													</div>
+													
+													<!-- Sector 2: Manufacturing -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_manufacturing.png" alt="Manufacturing Units" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Manufacturing Units</h4>
+														</div>
+													</div>
+													
+													<!-- Sector 3: Hotels & Hospitality -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_hotels.png" alt="Hotels & Hospitality" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Hotels & Hospitality</h4>
+														</div>
+													</div>
+													
+													<!-- Sector 4: Educational Institutions -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_education.png" alt="Educational Institutions" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Educational Institutions</h4>
+														</div>
+													</div>
+
+													<!-- Sector 5: Corporate Offices -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_corporate.png" alt="Corporate Offices" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Corporate Offices</h4>
+														</div>
+													</div>
+
+													<!-- Sector 6: IT Parks & Datacenters -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_it_parks.png" alt="IT Parks & Datacenters" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>IT Parks & Datacenters</h4>
+														</div>
+													</div>
+
+													<!-- Sector 7: Critical Infrastructure -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_infrastructure.png" alt="Critical Infrastructure" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Critical Infrastructure</h4>
+														</div>
+													</div>
+
+													<!-- Sector 8: Banking & Finance -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_banking.png" alt="Banking & Finance" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Banking & Finance</h4>
+														</div>
+													</div>
+
+													<!-- Sector 9: Logistics & Warehouses -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_logistics.png" alt="Logistics & Warehouses" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Logistics & Warehouses</h4>
+														</div>
+													</div>
+
+													<!-- Sector 10: Government & Public Sector -->
+													<div class="sector-card">
+														<div class="sector-img-wrapper">
+															<img src="assets/sector_government.png" alt="Government & Public Sector" loading="lazy">
+														</div>
+														<div class="sector-content">
+															<h4>Government & Public Sector</h4>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="elementor-element elementor-element-6d38999 e-flex e-con-boxed e-con e-parent"
+											data-id="6d38999" data-element_type="container" data-e-type="container">
+											<div class="e-con-inner">
+												<div class="elementor-element elementor-element-a3232c4 e-con-full e-flex e-con e-child"
+													data-id="a3232c4" data-element_type="container"
+													data-e-type="container">
+													<div class="elementor-element elementor-element-036b3fa elementor-invisible elementor-widget elementor-widget-custom-title-addons"
+														data-id="036b3fa" data-element_type="widget"
+														data-e-type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;}"
+														data-widget_type="custom-title-addons.default">
+														<div class="elementor-widget-container">
+															<div class="tpc-double_heading">
+																<h3 class="dbl__title-wrapper"><span
+																		class="dbl__title dbl-title_1">Delivering
+																		Security and Control Across Every
+																		Facility</span></h3>
+															</div>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-384bc92 e-con-full e-flex e-con e-child"
+														data-id="384bc92" data-element_type="container"
+														data-e-type="container">
+														<div class="elementor-element elementor-element-c51449f e-con-full e-flex e-con e-child"
+															data-id="c51449f" data-element_type="container"
+															data-e-type="container"
+															data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+															<div class="elementor-element elementor-element-0a2d025 elementor-widget elementor-widget-custom-title-addons"
+																data-id="0a2d025" data-element_type="widget"
+																data-e-type="widget"
+																data-widget_type="custom-title-addons.default">
+																<div class="elementor-widget-container">
+																	<div class="tpc-double_heading">
+																		<h3 class="dbl__title-wrapper"><span
+																				class="dbl__title dbl-title_1">25</span>
+																		</h3>
+																	</div>
+																</div>
+															</div>
+															<div class="elementor-element elementor-element-414e160 elementor-widget elementor-widget-text-editor"
+																data-id="414e160" data-element_type="widget"
+																data-e-type="widget"
+																data-widget_type="text-editor.default">
+																<div class="elementor-widget-container">
+																	Years of experience </div>
+															</div>
+														</div>
+														<div class="elementor-element elementor-element-0ad3b2f e-con-full e-flex e-con e-child"
+															data-id="0ad3b2f" data-element_type="container"
+															data-e-type="container">
+															<div class="elementor-element elementor-element-69a81a1 elementor-widget elementor-widget-text-editor"
+																data-id="69a81a1" data-element_type="widget"
+																data-e-type="widget"
+																data-widget_type="text-editor.default">
+																<div class="elementor-widget-container">
+																	Our two product lines, KeyKnox (Electronic Key
+																	Management System) and ArcaKnox (Smart Locker), are
+																	designed from the ground up for all operations —
+																	with support for compliant reporting, integration
+																	with relevant third party platforms, and
+																	field-proven hardware suited to all power and
+																	climate conditions. Backed by Smarti Electronics
+																	Systems Pvt. Ltd., with over 25 years of experience.
+																</div>
+															</div>
+															<div class="elementor-element elementor-element-8e79dea elementor-widget elementor-widget-techwix-button"
+																data-id="8e79dea" data-element_type="widget"
+																data-e-type="widget"
+																data-widget_type="techwix-button.default">
+																<div class="elementor-widget-container">
+																	<div class="techwix-button-widget-wrapper"><a
+																			class="techwix-btn techwix-btn-size-custom  techwix-btn-icon techwix-button-icon-position-after style-2"
+																			href="#products">Explore Solutions<svg
+																				class="e-font-icon-svg e-fas-long-arrow-alt-right"
+																				viewBox="0 0 448 512"
+																				xmlns="http://www.w3.org/2000/svg">
+																				<path
+																					d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
+																				</path>
+																			</svg></a></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-4acead0 e-con-full e-flex e-con e-child"
+													data-id="4acead0" data-element_type="container"
+													data-e-type="container">
+													<div class="elementor-element elementor-element-b6cbdf4 techwix-progress-bar elementor-invisible elementor-widget elementor-widget-progress"
+														data-id="b6cbdf4" data-element_type="widget"
+														data-e-type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;}"
+														data-widget_type="progress.default">
+														<div class="elementor-widget-container">
+															<h4 class="elementor-title"
+																id="elementor-progress-bar-b6cbdf4">
+																Key Lifecycle Management </h4>
+
+															<div aria-labelledby="elementor-progress-bar-b6cbdf4"
+																class="elementor-progress-wrapper" role="progressbar"
+																aria-valuemin="0" aria-valuemax="100"
+																aria-valuenow="95">
+																<div class="elementor-progress-bar" data-max="95">
+																	<span class="elementor-progress-text"></span>
+																	<span
+																		class="elementor-progress-percentage">95%</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-6116fcc techwix-progress-bar elementor-invisible elementor-widget elementor-widget-progress"
+														data-id="6116fcc" data-element_type="widget"
+														data-e-type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;}"
+														data-widget_type="progress.default">
+														<div class="elementor-widget-container">
+															<h4 class="elementor-title"
+																id="elementor-progress-bar-6116fcc">
+																Locker Utilisation </h4>
+
+															<div aria-labelledby="elementor-progress-bar-6116fcc"
+																class="elementor-progress-wrapper" role="progressbar"
+																aria-valuemin="0" aria-valuemax="100"
+																aria-valuenow="90">
+																<div class="elementor-progress-bar" data-max="90">
+																	<span class="elementor-progress-text"></span>
+																	<span
+																		class="elementor-progress-percentage">90%</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-bea7d9b techwix-progress-bar elementor-invisible elementor-widget elementor-widget-progress"
+														data-id="bea7d9b" data-element_type="widget"
+														data-e-type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;}"
+														data-widget_type="progress.default">
+														<div class="elementor-widget-container">
+															<h4 class="elementor-title"
+																id="elementor-progress-bar-bea7d9b">
+																Centralised Policy Enforcement </h4>
+
+															<div aria-labelledby="elementor-progress-bar-bea7d9b"
+																class="elementor-progress-wrapper" role="progressbar"
+																aria-valuemin="0" aria-valuemax="100"
+																aria-valuenow="85">
+																<div class="elementor-progress-bar" data-max="85">
+																	<span class="elementor-progress-text"></span>
+																	<span
+																		class="elementor-progress-percentage">85%</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-d254fa7 techwix-progress-bar elementor-invisible elementor-widget elementor-widget-progress"
+														data-id="d254fa7" data-element_type="widget"
+														data-e-type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;}"
+														data-widget_type="progress.default">
+														<div class="elementor-widget-container">
+															<h4 class="elementor-title"
+																id="elementor-progress-bar-d254fa7">
+																Compliance-Ready Reporting </h4>
+
+															<div aria-labelledby="elementor-progress-bar-d254fa7"
+																class="elementor-progress-wrapper" role="progressbar"
+																aria-valuemin="0" aria-valuemax="100"
+																aria-valuenow="92">
+																<div class="elementor-progress-bar" data-max="92">
+																	<span class="elementor-progress-text"></span>
+																	<span
+																		class="elementor-progress-percentage">92%</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- CTA Block -->
+										<div class="elementor-element elementor-element-8b9e0b0 e-flex e-con-boxed e-con e-parent"
+											data-id="8b9e0b0" data-element_type="container" data-e-type="container"
+											style="margin-top: 10px; margin-bottom: 100px; width: 100%;">
+											<div class="e-con-inner"
+												style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+												<div
+													style="background-color: #021e40; border-radius: 12px; padding: 80px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0px 10px 30px rgba(0,0,0,0.15);">
+													<!-- Dot Grid Background Effect -->
+													<div
+														style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px); background-size: 20px 20px; opacity: 0.7; pointer-events: none;">
+													</div>
+
+													<div style="position: relative; z-index: 2;">
+														<h2
+															style="font-family: 'Barlow', sans-serif; font-size: 38px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: -0.5px;">
+															Ready to Strengthen your Access Control?</h2>
+														<p
+															style="font-family: 'Jost', sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.8); max-width: 650px; margin: 0 auto 35px auto; line-height: 1.6;">
+															Connect with a Meclix specialist to define a solution
+															tailored to your specific environment.</p>
+														<div>
+															<a class="techwix-btn style-1 btn-consultation-trigger" href="javascript:void(0);" onclick="openConsultationModal(event)"
+																style="padding: 16px 40px; font-size: 16px; font-weight: 600; border-radius: 6px; display: inline-block;">Schedule
+																a Free Consultation</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- .entry-content -->
+
+							</article><!-- #post-22 -->
+						</main>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer id="colophon" class="site-footer footer-v1">
+			<footer id="techwix-footer" class="techwix-footer footer-builder-wrapper elementor-footer-02">
+				<div class="techwix-footer-inner">
+					<div data-elementor-type="wp-post" data-elementor-id="3317" class="elementor elementor-3317">
+						<div class="elementor-element elementor-element-0858ef2 e-con-full e-flex e-con e-parent"
+							data-id="0858ef2" data-element_type="container" data-e-type="container"
+							data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-element elementor-element-4ce2696 e-flex e-con-boxed e-con e-child"
+								data-id="4ce2696" data-element_type="container" data-e-type="container"
+								data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+								<div class="e-con-inner">
+									<div class="elementor-element elementor-element-a64123c e-con-full e-flex e-con e-child"
+										data-id="a64123c" data-element_type="container" data-e-type="container">
+										<div class="elementor-element elementor-element-b6deeeb text-left elementor-widget elementor-widget-techwix-site-logo"
+											data-id="b6deeeb" data-element_type="widget" data-e-type="widget"
+											data-widget_type="techwix-site-logo.default">
+											<div class="elementor-widget-container">
+												<div class="site-branding site-logo-info techwix-logotype-container ">
+													<div class="logo-wrapper"><a href="index.html"
+															class="navbar-brand site-white-logo"
+															style="padding: 5px 0; display: inline-block;"><img
+																src="assets/images/new_logo.png"
+																alt="Meclix Mechatronix"
+																style="height: 48px; width: auto; max-height: 100%; display: block; filter: brightness(0) invert(1);"></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-ce7ac9b elementor-widget elementor-widget-text-editor"
+											data-id="ce7ac9b" data-element_type="widget" data-e-type="widget"
+											data-widget_type="text-editor.default">
+											<div class="elementor-widget-container">
+												Meclix Mechatronix delivers access-controlled storage and asset
+												management solutions for modern enterprises. Backed by Smarti
+												Electronics Systems Pvt. Ltd., with over 25 years of experience. </div>
+										</div>
+										<div class="elementor-element elementor-element-258e46b elementor-shape-circle e-grid-align-left elementor-grid-0 elementor-widget elementor-widget-social-icons"
+											data-id="258e46b" data-element_type="widget" data-e-type="widget"
+											data-widget_type="social-icons.default">
+											<div class="elementor-widget-container">
+												<div class="elementor-social-icons-wrapper elementor-grid" role="list">
+													<span class="elementor-grid-item" role="listitem">
+														<a class="elementor-icon elementor-social-icon elementor-social-icon-flaticon-facebook-logo elementor-repeater-item-b3d0af0"
+															href="https://www.facebook.com" target="_blank">
+															<span
+																class="elementor-screen-only">Flaticon-facebook-logo</span>
+															<i aria-hidden="true"
+																class="techwix flaticon-facebook-logo"></i> </a>
+													</span>
+													<span class="elementor-grid-item" role="listitem">
+														<a class="elementor-icon elementor-social-icon elementor-social-icon-flaticon-twitter elementor-repeater-item-661c24f"
+															href="https://www.twitter.com" target="_blank">
+															<span class="elementor-screen-only">Flaticon-twitter</span>
+															<i aria-hidden="true" class="techwix flaticon-twitter"></i>
+														</a>
+													</span>
+													<span class="elementor-grid-item" role="listitem">
+														<a class="elementor-icon elementor-social-icon elementor-social-icon-flaticon-linkedin elementor-repeater-item-6ee9cf7"
+															href="https://www.linkedin.com" target="_blank">
+															<span class="elementor-screen-only">Flaticon-linkedin</span>
+															<i aria-hidden="true" class="techwix flaticon-linkedin"></i>
+														</a>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="elementor-element elementor-element-d42a5e7 e-con-full e-flex e-con e-child"
+										data-id="d42a5e7" data-element_type="container" data-e-type="container">
+										<div class="elementor-element elementor-element-f7bd1a0 elementor-widget elementor-widget-custom-title-addons"
+											data-id="f7bd1a0" data-element_type="widget" data-e-type="widget"
+											data-widget_type="custom-title-addons.default">
+											<div class="elementor-widget-container">
+												<div class="tpc-double_heading">
+													<h3 class="dbl__title-wrapper"><span
+															class="dbl__title dbl-title_1">Useful Links</span></h3>
+												</div>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-aa18091 elementor-widget elementor-widget-techwix-footer-menu"
+											data-id="aa18091" data-element_type="widget" data-e-type="widget"
+											data-widget_type="techwix-footer-menu.default">
+											<div class="elementor-widget-container">
+
+												<div class="site-footer ">
+
+													<div class=" widget widget_nav_menu ">
+
+
+														<div class="menu-footer-menu-useful-links-container">
+															<ul id="menu-footer-menu-useful-links" class="menu">
+																<li class="menu-item"><a href="index.html">Home</a></li>
+																<li class="menu-item"><a href="about.html">About Us</a>
+																</li>
+																<li class="menu-item"><a href="lockers.html">Smart
+																		Locker</a></li>
+																<li class="menu-item"><a href="keyknox.html">KeyKnox
+																		System</a></li>
+																<li class="menu-item"><a href="about.html">Contact
+																		Us</a></li>
+															</ul>
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="elementor-element elementor-element-8583a3b e-con-full e-flex e-con e-child"
+										data-id="8583a3b" data-element_type="container" data-e-type="container">
+										<div class="elementor-element elementor-element-2e06580 elementor-widget elementor-widget-custom-title-addons"
+											data-id="2e06580" data-element_type="widget" data-e-type="widget"
+											data-widget_type="custom-title-addons.default">
+											<div class="elementor-widget-container">
+												<div class="tpc-double_heading">
+													<h3 class="dbl__title-wrapper"><span
+															class="dbl__title dbl-title_1">Our Products</span></h3>
+												</div>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-df7a40e elementor-widget elementor-widget-techwix-footer-menu"
+											data-id="df7a40e" data-element_type="widget" data-e-type="widget"
+											data-widget_type="techwix-footer-menu.default">
+											<div class="elementor-widget-container">
+
+												<div class="site-footer ">
+
+													<div class=" widget widget_nav_menu ">
+
+
+														<div class="menu-footer-menu-services-container">
+															<ul id="menu-footer-menu-services" class="menu">
+																<li class="menu-item"><a href="#products">ArcaKnox -
+																		Smart Locker</a></li>
+																<li class="menu-item"><a href="#keyknox">KeyKnox - Key
+																		Management</a></li>
+																<li class="menu-item"><a href="#software-specs">Unified
+																		Management Platform</a></li>
+															</ul>
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="elementor-element elementor-element-44a4fb6 e-con-full e-flex e-con e-child"
+										data-id="44a4fb6" data-element_type="container" data-e-type="container">
+										<div class="elementor-element elementor-element-5d54c38 elementor-widget elementor-widget-custom-title-addons"
+											data-id="5d54c38" data-element_type="widget" data-e-type="widget"
+											data-widget_type="custom-title-addons.default">
+											<div class="elementor-widget-container">
+												<div class="tpc-double_heading">
+													<h3 class="dbl__title-wrapper"><span
+															class="dbl__title dbl-title_1">Contact Information</span>
+													</h3>
+												</div>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-6450c0f elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+											data-id="6450c0f" data-element_type="widget" data-e-type="widget"
+											data-widget_type="icon-list.default">
+											<div class="elementor-widget-container">
+												<ul class="elementor-icon-list-items">
+													<li class="elementor-icon-list-item">
+														<a href="tel:+919876543210">
+
+															<span class="elementor-icon-list-icon">
+																<i aria-hidden="true"
+																	class="techwix flaticon-phone-call"></i> </span>
+															<span class="elementor-icon-list-text">+91 98765
+																43210</span>
+														</a>
+													</li>
+													<li class="elementor-icon-list-item">
+														<a href="mailto:info@meclix.in">
+
+															<span class="elementor-icon-list-icon">
+																<i aria-hidden="true"
+																	class="techwix flaticon-message"></i> </span>
+															<span class="elementor-icon-list-text">info@meclix.in</span>
+														</a>
+													</li>
+													<li class="elementor-icon-list-item">
+														<a href="https://maps.google.com/?q=Bangalore,Karnataka,India"
+															target="_blank">
+
+															<span class="elementor-icon-list-icon">
+																<i aria-hidden="true"
+																	class="techwix flaticon-location"></i> </span>
+															<span class="elementor-icon-list-text">Bangalore, Karnataka,
+																India</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-e80e3da e-con-full e-flex e-con e-child"
+								data-id="e80e3da" data-element_type="container" data-e-type="container">
+								<div class="elementor-element elementor-element-2ff2794 elementor-widget elementor-widget-techwix-footer-copyright"
+									data-id="2ff2794" data-element_type="widget" data-e-type="widget"
+									data-widget_type="techwix-footer-copyright.default">
+									<div class="elementor-widget-container">
+										<div class="techwix-copyright-wrapper"><span>&copy; 2026 Meclix Mechatronix. All
+												rights reserved. Backed by Smarti Electronics Systems Pvt. Ltd.</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</footer>
+	</div>
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/wp/techwix/*"},{"not":{"href_matches":["/wp/techwix/wp-*.php","/wp/techwix/wp-admin/*","/wp/techwix/wp-content/uploads/*","/wp/techwix/wp-content/*","/wp/techwix/wp-content/plugins/*","/wp/techwix/wp-content/themes/techwix/*","/wp/techwix/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+	<div class="techwix-search-box">
+		<div class="techwix-search-form">
+			<div class="techwix-closebtn"><span></span><span></span></div>
+			<form action="index.html" method="get"><input type="text" value="" name="s"
+					placeholder="Type here to search..." class="input-search" autocomplete="off" /><input type="hidden"
+					name="post_type[]" value="post" /><input type="hidden" name="tpc_wp_search_filter"
+					value="tpc_wp_search" /><button type="submit"><i class="flaticon-search"></i></button></form>
+		</div>
+	</div>
+	<div class="devthrow-progress-parent"><svg class="devthrow-back-circle svg-inner" width="100%" height="100%"
+			viewBox="-1 -1 102 102">
+			<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+		</svg></div>
+	<script>
+		const lazyloadRunObserver = () => {
+			const lazyloadBackgrounds = document.querySelectorAll(`.e-con.e-parent:not(.e-lazyloaded)`);
+			const lazyloadBackgroundObserver = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						let lazyloadBackground = entry.target;
+						if (lazyloadBackground) {
+							lazyloadBackground.classList.add('e-lazyloaded');
+						}
+						lazyloadBackgroundObserver.unobserve(entry.target);
+					}
+				});
+			}, { rootMargin: '200px 0px 200px 0px' });
+			lazyloadBackgrounds.forEach((lazyloadBackground) => {
+				lazyloadBackgroundObserver.observe(lazyloadBackground);
+			});
+		};
+		const events = [
+			'DOMContentLoaded',
+			'elementor/lazyload/observe',
+		];
+		events.forEach((event) => {
+			document.addEventListener(event, lazyloadRunObserver);
+		});
+	</script>
+	<script type='text/javascript'>
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<link rel='stylesheet' id='wc-blocks-style-css' href='assets/css/wc-blocks.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='widget-social-icons-css' href='assets/css/widget-social-icons.min.css' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='e-apple-webkit-css' href='assets/css/custom-apple-webkit.min.css' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='widget-icon-list-css' href='assets/css/custom-widget-icon-list.min.css' type='text/css'
+		media='all' />
+	<script type="text/javascript" src="assets/js/hooks.min.js" id="wp-hooks-js"></script>
+	<script type="text/javascript" src="assets/js/i18n.min.js" id="wp-i18n-js"></script>
+	<script type="text/javascript" id="wp-i18n-js-after">
+		/* <![CDATA[ */
+		wp.i18n.setLocaleData({ 'text direction\u0004ltr': ['ltr'] });
+		//# sourceURL=wp-i18n-js-after
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="assets/js/index.js" id="swv-js"></script>
+	<script type="text/javascript" id="contact-form-7-js-before">
+		/* <![CDATA[ */
+		var wpcf7 = {
+			"api": {
+				"root": "https:\/\/thepixelcurve.com\/wp\/techwix\/wp-json\/",
+				"namespace": "contact-form-7\/v1"
+			},
+			"cached": 1
+		};
+		//# sourceURL=contact-form-7-js-before
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="assets/js/index.js" id="contact-form-7-js"></script>
+	<script type="text/javascript" src="assets/js/metisMenu.min.js" id="metismenu-js"></script>
+	<script type="text/javascript" src="assets/js/swiper-bundle.min.js" id="techwix-swiper-js"></script>
+	<script type="text/javascript" src="assets/js/techwix-mouse-move-animation.js"
+		id="techwix-mouse-animation-js"></script>
+	<script type="text/javascript" src="assets/js/sal.min.js" id="techwix-sal-js-js"></script>
+	<script type="text/javascript" src="assets/js/isotope.min.js" id="jquery-isotope-js"></script>
+	<script type="text/javascript" src="assets/js/navigation.js" id="techwix-navigation-js"></script>
+	<script type="text/javascript" src="assets/js/skip-link-focus-fix.js" id="techwix-skip-link-focus-fix-js"></script>
+	<script type="text/javascript" src="assets/js/tipped.min.js" id="techwix-tipped-js"></script>
+	<script type="text/javascript" src="assets/js/nice-select.min.js" id="nice-select-js"></script>
+	<script type="text/javascript" src="assets/js/back-to-top.js" id="techwix-back-to-top-js"></script>
+	<script type="text/javascript" src="assets/js/youtube-popup.js" id="youtube-popup-js"></script>
+	<script type="text/javascript" src="assets/js/headroom.min.js" id="headroom-js"></script>
+	<script type="text/javascript" id="techwix-init-js-extra">
+		/* <![CDATA[ */
+		var techwix_sticky_data = { "mode": "smart" };
+		//# sourceURL=techwix-init-js-extra
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="assets/js/init.js" id="techwix-init-js"></script>
+	<script type="text/javascript" src="assets/js/sourcebuster.min.js" id="sourcebuster-js-js"></script>
+	<script type="text/javascript" id="wc-order-attribution-js-extra">
+		/* <![CDATA[ */
+		var wc_order_attribution = { "params": { "lifetime": 1.0000000000000000818030539140313095458623138256371021270751953125e-5, "session": 30, "base64": false, "ajaxurl": "#", "prefix": "wc_order_attribution_", "allowTracking": true }, "fields": { "source_type": "current.typ", "referrer": "current_add.rf", "utm_campaign": "current.cmp", "utm_source": "current.src", "utm_medium": "current.mdm", "utm_content": "current.cnt", "utm_id": "current.id", "utm_term": "current.trm", "utm_source_platform": "current.plt", "utm_creative_format": "current.fmt", "utm_marketing_tactic": "current.tct", "session_entry": "current_add.ep", "session_start_time": "current_add.fd", "session_pages": "session.pgs", "session_count": "udata.vst", "user_agent": "udata.uag" } };
+		//# sourceURL=wc-order-attribution-js-extra
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="assets/js/order-attribution.min.js" id="wc-order-attribution-js"></script>
+	<script type="text/javascript" src="assets/js/tilt.jquery.min.js" id="jquery-tilt-js"></script>
+	<script type="text/javascript" src="assets/js/techwix-animation.min.js" id="techwix-animation-js"></script>
+	<script type="text/javascript" src="assets/js/webpack.runtime.min.js" id="elementor-webpack-runtime-js"></script>
+	<script type="text/javascript" src="assets/js/frontend-modules.min.js" id="elementor-frontend-modules-js"></script>
+	<script type="text/javascript" src="assets/js/core.min.js" id="jquery-ui-core-js"></script>
+	<script type="text/javascript" id="elementor-frontend-js-before">
+		/* <![CDATA[ */
+		var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "download": "Download", "downloadImage": "Download image", "fullscreen": "Fullscreen", "zoom": "Zoom", "share": "Share", "playVideo": "Play Video", "previous": "Previous", "next": "Next", "close": "Close", "a11yCarouselPrevSlideMessage": "Previous slide", "a11yCarouselNextSlideMessage": "Next slide", "a11yCarouselFirstSlideMessage": "This is the first slide", "a11yCarouselLastSlideMessage": "This is the last slide", "a11yCarouselPaginationBulletMessage": "Go to slide" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "responsive": { "breakpoints": { "mobile": { "label": "Mobile Portrait", "value": 767, "default_value": 767, "direction": "max", "is_enabled": true }, "mobile_extra": { "label": "Mobile Landscape", "value": 880, "default_value": 880, "direction": "max", "is_enabled": false }, "tablet": { "label": "Tablet Portrait", "value": 1024, "default_value": 1024, "direction": "max", "is_enabled": true }, "tablet_extra": { "label": "Tablet Landscape", "value": 1200, "default_value": 1200, "direction": "max", "is_enabled": true }, "laptop": { "label": "Laptop", "value": 1366, "default_value": 1366, "direction": "max", "is_enabled": false }, "widescreen": { "label": "Widescreen", "value": 2400, "default_value": 2400, "direction": "min", "is_enabled": false } }, "hasCustomBreakpoints": true }, "version": "4.0.1", "is_static": false, "experimentalFeatures": { "e_font_icon_svg": true, "additional_custom_breakpoints": true, "container": true, "nested-elements": true, "global_classes_should_enforce_capabilities": true, "e_variables": true, "e_opt_in_v4_page": true, "e_components": true, "e_interactions": true, "e_widget_creation": true, "import-export-customization": true }, "urls": { "assets": "https:\/\/thepixelcurve.com\/wp\/techwix\/wp-content\/plugins\/elementor\/assets\/", "ajaxurl": "https:\/\/thepixelcurve.com\/wp\/techwix\/wp-admin\/admin-ajax.php", "uploadUrl": "https:\/\/thepixelcurve.com\/wp\/techwix\/wp-content\/uploads" }, "nonces": { "floatingButtonsClickTracking": "167cc6247a", "atomicFormsSendForm": "e97ef76f18" }, "swiperClass": "swiper", "settings": { "page": [], "editorPreferences": [] }, "kit": { "active_breakpoints": ["viewport_mobile", "viewport_tablet", "viewport_tablet_extra"], "global_image_lightbox": "yes", "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description" }, "post": { "id": 22, "title": "Techwix%20%E2%80%93%20Technology%20WordPress%20Theme", "excerpt": "", "featuredImage": false } };
+		//# sourceURL=elementor-frontend-js-before
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="assets/js/frontend.min.js" id="elementor-frontend-js"></script>
+	<script type="text/javascript" src="assets/js/youtube-popup.js" id="jquery-youtubepopup-js"></script>
+	<script type="text/javascript" src="assets/js/jquery.counterup.min.js" id="jquery-counterup-js"></script>
+	<script type="text/javascript" src="assets/js/jquery.waypoints.min.js" id="jquery-waypoints-js"></script>
+	<script type="text/javascript" src="assets/js/swiper.min.js" id="swiper-js"></script>
+	<script type="text/javascript" id="techwix-active-js-extra">
+		/* <![CDATA[ */
+		var techwix_frontend_ajax_object = { "ajaxurl": "#" };
+		//# sourceURL=techwix-active-js-extra
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="assets/js/techwix-active.js" id="techwix-active-js"></script>
+	<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"assets/js/wp-emoji-release.min.js"}}
+</script>
+	<script type="module">
+		/* <![CDATA[ */
+		/*! This file is auto-generated */
+		const a = JSON.parse(document.getElementById("wp-emoji-settings").textContent), o = (window._wpemojiSettings = a, "wpEmojiSettingsSupports"), s = ["flag", "emoji"]; function i(e) { try { var t = { supportTests: e, timestamp: (new Date).valueOf() }; sessionStorage.setItem(o, JSON.stringify(t)) } catch (e) { } } function c(e, t, n) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data); e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0); const a = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data); return t.every((e, t) => e === a[t]) } function p(e, t) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); var n = e.getImageData(16, 16, 1, 1); for (let e = 0; e < n.data.length; e++)if (0 !== n.data[e]) return !1; return !0 } function u(e, t, n, a) { switch (t) { case "flag": return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\udde8\ud83c\uddf6", "\ud83c\udde8\u200b\ud83c\uddf6") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !a(e, "\ud83e\u1fac8") }return !1 } function f(e, t, n, a) { let r; const o = (r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : document.createElement("canvas")).getContext("2d", { willReadFrequently: !0 }), s = (o.textBaseline = "top", o.font = "600 32px Arial", {}); return e.forEach(e => { s[e] = t(o, e, n, a) }), s } function r(e) { var t = document.createElement("script"); t.src = e, t.defer = !0, document.head.appendChild(t) } a.supports = { everything: !0, everythingExceptFlag: !0 }, new Promise(t => { let n = function () { try { var e = JSON.parse(sessionStorage.getItem(o)); if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests } catch (e) { } return null }(); if (!n) { if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try { var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), c.toString(), p.toString()].join(",") + "));", a = new Blob([e], { type: "text/javascript" }); const r = new Worker(URL.createObjectURL(a), { name: "wpTestEmojiSupports" }); return void (r.onmessage = e => { i(n = e.data), r.terminate(), t(n) }) } catch (e) { } i(n = f(s, u, c, p)) } t(n) }).then(e => { for (const n in e) a.supports[n] = e[n], a.supports.everything = a.supports.everything && a.supports[n], "flag" !== n && (a.supports.everythingExceptFlag = a.supports.everythingExceptFlag && a.supports[n]); var t; a.supports.everythingExceptFlag = a.supports.everythingExceptFlag && !a.supports.flag, a.supports.everything || ((t = a.source || {}).concatemoji ? r(t.concatemoji) : t.wpemoji && t.twemoji && (r(t.twemoji), r(t.wpemoji))) });
+		//# sourceURL=assets/js/wp-emoji-loader.min.js
+		/* ]]> */
+	</script>
+	<!-- ==========================================================================
+	     CONSULTATION BOOKING DIALOG (MODAL) AND STYLES
+	     ========================================================================== -->
+	<style>
+		.modal-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background: rgba(2, 30, 64, 0.6);
+			backdrop-filter: blur(5px);
+			-webkit-backdrop-filter: blur(5px);
+			z-index: 99999;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.3s ease;
+		}
+
+		.modal-overlay.open {
+			opacity: 1;
+			pointer-events: all;
+		}
+
+		.modal-box {
+			width: 90%;
+			max-width: 600px;
+			border-radius: 8px;
+			padding: 40px;
+			position: relative;
+			transform: translateY(20px);
+			transition: transform 0.3s ease;
+			background: #ffffff;
+			border: 1px solid #ebebeb;
+			box-shadow: 0 30px 70px rgba(2, 30, 64, 0.25);
+			box-sizing: border-box;
+		}
+
+		.modal-overlay.open .modal-box {
+			transform: translateY(0);
+		}
+
+		.modal-close-btn {
+			position: absolute;
+			top: 20px;
+			right: 24px;
+			background: transparent;
+			border: none;
+			color: #4c4d56;
+			font-size: 1.8rem;
+			cursor: pointer;
+			transition: color 0.2s ease;
+			line-height: 1;
+		}
+
+		.modal-close-btn:hover {
+			color: #ff4830;
+		}
+
+		.modal-header h3 {
+			font-family: 'Jost', sans-serif !important;
+			font-size: 28px !important;
+			font-weight: 700 !important;
+			margin-top: 0;
+			margin-bottom: 8px;
+			color: #0e0e0e;
+		}
+
+		.modal-header p {
+			font-family: 'Barlow', sans-serif !important;
+			color: #4c4d56 !important;
+			font-size: 15px !important;
+			margin-top: 0;
+			margin-bottom: 24px;
+			line-height: 1.5;
+		}
+
+		.modal-form-group {
+			margin-bottom: 18px !important;
+			box-sizing: border-box !important;
+			text-align: left !important;
+			float: none !important;
+			width: auto !important;
+			display: block !important;
+		}
+
+		.modal-form-row {
+			display: grid !important;
+			grid-template-columns: 1fr 1fr !important;
+			gap: 20px !important;
+			float: none !important;
+			width: auto !important;
+		}
+
+		@media (max-width: 576px) {
+			.modal-form-row {
+				grid-template-columns: 1fr !important;
+				gap: 0 !important;
+			}
+			.modal-box {
+				padding: 24px 20px !important;
+			}
+		}
+
+		.modal-form-label {
+			display: block !important;
+			font-size: 14px !important;
+			font-family: 'Barlow', sans-serif !important;
+			color: #0e0e0e !important;
+			margin-bottom: 6px !important;
+			font-weight: 700 !important;
+			float: none !important;
+			width: auto !important;
+			text-align: left !important;
+		}
+
+		.modal-form-input {
+			width: 100% !important;
+			background: #f8fafc !important;
+			border: 1px solid #ebebeb !important;
+			border-radius: 4px !important;
+			padding: 12px 16px !important;
+			color: #0e0e0e !important;
+			font-family: 'Barlow', sans-serif !important;
+			font-size: 15px !important;
+			transition: all 0.3s ease !important;
+			box-sizing: border-box !important;
+			float: none !important;
+			display: block !important;
+		}
+
+		.modal-form-input:focus {
+			outline: none !important;
+			border-color: #086ad8 !important;
+			background: #ffffff !important;
+			box-shadow: 0 0 0 3px rgba(8, 106, 216, 0.1) !important;
+		}
+
+		.modal-form-submit-row {
+			margin-top: 24px !important;
+			display: flex !important;
+			justify-content: flex-end !important;
+			float: none !important;
+			width: auto !important;
+			clear: both !important;
+		}
+
+		/* Success message */
+		.booking-success-message {
+			display: none;
+			text-align: center;
+			padding: 40px 0;
+		}
+
+		.success-icon {
+			width: 70px;
+			height: 70px;
+			background: rgba(46, 125, 50, 0.08);
+			border: 2px solid #2e7d32;
+			border-radius: 50%;
+			color: #2e7d32;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 2rem;
+			margin: 0 auto 24px auto;
+		}
+
+		.booking-success-message h4 {
+			font-family: 'Jost', sans-serif !important;
+			font-size: 24px !important;
+			margin-top: 0;
+			margin-bottom: 12px;
+			color: #0e0e0e;
+		}
+
+		.booking-success-message p {
+			font-family: 'Barlow', sans-serif !important;
+			color: #4c4d56 !important;
+			font-size: 15px !important;
+			margin-bottom: 24px;
+			line-height: 1.5;
+		}
+	</style>
+
+	<div class="modal-overlay" id="consultation-modal">
+		<div class="modal-box">
+			<button class="modal-close-btn" id="modal-close-btn">&times;</button>
+			<div id="booking-form-container">
+				<div class="modal-header">
+					<h3>Schedule a Consultation</h3>
+					<p>Book a free technical consultation with a Meclix solutions specialist.</p>
+				</div>
+				
+				<form id="consultation-form" novalidate>
+					<div class="modal-form-row">
+						<div class="modal-form-group">
+							<label class="modal-form-label" for="booking-name">Full Name *</label>
+							<input type="text" id="booking-name" class="modal-form-input" required placeholder="John Doe">
+						</div>
+						<div class="modal-form-group">
+							<label class="modal-form-label" for="booking-company">Company *</label>
+							<input type="text" id="booking-company" class="modal-form-input" required placeholder="Enterprise Corp">
+						</div>
+					</div>
+					
+					<div class="modal-form-row">
+						<div class="modal-form-group">
+							<label class="modal-form-label" for="booking-email">Work Email *</label>
+							<input type="email" id="booking-email" class="modal-form-input" required placeholder="john@company.com">
+						</div>
+						<div class="modal-form-group">
+							<label class="modal-form-label" for="booking-phone">Phone Number *</label>
+							<input type="tel" id="booking-phone" class="modal-form-input" required placeholder="+91 99999 99999">
+						</div>
+					</div>
+					
+					<div class="modal-form-group">
+						<label class="modal-form-label" for="booking-product">Product of Interest *</label>
+						<select id="booking-product" class="modal-form-input" required style="appearance: auto; -webkit-appearance: auto;">
+							<option value="" disabled selected>Select a product...</option>
+							<option value="keyknox">KeyKnox (Electronic Key Management System)</option>
+							<option value="arcaknox">ArcaKnox (Smart Locker Systems)</option>
+							<option value="both">Both Product Lines</option>
+							<option value="software">Shield Software / Integrations</option>
+						</select>
+					</div>
+					
+					<div class="modal-form-submit-row">
+						<button type="submit" class="techwix-btn style-1" id="booking-submit-btn" style="border: none; padding: 14px 35px; font-weight: 600; cursor: pointer; border-radius: 6px;">Book Consultation Session</button>
+					</div>
+				</form>
+			</div>
+
+			<div id="booking-success-container" class="booking-success-message">
+				<div class="success-icon">✓</div>
+				<h4>Consultation Scheduled!</h4>
+				<p>Thank you for reaching out. A Meclix Mechatronix security specialist will review your request and contact you shortly.</p>
+				<button class="techwix-btn style-1" id="success-done-btn" style="border: none; padding: 14px 35px; font-weight: 600; cursor: pointer; border-radius: 6px;">Back to Website</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		(() => {
+			const initModal = () => {
+				const consultationModal = document.getElementById('consultation-modal');
+				const modalCloseBtn = document.getElementById('modal-close-btn');
+				const successDoneBtn = document.getElementById('success-done-btn');
+				const bookingFormContainer = document.getElementById('booking-form-container');
+				const bookingSuccessContainer = document.getElementById('booking-success-container');
+				const consultationForm = document.getElementById('consultation-form');
+
+				// Bind click events directly to triggers as secondary listener
+				const triggers = document.querySelectorAll('.btn-consultation-trigger');
+				triggers.forEach(trigger => {
+					trigger.addEventListener('click', (e) => {
+						e.preventDefault();
+						e.stopPropagation();
+						window.openConsultationModal();
+					});
+				});
+
+				// Document level click fallback
+				document.addEventListener('click', (e) => {
+					const trigger = e.target.closest('.btn-consultation-trigger');
+					if (trigger) {
+						e.preventDefault();
+						e.stopPropagation();
+						window.openConsultationModal();
+					}
+				});
+
+				if (modalCloseBtn) modalCloseBtn.addEventListener('click', window.closeConsultationModal);
+				if (successDoneBtn) successDoneBtn.addEventListener('click', window.closeConsultationModal);
+
+				if (consultationModal) {
+					consultationModal.addEventListener('click', (e) => {
+						if (e.target === consultationModal) {
+							window.closeConsultationModal();
+						}
+					});
+				}
+
+				if (consultationForm) {
+					consultationForm.addEventListener('submit', (e) => {
+						e.preventDefault();
+						e.stopPropagation();
+
+						let isValid = true;
+						const inputs = consultationForm.querySelectorAll('.modal-form-input');
+						inputs.forEach(input => {
+							if (!input.checkValidity()) {
+								isValid = false;
+								input.style.borderColor = '#ff5f56';
+							} else {
+								input.style.borderColor = '#ebebeb';
+							}
+						});
+
+						if (isValid) {
+							const submitBtn = document.getElementById('booking-submit-btn');
+							if (submitBtn) {
+								submitBtn.textContent = 'Scheduling Slot...';
+								submitBtn.disabled = true;
+							}
+
+							setTimeout(() => {
+								if (bookingFormContainer) bookingFormContainer.style.display = 'none';
+								if (bookingSuccessContainer) bookingSuccessContainer.style.display = 'block';
+								if (submitBtn) {
+									submitBtn.textContent = 'Book Consultation Session';
+									submitBtn.disabled = false;
+								}
+								consultationForm.reset();
+							}, 1000);
+						}
+					});
+				}
+			};
+
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', initModal);
+			} else {
+				initModal();
+			}
+		})();
+	</script>
+
+	<script src="index.js"></script>
+</body>
+
+</html>
+
+<!-- Page supported by LiteSpeed Cache 7.8.1 on 2026-05-26 05:22:05 -->

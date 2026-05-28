@@ -1,0 +1,373 @@
+/* Meclix Custom Styles for Modal Booking & Interactive Key Cabinet Simulator */
+
+.floating-box {
+  position: relative;
+  width: 325px;
+  height: 380px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 15px 40px rgba(8, 106, 216, 0.06);
+  z-index: 2;
+  overflow: hidden;
+  animation: floatCard 5s ease-in-out infinite;
+}
+
+.floating-box-header {
+  height: 55px;
+  border-bottom: 1px solid var(--border-light);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: rgba(8, 106, 216, 0.08);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  animation: pulseDot 1.5s infinite;
+}
+
+.floating-box-body {
+  padding: 20px;
+  height: calc(100% - 55px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cabinet-sim {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background: #f1f5f9;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.key-hook {
+  height: 52px;
+  border-radius: 6px;
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all var(--transition-normal);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.key-hook .key-tag {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.key-hook .led {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #94a3b8;
+  transition: all var(--transition-normal);
+  box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+
+.key-hook.active-key {
+  background: #ffffff;
+  border-color: rgba(8, 106, 216, 0.15);
+  box-shadow: 0 2px 5px rgba(8, 106, 216, 0.03);
+}
+
+.key-hook.active-key.in {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(8, 106, 216, 0.03) 100%);
+  border-color: rgba(8, 106, 216, 0.25);
+  box-shadow: 0 4px 8px rgba(8, 106, 216, 0.05);
+}
+
+.key-hook.active-key.in .led {
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981, 0 0 12px rgba(16, 185, 129, 0.5);
+}
+
+.key-hook.active-key.out {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.key-hook.active-key.out .led {
+  background: #ef4444;
+  animation: pulseRedLED 1s infinite alternate;
+}
+
+@keyframes pulseRedLED {
+  0% { opacity: 0.4; box-shadow: 0 0 2px #ef4444; }
+
+}
+
+.key-hook.active-key::before {
+  content: '🔑';
+  font-size: 1.1rem;
+  transition: all var(--transition-normal);
+  pointer-events: none;
+}
+
+.key-hook.active-key.in::before {
+  transform: scale(1);
+  animation: keyFloat 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes keyFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+
+}
+
+.key-hook.active-key.out::before {
+  opacity: 0.1;
+  transform: scale(0.85) translateY(2px);
+  filter: grayscale(100%);
+}
+
+.key-hook.active-key.out::after {
+  content: 'OUT';
+  position: absolute;
+  font-size: 0.52rem;
+  bottom: 3px;
+  color: #ef4444;
+  font-weight: 700;
+  background: rgba(239, 68, 68, 0.08);
+  padding: 1px 4px;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+}
+
+.key-hook.active-key.in::after {
+  content: 'IN';
+  position: absolute;
+  font-size: 0.52rem;
+  bottom: 3px;
+  color: #10b981;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.08);
+  padding: 1px 4px;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+}
+
+.sim-events {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: #f8fafc;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  max-height: 110px;
+  overflow-y: hidden;
+}
+
+.sim-event-line {
+  color: var(--color-body);
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.sim-event-line span.cyan { color: var(--color-primary); font-weight: 600; }
+
+.sim-event-line span.red { color: var(--color-secondary); font-weight: 600; }
+
+.sim-event-line span.green { color: #2e7d32; font-weight: 600; }
+
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.9); opacity: 0.6; }
+
+/* ==========================================================================
+   CONSULTATION BOOKING DIALOG (MODAL)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(2, 30, 64, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-box {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 4px;
+  padding: 40px;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform var(--transition-normal);
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 30px 70px rgba(2, 30, 64, 0.25);
+}
+
+.modal-overlay.open .modal-box {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  color: var(--color-body);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: color var(--transition-normal);
+}
+
+.modal-close-btn:hover {
+  color: var(--color-secondary);
+}
+
+.modal-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: var(--color-dark);
+}
+
+.modal-header p {
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-dark);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.form-input {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 12px 16px;
+  color: var(--color-dark);
+  font-family: var(--font-secondary);
+  transition: all var(--transition-normal);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(8, 106, 216, 0.1);
+}
+
+.form-submit-row {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Success message */
+.booking-success-message {
+  display: none;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.success-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(46, 125, 50, 0.08);
+  border: 2px solid #2e7d32;
+  border-radius: 50%;
+  color: #2e7d32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 24px auto;
+}
+
+.booking-success-message h4 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+
+.form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+@keyframes pulseRedLED {
+  0% { opacity: 0.4; box-shadow: 0 0 2px #ef4444; }
+  100% { opacity: 1; box-shadow: 0 0 6px #ef4444, 0 0 12px rgba(239, 68, 68, 0.5); }
+}
+
+@keyframes keyFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-2px) rotate(5deg); }
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
