@@ -1849,9 +1849,13 @@ main {
    FOOTER (Techwix Style)
    ========================================================================== */
 .site-footer {
-  background: #021e40;                     /* Official Techwix Navy */
+  background-color: #010717;                     /* Official Techwix Dark Navy */
+  background-image: url("assets/images/TECW0135.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 70px 0 30px 0;
+  padding: 100px 0 30px 0;
   color: rgba(255,255,255,0.7);
 }
 
@@ -2295,3 +2299,318 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   DYNAMIC SIDEBAR NAV & SUBSECTION CONTENT (Smart Locker Redesign)
+   ========================================================================== */
+.locker-redesign-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 50px;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  align-items: start;
+  background-color: #f4f7fa;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+}
+
+.locker-sidebar {
+  position: sticky;
+  top: 120px;
+  background: var(--color-navy);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 16px;
+  box-shadow: var(--shadow-normal);
+  z-index: 10;
+}
+
+.locker-sidebar-title {
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  padding-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-left: 3px solid var(--color-primary);
+}
+
+.locker-sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.locker-sidebar-item button,
+.locker-sidebar-item a {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all var(--transition-normal);
+}
+
+.locker-sidebar-item button svg,
+.locker-sidebar-item a svg {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all var(--transition-normal);
+}
+
+.locker-sidebar-item button:hover,
+.locker-sidebar-item a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.locker-sidebar-item button:hover svg,
+.locker-sidebar-item a:hover svg {
+  color: #ffffff;
+}
+
+.locker-sidebar-item.active button,
+.locker-sidebar-item.active a {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.locker-sidebar-item.active button svg,
+.locker-sidebar-item.active a svg {
+  color: #ffffff;
+}
+
+
+.locker-content-area {
+  min-height: 500px;
+}
+
+.locker-pane {
+  display: none;
+  animation: lockerFadeIn 0.4s ease forwards;
+}
+
+.locker-pane.active {
+  display: block;
+}
+
+@keyframes lockerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 991px) {
+  .locker-redesign-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  .locker-sidebar {
+    position: static;
+    padding: 16px;
+  }
+  
+  .locker-sidebar-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .locker-sidebar-item {
+    flex: 1 1 200px;
+  }
+  
+  .locker-sidebar-item button,
+  .locker-sidebar-item a {
+    justify-content: center;
+  }
+
+}
+
+/* Scoped layout for dynamic use-case split content grid */
+@media (max-width: 768px) {
+  .usecase-content-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
+
+/* ==========================================================================
+   DROPDOWN NAVIGATION MENU SYSTEM
+   ========================================================================== */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  background: #ffffff;
+  min-width: 230px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(2, 30, 64, 0.08);
+  border: 1px solid var(--border-light);
+  padding: 12px 0;
+  z-index: 999;
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+  width: 100%;
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 24px;
+  font-family: var(--font-primary);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  transition: all var(--transition-normal);
+  border-bottom: none !important;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a.active {
+  background: #f4f7fa;
+  color: var(--color-primary);
+  padding-left: 28px;
+}
+
+/* Arrow indicator on desktop hover */
+.dropdown-toggle::after {
+  content: ' ▾';
+  font-size: 0.75rem;
+  vertical-align: middle;
+  display: inline-block;
+  transition: transform var(--transition-normal);
+}
+
+.nav-dropdown:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+/* Responsive Overrides: Custom header mobile view */
+@media (max-width: 768px) {
+  .nav-menu .nav-dropdown {
+    width: 100%;
+  }
+  
+  .nav-menu .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding: 4px 0 8px 16px;
+    background: transparent;
+    min-width: auto;
+    margin: 0;
+  }
+  
+  .nav-menu .dropdown-menu a {
+    padding: 6px 0;
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+  }
+  
+  .nav-menu .dropdown-menu a:hover,
+  .nav-menu .dropdown-menu a.active {
+    background: transparent;
+    color: var(--color-primary);
+    padding-left: 0;
+  }
+  
+  .nav-menu .dropdown-toggle::after {
+    display: none;
+  }
+}
+
+/* Responsive Overrides: Theme header mobile view */
+.techwix-mobile-menu .nav-dropdown {
+  width: 100%;
+}
+
+.techwix-mobile-menu .dropdown-menu {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  display: block;
+  transform: none;
+  box-shadow: none;
+  border: none;
+  padding: 4px 0 8px 16px;
+  background: transparent;
+  min-width: auto;
+  margin: 0;
+}
+
+.techwix-mobile-menu .dropdown-menu a {
+  padding: 6px 0;
+  font-size: 0.88rem;
+  color: inherit;
+  opacity: 0.8;
+  display: block;
+}
+
+.techwix-mobile-menu .dropdown-menu a:hover,
+.techwix-mobile-menu .dropdown-menu a.active {
+  background: transparent;
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+.techwix-mobile-menu .dropdown-toggle::after {
+  display: none;
+}
+
+/* Fix homepage header gap by resetting default WordPress wrapper paddings */
+.home .tpc-site-content,
+.home .techwix-page-container,
+.home .techwix-main-content-inner,
+.home .content-area,
+.home main#main,
+.home .site-main {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+

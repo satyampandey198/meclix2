@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KeyKnox Electronic Key Management for Fleet Management | Meclix Mechatronix</title>
-  <meta name="description" content="Secure, track, and manage vehicle keys for logistics, showrooms, and corporate fleets. RFID tracking, driver authentication, and audit trails.">
+  <title>KeyKnox Key Management for Plant & Maintenance | Meclix Mechatronix</title>
+  <meta name="description" content="Secure industrial key cabinets for manufacturing, utilities, and pharma plants. Manage technician shifts, contractor access, and critical safety isolations.">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -37,10 +37,10 @@
         <div class="nav-dropdown">
           <a class="nav-link dropdown-toggle active" href="keyknox.html">KeyKnox System</a>
           <ul class="dropdown-menu">
-            <li><a href="keyknox.html" class="active">Fleet & Vehicles</a></li>
+            <li><a href="keyknox.html">Fleet & Vehicles</a></li>
             <li><a href="server-racks.html">Server Racks</a></li>
             <li><a href="premise-workplace.html">Premise & Workplace</a></li>
-            <li><a href="plant-maintenance.html">Plant & Maintenance</a></li>
+            <li><a href="plant-maintenance.html" class="active">Plant & Maintenance</a></li>
           </ul>
         </div>
         <a class="nav-link" href="software.html">Software & Specs</a>
@@ -146,30 +146,24 @@
       <!-- Sector-Specific Key Governance Content -->
       <div class="key-use-cases-tabs" style="margin-top: 40px;">
         <div class="use-case-tab-content">
-          <!-- Fleet & Vehicles -->
-          <div class="use-case-pane active" id="key-usecase-fleet">
+          <!-- Plant & Maintenance -->
+          <div class="use-case-pane active" id="key-usecase-plant">
             <div class="use-case-left">
-              <h3>Electronic Key Management for Fleet Management</h3>
-              <p style="margin: 16px 0;">Are lost keys, vehicle downtime, and limited visibility impacting your fleet operations? Manual logbooks leave assets vulnerable. KeyKnox records every vehicle key checkout, assigned driver, and return activity.</p>
+              <h3>Plant & Maintenance Key Custody Control</h3>
+              <p style="margin: 16px 0;">Keys to critical isolation points, restricted chemical stores, or high-voltage panels are often shared across shifts. Lost keys lead to safety hazards and operational delays. KeyKnox enforces structured key custody across shifts.</p>
               
-              <h5 style="color: var(--color-primary); margin-bottom: 12px; font-family: var(--font-body);">Key Benefits for Fleet Teams</h5>
+              <h5 style="color: var(--color-primary); margin-bottom: 12px; font-family: var(--font-body);">Key Benefits for Industrial Sites</h5>
               <ul class="benefits-list">
-                <li><strong>Drivers:</strong> Instant, authenticated retrieval, eliminating shift delays.</li>
-                <li><strong>Security:</strong> Restricts access to authorized drivers with PIN, Card, or Biometrics.</li>
-                <li><strong>Managers:</strong> Complete visibility of vehicle usage, minimizing missing keys.</li>
-                <li><strong>Finance:</strong> Reduced vehicle damage and elimination of rekeying costs.</li>
+                <li><strong>Technicians:</strong> Keys issued based on roles, ensuring correct equipment access.</li>
+                <li><strong>Supervisors:</strong> Shift-end dashboard reveals outstanding keys instantly.</li>
+                <li><strong>EHS Teams:</strong> High-risk keys configured to require dual-authorisation approval.</li>
+                <li><strong>Contractors:</strong> Activity logged against contractor profiles for safety tracking.</li>
               </ul>
-              <p style="margin-top: 16px; font-size: 0.9rem; color: var(--color-text-muted);"><strong>Applicable for:</strong> Automobile Showrooms, Logistics Operations, Corporate Pools, Parking Facilities.</p>
+              <p style="margin-top: 16px; font-size: 0.9rem; color: var(--color-text-muted);"><strong>Applicable for:</strong> Industrial Plants, Pharma Manufacturing, Refineries, Utilities.</p>
             </div>
             <div class="use-case-right card-panel" style="padding: 24px;">
-              <h5 style="font-family: var(--font-body); color: var(--color-text-headings); margin-bottom: 16px;">System Software Control</h5>
-              <p style="font-size: 0.9rem; margin-bottom: 16px;">KeyKnox Shield platform maps key IDs to vehicle registers and tracks reservation logs automatically, optimizing vehicle rotation cycles.</p>
-              <div style="background: var(--bg-body); padding:16px; border: 1px solid var(--border-light); border-radius:8px; font-family: var(--font-mono); font-size:0.75rem;">
-                <span style="color:var(--color-primary);">[Fleet Reserve Monitor]</span><br>
-                - MH-12-QX-4015: OUT (Driver #12)<br>
-                - DL-01-AW-8890: IN (Reserved #05)<br>
-                - KA-51-MM-0012: OUT (Driver #19)
-              </div>
+              <h5 style="font-family: var(--font-body); color: var(--color-text-headings); margin-bottom: 16px;">Dual-Authorisation Rules</h5>
+              <p style="font-size: 0.9rem; margin-bottom: 16px;">For high-risk zones (e.g. electrical substations), the cabinet only unlocks when both a technician and a supervisor scan their credentials.</p>
 
             <!-- Integrated Technical & Software Specifications -->
             <div class="specs-tables-container" style="margin-top: 30px; display: flex; flex-direction: column; gap: 20px;">
@@ -227,46 +221,46 @@
         <aside class="locker-sidebar">
           <div class="locker-sidebar-title">Stakeholders</div>
           <ul class="locker-sidebar-menu">
-            <li class="locker-sidebar-item active" data-tab="fleet-managers">
-              <button>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                Fleet managers
-              </button>
-            </li>
-            <li class="locker-sidebar-item" data-tab="drivers">
+            <li class="locker-sidebar-item active" data-tab="maintenance-technicians">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                Drivers
+                Maintenance Technicians
               </button>
             </li>
-            <li class="locker-sidebar-item" data-tab="operations-team">
+            <li class="locker-sidebar-item" data-tab="maintenance-supervisors">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                Operations team
+                Maintenance Supervisors
               </button>
             </li>
-            <li class="locker-sidebar-item" data-tab="security-team">
+            <li class="locker-sidebar-item" data-tab="plant-operations-managers">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                Plant & Operations Managers
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="environment-health-safety-ehs-teams">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7z"/></svg>
-                Security team
+                Environment, Health & Safety (EHS) Teams
               </button>
             </li>
-            <li class="locker-sidebar-item" data-tab="finance-team">
+            <li class="locker-sidebar-item" data-tab="contractors-third-party-teams">
               <button>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                Finance team
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Contractors & Third-Party Teams
               </button>
             </li>
-            <li class="locker-sidebar-item" data-tab="maintenance-team">
+            <li class="locker-sidebar-item" data-tab="hr-compliance-teams">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7z"/></svg>
+                HR & Compliance Teams
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="senior-management-leadership">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                Maintenance team
-              </button>
-            </li>
-            <li class="locker-sidebar-item" data-tab="senior-management">
-              <button>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                Senior management
+                Senior Management & Leadership
               </button>
             </li>
           </ul>
@@ -274,107 +268,107 @@
 
         <!-- Stakeholder Content Area -->
         <div class="locker-content-area">
-          <!-- Pane: Fleet managers -->
-          <div class="locker-pane active" id="pane-fleet-managers">
-            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
-              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
-                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                </div>
-                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Fleet managers</h4>
-              </div>
-              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
-                Full visibility into who has which vehicle key, faster allocation, fewer manual sign-outs, and better control across locations.
-              </p>
-            </div>
-          </div>
-
-          <!-- Pane: Drivers -->
-          <div class="locker-pane" id="pane-drivers">
+          <!-- Pane: Maintenance Technicians -->
+          <div class="locker-pane active" id="pane-maintenance-technicians">
             <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
               <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
                 <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 </div>
-                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Drivers</h4>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Maintenance Technicians</h4>
               </div>
               <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
-                Quick and secure access to assigned vehicles, less waiting time, and a smoother start to shifts or trips.
+                Access to keys aligned with defined roles and job requirements, helping reduce the risk of incorrect key usage during operations. Shift handovers are supported with time-stamped records, improving clarity of key custody. Access history is recorded and available for reference when required.
               </p>
             </div>
           </div>
 
-          <!-- Pane: Operations team -->
-          <div class="locker-pane" id="pane-operations-team">
+          <!-- Pane: Maintenance Supervisors -->
+          <div class="locker-pane" id="pane-maintenance-supervisors">
             <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
               <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
                 <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                 </div>
-                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Operations team</h4>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Maintenance Supervisors</h4>
               </div>
               <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
-                Better coordination, lower downtime, improved vehicle rotation, and more efficient day-to-day fleet movement.
+                Visibility into key usage across teams — including allocation and duration. Shift activity records support reconciliation during handovers. Outstanding key usage can be identified through system reports, helping improve follow-up and accountability.
               </p>
             </div>
           </div>
 
-          <!-- Pane: Security team -->
-          <div class="locker-pane" id="pane-security-team">
+          <!-- Pane: Plant & Operations Managers -->
+          <div class="locker-pane" id="pane-plant-operations-managers">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Plant & Operations Managers</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Improved control over access to critical plant areas across shifts and contractor teams. Key usage records provide visibility into access patterns, helping reduce operational delays associated with untracked keys and improving overall coordination.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Environment, Health & Safety (EHS) Teams -->
+          <div class="locker-pane" id="pane-environment-health-safety-ehs-teams">
             <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
               <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
                 <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7z"/></svg>
                 </div>
-                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Security team</h4>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Environment, Health & Safety (EHS) Teams</h4>
               </div>
               <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
-                Controlled access, reduced risk of lost or stolen keys, and a clear audit trail for every key transaction. Time-stamped records, stronger accountability, and easier reporting for internal audits and regulatory checks.
+                Access to keys for critical areas — such as chemical stores, electrical rooms, and confined spaces — can be configured with controlled access workflows to strengthen governance. Key access records support incident investigations, safety reviews, and regulatory inspections. Alignment with permit and operational processes improves visibility into access control practices.
               </p>
             </div>
           </div>
 
-          <!-- Pane: Finance team -->
-          <div class="locker-pane" id="pane-finance-team">
+          <!-- Pane: Contractors & Third-Party Teams -->
+          <div class="locker-pane" id="pane-contractors-third-party-teams">
             <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
               <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
                 <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 </div>
-                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Finance team</h4>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Contractors & Third-Party Teams</h4>
               </div>
               <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
-                Lower replacement and rekeying costs, reduced losses, and improved fleet asset protection.
+                Access to keys can be configured based on defined scope and duration aligned with approved work. Reduces dependency on manual key handling by site personnel, while ensuring that activity is recorded for traceability and review.
               </p>
             </div>
           </div>
 
-          <!-- Pane: Maintenance team -->
-          <div class="locker-pane" id="pane-maintenance-team">
+          <!-- Pane: HR & Compliance Teams -->
+          <div class="locker-pane" id="pane-hr-compliance-teams">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7z"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">HR & Compliance Teams</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Key access records for employees and contractors are available for audit, investigation, and compliance review purposes. Contractor access logs support traceability of third-party activity. Access can be managed based on defined authorisation criteria to ensure controlled usage of keys in sensitive area.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Senior Management & Leadership -->
+          <div class="locker-pane" id="pane-senior-management-leadership">
             <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
               <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
                 <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                 </div>
-                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Maintenance team</h4>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Senior Management & Leadership</h4>
               </div>
               <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
-                Easier control over service vehicles, clearer handover records, and fewer delays in vehicle availability.
-              </p>
-            </div>
-          </div>
-
-          <!-- Pane: Senior management -->
-          <div class="locker-pane" id="pane-senior-management">
-            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
-              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
-                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                </div>
-                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Senior management</h4>
-              </div>
-              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
-                Higher productivity, better fleet utilization, reduced liability, and stronger governance over company assets.
+                A structured, system-supported approach to managing physical access to critical plant areas. Improves governance of key usage and helps reduce risks associated with untracked access. Supports internal reporting and operational oversight.
               </p>
             </div>
           </div>

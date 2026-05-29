@@ -10,10 +10,24 @@ const initMeclix = () => {
   }
 
   const navLinks = document.querySelectorAll('.nav-link');
+  const lockerPages = ['lockers.html', 'it-lockers.html', 'visitor-lockers.html', 'tool-lockers.html'];
+  const keyPages = ['keyknox.html', 'server-racks.html', 'premise-workplace.html', 'plant-maintenance.html'];
+
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    // Match exact filename or map root/index
-    if (pageName === href || (pageName === 'index.html' && href === 'index.html')) {
+    let isActive = false;
+
+    if (pageName === href) {
+      isActive = true;
+    } else if (href === 'lockers.html' && lockerPages.includes(pageName)) {
+      isActive = true;
+    } else if (href === 'keyknox.html' && keyPages.includes(pageName)) {
+      isActive = true;
+    } else if (pageName === 'index.html' && href === 'index.html') {
+      isActive = true;
+    }
+
+    if (isActive) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
@@ -298,6 +312,35 @@ const initMeclix = () => {
       }
     }, 4000);
   }
+
+  /* ==========================================================================
+     10. SMART LOCKER USE CASES TABS SWITCHER (Only on Smart Locker Page)
+     ========================================================================== */
+  const lockerSidebarItems = document.querySelectorAll('.locker-sidebar-item');
+  const lockerPanes = document.querySelectorAll('.locker-pane');
+
+  lockerSidebarItems.forEach(item => {
+    const btn = item.querySelector('button');
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Remove active classes
+        lockerSidebarItems.forEach(si => si.classList.remove('active'));
+        lockerPanes.forEach(lp => lp.classList.remove('active'));
+
+        // Add active class to current item
+        item.classList.add('active');
+
+        // Show corresponding pane
+        const tabName = item.getAttribute('data-tab');
+        const targetPane = document.getElementById('pane-' + tabName);
+        if (targetPane) {
+          targetPane.classList.add('active');
+        }
+      });
+    }
+  });
 
 };
 

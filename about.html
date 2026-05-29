@@ -1,22 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Meclix Mechatronix</title>
+  <title>About Meclix Mechatronix | Access Accountability</title>
   <meta name="description" content="Founded on physical access accountability. Backed by Smarti Electronics Systems with over 25 years of identification and security infrastructure experience.">
-  <link rel="stylesheet" href="index.css">
-</head>
-<body>
 
   <!-- ==========================================================================
-       HEADER & NAVIGATION
+       OFFICIAL TECHWIX THEME STYLESHEET LOADERS
        ========================================================================== -->
-  <header class="site-header" id="site-header">
+  <link rel='stylesheet' id='techwix-core-css' href='assets/css/techwix-core.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='woocommerce-layout-css' href='assets/css/woocommerce-layout.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='woocommerce-smallscreen-css' href='assets/css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)' />
+  <link rel='stylesheet' id='woocommerce.css' href='assets/css/woocommerce.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='elementor-frontend-css' href='assets/css/custom-frontend.min.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='elementor-post-2651-css' href='assets/css/post-2651.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='techwix-main-fonts-css' href='https://fonts.googleapis.com/css?family=Jost%3A300%2C400%2C500%2C600%2C700%2C800%7CBarlow%3A300%2C400%2C500%2C600%2C700%2C800&#038;subset=latin%2Clatin-ext&#038;ver=1.1.6' type='text/css' media='all' />
+  <link rel='stylesheet' id='techwix-flaticon-css' href='assets/css/flaticon_techwix.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='techwix-swiper-css' href='assets/css/swiper-bundle.min.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='techwix-main-css' href='assets/css/main.css' type='text/css' media='all' />
+  
+  <!-- Local Global Custom Overrides -->
+  <link rel="stylesheet" href="index.css">
+
+  <style>
+    /* Scoped visual overrides for absolute consistency */
+    .techwix-page-title-area {
+      padding-top: 140px !important;
+      padding-bottom: 90px !important;
+      position: relative !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      overflow: hidden !important;
+      min-height: auto !important;
+    }
+    .techwix-page-title-area .shape-1,
+    .techwix-page-title-area .shape-2,
+    .techwix-page-title-area .shape-3,
+    .techwix-page-title-area .shape-4 {
+      position: absolute !important;
+      pointer-events: none !important;
+      z-index: 0 !important;
+    }
+    .techwix-page-title-area .shape-1 { top: -20%; right: -10%; opacity: 0.85; }
+    .techwix-page-title-area .shape-2 { top: 10%; left: 5%; opacity: 0.4; }
+    .techwix-page-title-area .shape-3 { bottom: -10%; left: -5%; opacity: 0.85; }
+    .techwix-page-title-area .shape-4 { bottom: -20%; right: 10%; opacity: 0.3; }
+    
+    .techwix-container {
+      position: relative !important;
+      z-index: 2 !important;
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      padding: 0 15px !important;
+    }
+    
+    .techwix-page-title h1 {
+      font-size: 48px !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      margin: 0 0 10px 0 !important;
+    }
+    
+    .techwix-breadcrumb-wrapper nav.techwix-breadcrumb ul.breadcrumb {
+      display: flex !important;
+      align-items: center !important;
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      gap: 10px !important;
+      font-size: 15px !important;
+      font-weight: 500 !important;
+    }
+    
+    .techwix-breadcrumb-wrapper nav.techwix-breadcrumb ul.breadcrumb a {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+    .techwix-breadcrumb-wrapper nav.techwix-breadcrumb ul.breadcrumb a:hover {
+      color: #ffffff !important;
+    }
+    .techwix-breadcrumb-wrapper nav.techwix-breadcrumb ul.breadcrumb span.active {
+      color: #ff4830 !important;
+    }
+    
+    /* Image overrides for exact placement */
+    .elementor-2651 .elementor-element.elementor-element-42cd6e3 img,
+    .elementor-2651 .elementor-element.elementor-element-9fcd524 img {
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+    }
+
+    /* Modal override integration */
+    .modal-overlay {
+      z-index: 99999 !important;
+    }
+
+    /* Target specific practices container styles for perfect layouts */
+    @media (max-width: 768px) {
+      .practices-container {
+        grid-template-columns: 1fr !important;
+      }
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .values-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    
+    /* Fix spacing for Stats Block to create a beautiful gap below Core Values */
+    .elementor-2651 .elementor-element.elementor-element-9110610 {
+      margin-top: 60px !important;
+      margin-bottom: 60px !important;
+    }
+    
+    /* Mission & Vision responsive grid adjustments */
+    @media (max-width: 991px) {
+      .mission-vision-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+    }
+    
+    /* Spacing adjustments for Who We Are section container */
+    .elementor-2651 .elementor-element.elementor-element-d0f5ffc {
+      padding-top: 100px !important;
+      padding-bottom: 50px !important;
+    }
+    
+    /* Restructure margins to eliminate large desktop gap below text */
+    @media (min-width: 992px) {
+      .mission-vision-section {
+        margin-top: -160px !important;
+        position: relative;
+        z-index: 10;
+      }
+    }
+  </style>
+</head>
+<body class="page-template-default page page-id-2651 wp-embed-responsive theme-techwix woocommerce-no-js elementor-default elementor-kit-8 elementor-page elementor-page-2651">
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (Meclix Global consistent navbar)
+       ========================================================================== -->
+      <header class="site-header" id="site-header">
     <div class="header-container">
-      <a class='logo-link' href='index.html'>
-        <div class="logo-icon">M</div>
-        <span class="logo-text">MECLIX<span>MECHATRONIX</span></span>
+      <a class="logo-link" href="index.html" style="display: inline-block; padding: 5px 0;">
+        <img src="assets/images/new_logo.png" alt="Meclix Mechatronix" style="max-height: 48px; width: auto; display: block;">
       </a>
       
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
@@ -24,11 +157,27 @@
       </button>
 
       <nav class="nav-menu" id="nav-menu">
-        <a class='nav-link' href='index.html'>Home</a>
-        <a class='nav-link active' href='about.html'>About Us</a>
-        <a class='nav-link' href='lockers.html'>Smart Locker</a>
-        <a class='nav-link' href='keyknox.html'>KeyKnox System</a>
-        <a class='nav-link' href='software.html'>Software & Specs</a>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="about.html">About Us</a>
+        <div class="nav-dropdown">
+          <a class="nav-link dropdown-toggle" href="lockers.html">ArcaKnox System</a>
+          <ul class="dropdown-menu">
+            <li><a href="lockers.html">Employee Assets</a></li>
+            <li><a href="it-lockers.html">IT Assets</a></li>
+            <li><a href="visitor-lockers.html">Visitor Assets</a></li>
+            <li><a href="tool-lockers.html">Tool Kits</a></li>
+          </ul>
+        </div>
+        <div class="nav-dropdown">
+          <a class="nav-link dropdown-toggle" href="keyknox.html">KeyKnox System</a>
+          <ul class="dropdown-menu">
+            <li><a href="keyknox.html">Fleet & Vehicles</a></li>
+            <li><a href="server-racks.html">Server Racks</a></li>
+            <li><a href="premise-workplace.html">Premise & Workplace</a></li>
+            <li><a href="plant-maintenance.html">Plant & Maintenance</a></li>
+          </ul>
+        </div>
+        <a class="nav-link" href="software.html">Software & Specs</a>
         <div class="nav-cta">
           <button class="btn btn-primary btn-sm btn-consultation-trigger">Book Consultation</button>
         </div>
@@ -36,198 +185,448 @@
     </div>
   </header>
 
-  <main>
-    <div class="container">
-      
-      <!-- About Us Section -->
-      <div class="about-hero" style="margin-top: 40px;">
-        <div class="about-hero-text">
-          <span class="eyebrow">About Meclix Mechatronix</span>
-          <h2>Access Accountability, Without Compromise</h2>
-          <div class="quote-block">
-            "We believe every organisation and every stakeholder in the organisation deserves complete confidence in who has access to what — and when. No guesswork. No manual logs. No missing assets & no missing keys."
-          </div>
-          <p>Meclix Mechatronix was founded with one conviction: that the physical access layer — keys, and assets — is the most under-managed security surface in all enterprises. We set out to change that scenario with technology that is rigorous, dependable, intelligent, and genuinely easy to deploy.</p>
-        </div>
-        <div class="about-hero-extra card-panel" style="padding: 40px;">
-          <p style="margin-bottom: 20px;">Our two core product lines, <strong>KeyKnox</strong> (Electronic Key Management System) and <strong>ArcaKnox</strong> (Smart Locker), are designed from the ground up for critical operations — with support for compliant reporting, integration with relevant third-party platforms, and field-proven hardware suited to all power and climate conditions.</p>
-          <p>Engineered for high reliability, and backed by extensive experience in identity systems and electronic security.</p>
-        </div>
-      </div>
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================== -->
+  <main id="primary" class="site-main" style="padding-top: var(--header-height);">
 
-      <!-- Mission & Vision -->
-      <div class="mission-vision-row" id="mission-vision">
-        <div class="mission-vision-card card-panel">
-          <h3><span>🎯</span> Our Mission</h3>
-          <p>To deliver innovative and reliable advanced solutions for critical applications, ensuring exceptional performance across various industries.</p>
-        </div>
-        <div class="mission-vision-card card-panel">
-          <h3><span>👁️</span> Our Vision</h3>
-          <p>To be a leading force in Smart Locker and Electronic Key Management Systems, committed to advancing product value through continuous innovation and specialized industry solutions.</p>
-        </div>
+    <!-- Breadcrumb Title Block -->
+    <div class="techwix-page-title-area techwix-breadcrumb-style-1 techwix-breadcrumb-has-bg" style="background-image:url('https://thepixelcurve.com/wp/techwix/wp-content/themes/techwix//assets/images/header.jpg'); background-color:#021e40;">			
+      <div class="shape-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="944px" height="894px">
+          <defs>
+            <linearGradient id="PSgrad_0" x1="88.295%" x2="0%" y1="0%" y2="46.947%">
+              <stop offset="0%" stop-color="rgb(67,186,255)" stop-opacity="1" />
+              <stop offset="100%" stop-color="rgb(113,65,177)" stop-opacity="1" />
+            </linearGradient>
+          </defs>
+          <path fill-rule="evenodd" fill="rgb(43, 142, 254)" d="M39.612,410.76 L467.344,29.824 C516.51,-13.476 590.638,-9.93 633.938,39.613 L914.192,317.344 C957.492,366.50 953.109,440.637 904.402,483.938 L476.671,864.191 C427.964,907.492 353.376,903.109 310.76,854.402 L29.823,576.670 C-13.477,527.963 -9.94,453.376 39.612,410.76 Z" />
+          <path fill="url(#PSgrad_0)" d="M39.612,410.76 L467.344,29.824 C516.51,-13.476 590.638,-9.93 633.938,39.613 L914.192,317.344 C957.492,366.50 953.109,440.637 904.402,483.938 L476.671,864.191 C427.964,907.492 353.376,903.109 310.76,854.402 L29.823,576.670 C-13.477,527.963 -9.94,453.376 39.612,410.76 Z" />
+        </svg>
       </div>
-
-      <!-- Core Values -->
-      <div class="values-wrapper">
-        <div class="section-header">
-          <span class="eyebrow">Principles</span>
-          <h2>Our Core Values</h2>
-        </div>
-        <div class="values-grid">
-          <div class="value-card card-panel">
-            <h4>Customer Focus</h4>
-            <p>We are dedicated to understanding and meeting each client's unique needs, offering exceptional support.</p>
-          </div>
-          <div class="value-card card-panel">
-            <h4>Expertise</h4>
-            <p>We leverage our industry knowledge and technical skills to deliver tailored solutions for critical applications.</p>
-          </div>
-          <div class="value-card card-panel">
-            <h4>Innovation</h4>
-            <p>Our R&D team continuously evolves our products to stay ahead of industry trends.</p>
-          </div>
-          <div class="value-card card-panel">
-            <h4>Collaboration</h4>
-            <p>We believe in teamwork and open communication to achieve goals and drive mutual success.</p>
-          </div>
-        </div>
+      <div class="shape-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="726.5px" height="726.5px">
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="0.302" fill="none" d="M28.14,285.269 L325.37,21.217 C358.860,-8.851 410.655,-5.808 440.723,28.14 L704.777,325.36 C734.846,358.859 731.802,410.654 697.979,440.722 L400.955,704.776 C367.132,734.844 315.338,731.802 285.269,697.978 L21.216,400.954 C-8.852,367.132 -5.808,315.337 28.14,285.269 Z" />
+        </svg>
       </div>
-
-      <!-- Corporate Backing -->
-      <div class="smarti-branding card-panel" id="smarti-backing">
-        <div>
-          <h3>Backed by Enterprise Legacy</h3>
-          <p style="margin-top: 16px; font-size: 1.1rem; line-height: 1.6;">Meclix Mechatronix delivers access-controlled storage and asset management solutions for modern enterprises. The company is backed by <strong>Smarti Electronics Systems Pvt. Ltd.</strong>, with over 25 years of experience in identification, entrance control, and eSurveillance systems.</p>
-        </div>
-        <div class="smarti-logo-container">
-          <div class="smarti-badge">
-            <h4>SMARTI</h4>
-            <p>25+ Years of Trust</p>
-          </div>
-        </div>
+      <div class="shape-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="515px" height="515px">
+          <defs>
+            <linearGradient id="PSgrad_0" x1="0%" x2="89.879%" y1="0%" y2="43.837%">
+              <stop offset="0%" stop-color="rgb(67,186,255)" stop-opacity="1" />
+              <stop offset="100%" stop-color="rgb(113,65,177)" stop-opacity="1" />
+            </linearGradient>
+          </defs>
+          <path fill-rule="evenodd" fill="rgb(43, 142, 254)" d="M19.529,202.280 L230.531,14.698 C254.559,-6.661 291.353,-4.498 312.714,19.528 L500.295,230.531 C521.656,254.558 519.493,291.353 495.466,312.713 L284.463,500.295 C260.436,521.655 223.641,519.492 202.281,495.465 L14.699,284.462 C-6.660,260.435 -4.498,223.640 19.529,202.280 Z" />
+          <path fill="url(#PSgrad_0)" d="M19.529,202.280 L230.531,14.698 C254.559,-6.661 291.353,-4.498 312.714,19.528 L500.295,230.531 C521.656,254.558 519.493,291.353 495.466,312.713 L284.463,500.295 C260.436,521.655 223.641,519.492 202.281,495.465 L14.699,284.462 C-6.660,260.435 -4.498,223.640 19.529,202.280 Z" />
+        </svg>
       </div>
-
-      <!-- Industry Best Practices -->
-      <div class="best-practices-section" id="best-practices">
-        <div class="section-header">
-          <span class="eyebrow">Standards</span>
-          <h2>Industry Best Practices</h2>
-          <p>Our design processes incorporate standardized operations to meet modern audit compliance requirements.</p>
-        </div>
-        
-        <div class="practices-container">
-          <div class="practices-column card-panel">
-            <h3>KeyKnox — Key Best Practices</h3>
-            <ul class="practices-list">
-              <li class="practice-item">
-                <h5>Key Lifecycle Management</h5>
-                <p>Defines clear processes for key issuance, usage, return, and deactivation to ensure full lifecycle control of physical keys.</p>
-              </li>
-              <li class="practice-item">
-                <h5>Segregation of Duties</h5>
-                <p>Ensures separation between administrators and users to reduce risk and enforce operational governance.</p>
-              </li>
-              <li class="practice-item">
-                <h5>Compliance-Ready Reporting</h5>
-                <p>Provides structured reporting aligned with audit and compliance requirements, supporting internal and external audits.</p>
-              </li>
-              <li class="practice-item">
-                <h5>Exception-Based Monitoring</h5>
-                <p>Flags unusual access patterns or deviations from defined policies to enable proactive security intervention.</p>
-              </li>
-              <li class="practice-item">
-                <h5>Credential Management Standardization</h5>
-                <p>Supports consistent use of identity credentials across systems, reducing duplication and improving access control governance.</p>
-              </li>
-              <li class="practice-item">
-                <h5>Centralised Policy Enforcement</h5>
-                <p>Enables uniform access rules and policies to be applied across all cabinets and locations from a central platform.</p>
-              </li>
+      <div class="shape-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="972.5px" height="970.5px">
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M38.245,381.102 L435.258,28.158 C480.467,-12.32 549.697,-7.964 589.888,37.244 L942.832,434.257 C983.23,479.466 978.955,548.697 933.746,588.888 L536.733,941.832 C491.524,982.23 422.293,977.955 382.103,932.745 L29.158,535.732 C-11.32,490.523 -6.963,421.293 38.245,381.102 Z" />
+        </svg>
+      </div>
+      <div class="techwix-container">
+        <div class="techwix-page-title"><h1 class="entry-title">About Meclix Mechatronix</h1></div>
+        <div class="techwix-breadcrumb-wrapper">
+          <nav class="techwix-breadcrumb">
+            <ul class="breadcrumb">
+              <li><a href="index.html">Home</a></li>
+              <li><span class="active">About Us</span></li>
             </ul>
-          </div>
-          
-          <div class="practices-column card-panel">
-            <h3>ArcaKnox — Locker Best Practices</h3>
-            <ul class="practices-list">
-              <li class="practice-item">
-                <h5>Demand-Based Locker Allocation</h5>
-                <p>Allocates lockers based on real-time demand and usage patterns to maximise utilisation efficiency.</p>
-              </li>
-              <li class="practice-item">
-                <h5>Usage-Based Access Policies</h5>
-                <p>Defines locker access rules based on time, user type, and operational requirements to ensure controlled usage.</p>
-              </li>
-              <li class="practice-item">
-                <h5>Integration with Workplace Ecosystem</h5>
-                <p>Ensures seamless coexistence with systems such as visitor management, access control, and workplace applications.</p>
-              </li>
-              <li class="practice-item">
-                <h5>Resource Utilisation Optimisation</h5>
-                <p>Continuously monitors occupancy and usage trends to reduce idle capacity and improve infrastructure planning.</p>
-              </li>
-              <li class="practice-item">
-                <h5>User Self-Service Enablement</h5>
-                <p>Empowers users to independently access, release, and manage locker usage, reducing dependency on administrative support.</p>
-              </li>
-              <li class="practice-item">
-                <h5>Standardised Configuration Management</h5>
-                <p>Ensures consistent locker configurations and policies across multiple locations and deployments.</p>
-              </li>
-            </ul>
-          </div>
+          </nav>
         </div>
       </div>
-
-      <!-- Page CTA -->
-      <div class="global-page-cta">
-        <div class="cta-box">
-          <div class="tech-grid-bg"></div>
-          <h2>Ready to Strengthen your Access Control?</h2>
-          <p>Connect with a Meclix specialist to define a solution tailored to your specific environment.</p>
-          <button class="btn btn-primary btn-consultation-trigger">Schedule a Free Consultation</button>
-        </div>
-      </div>
-
     </div>
+
+    <!-- Main Content Nested Wrappers -->
+    <div id="content" class="tpc-site-content">
+      <div class="tpc-site-content-inner techwix-page-container techwix-container">
+        <div class="techwix-main-content-inner techwix-row">
+          <div id="primary-inner" class="content-area techwix-col-lg-12">
+            <article id="post-2651" class="techwix-single-page post-2651 page type-page status-publish hentry">
+              <div class="entry-content">
+                <div data-elementor-type="wp-page" data-elementor-id="2651" class="elementor elementor-2651">
+                  
+                  <!-- ==========================================
+                       SECTION 1: WHO WE ARE (OVERLAPPING IMAGES)
+                       ========================================== -->
+                  <div class="elementor-element elementor-element-d0f5ffc e-flex e-con-boxed e-con e-parent" data-id="d0f5ffc" data-element_type="container" data-e-type="container">
+                    <div class="e-con-inner">
+                      <!-- Overlapping Image Column -->
+                      <div class="elementor-element elementor-element-89a7481 e-con-full e-flex e-con e-child" data-id="89a7481" data-element_type="container" data-e-type="container">
+                        <!-- Floating Image Animation Widget -->
+                        <div class="elementor-element elementor-element-4742c28 elementor-absolute elementor-invisible elementor-widget elementor-widget-techwix-animation" data-id="4742c28" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;techwix--slide-left&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="techwix-animation.default">
+                          <div class="elementor-widget-container">
+                            <div class="techwix-animation-widget techwix-animation-display-type-mouse-track techwix-animation-content-type-image techwix-mouse-track-item" id="4742c28">
+                              <span data-depth="0.5"><img decoding="async" src="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0113.png" alt="TECW0113"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Overlapping Image Panel 1 -->
+                        <div class="elementor-element elementor-element-42cd6e3 elementor-invisible elementor-widget elementor-widget-image" data-id="42cd6e3" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;techwix--slide-down&quot;,&quot;_animation_delay&quot;:100}" data-widget_type="image.default">
+                          <div class="elementor-widget-container">
+                            <img fetchpriority="high" decoding="async" width="300" height="462" src="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0111.jpg" class="attachment-full size-full wp-image-2669" alt="Meclix Who We Are 1" srcset="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0111.jpg 300w, https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0111-195x300.jpg 195w" sizes="(max-width: 300px) 100vw, 300px" />
+                          </div>
+                        </div>
+                        <!-- Overlapping Image Panel 2 -->
+                        <div class="elementor-element elementor-element-9fcd524 elementor-invisible elementor-widget elementor-widget-image" data-id="9fcd524" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;,&quot;_animation_delay&quot;:200}" data-widget_type="image.default">
+                          <div class="elementor-widget-container">
+                            <img decoding="async" width="300" height="452" src="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0112.jpg" class="attachment-full size-full wp-image-2670" alt="Meclix Who We Are 2" srcset="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0112.jpg 300w, https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0112-199x300.jpg 199w" sizes="(max-width: 300px) 100vw, 300px" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Who We Are Content Column -->
+                      <div class="elementor-element elementor-element-08a940a e-con-full e-flex e-con e-child" data-id="08a940a" data-element_type="container" data-e-type="container">
+                        <div class="elementor-element elementor-element-e654e8e elementor-invisible elementor-widget elementor-widget-custom-title-addons" data-id="e654e8e" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;}" data-widget_type="custom-title-addons.default">
+                          <div class="elementor-widget-container">
+                            <div class="tpc-double_heading">
+                              <div class="dbl__subtitle"><span>Who we are</span></div>
+                              <h3 class="dbl__title-wrapper"><span class="dbl__title dbl-title_1">Access Accountability, Without Compromise.</span></h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="elementor-element elementor-element-a0e7864 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="a0e7864" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;}" data-widget_type="text-editor.default">
+                          <div class="elementor-widget-container">
+                            <p style="font-weight: 500; font-style: italic; margin-bottom: 12px; color: var(--color-primary);;">"We believe every organisation and every Stakeholder in the Organization deserves complete confidence in who has access to what — and when. No guesswork. No manual logs. No missing assets & no missing keys."</p>
+                            <p>Meclix Mechatronix was founded with one conviction: that the physical access layer — keys, and assets — is the most under-managed security surface in all enterprises. We set out to change that scenario with technology that is rigorous, dependable, intelligent, and genuinely easy to deploy.</p>
+                            <p style="margin-top: 15px;">Our two product lines, KeyKnox (Electronic Key Management System) and ArcaKnox (Smart Locker), are designed from the ground up for all operations — with support for compliant reporting, integration with relevant third party platforms, and field-proven hardware suited to all power and climate conditions.</p>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ==========================================
+                       SECTION: MISSION & VISION (Side by Side)
+                       ========================================== -->
+                  <div class="mission-vision-section" id="mission-vision" style="margin-bottom: 60px;">
+                    <div class="techwix-container">
+                      <div class="mission-vision-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px;">
+                        
+                        <!-- Mission Card -->
+                        <div class="mission-card card-panel" style="padding: 40px; border-radius: 8px; border: 1px solid #ebebeb; background: #ffffff; box-shadow: var(--shadow-normal); transition: all var(--transition-normal); position: relative; overflow: hidden;">
+                          <div style="display: flex; gap: 20px; align-items: flex-start;">
+                            <div class="icon-box" style="background: rgba(8, 106, 218, 0.08); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #086ad8;">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                            </div>
+                            <div>
+                              <h4 style="font-family: var(--font-primary); font-size: 22px; font-weight: 700; color: #021e40; margin-bottom: 15px;">Our Mission</h4>
+                              <p style="font-family: var(--font-secondary); font-size: 15px; line-height: 1.7; color: #4c4d56; margin: 0;">To deliver innovative and reliable advanced solutions for critical applications, ensuring exceptional performance across various industries.</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Vision Card -->
+                        <div class="vision-card card-panel" style="padding: 40px; border-radius: 8px; border: 1px solid #ebebeb; background: #ffffff; box-shadow: var(--shadow-normal); transition: all var(--transition-normal); position: relative; overflow: hidden;">
+                          <div style="display: flex; gap: 20px; align-items: flex-start;">
+                            <div class="icon-box" style="background: rgba(255, 72, 48, 0.08); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #ff4830;">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                            </div>
+                            <div>
+                              <h4 style="font-family: var(--font-primary); font-size: 22px; font-weight: 700; color: #021e40; margin-bottom: 15px;">Our Vision</h4>
+                              <p style="font-family: var(--font-secondary); font-size: 15px; line-height: 1.7; color: #4c4d56; margin: 0;">To be a leading force in Smart locker and Electronic Key Management System, committed to advance product value through continuous innovation and specialized industry solutions.</p>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ==========================================
+                       CORE VALUES SECTION (From client's draft)
+                       ========================================== -->
+                  <div class="values-wrapper" style="margin-top: 60px; margin-bottom: 80px;">
+                    <div class="techwix-container">
+                      <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+                        <span class="eyebrow">Principles</span>
+                        <h2 style="font-size: 36px; font-weight: 700; color: #0e0e0e; line-height: 1.3;">Our Core Values</h2>
+                      </div>
+                      <div class="values-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px;">
+                        <!-- Card 1 -->
+                        <div class="value-card card-panel" style="padding: 30px; border-radius: 8px; border: 1px solid #ebebeb; background: #ffffff;">
+                          <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #086ad8;">Customer Focus</h4>
+                          <p style="font-size: 15px; line-height: 1.7; color: #4c4d56;">We are dedicated to understanding and meeting each client's unique needs, offering exceptional support.</p>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="value-card card-panel" style="padding: 30px; border-radius: 8px; border: 1px solid #ebebeb; background: #ffffff;">
+                          <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #086ad8;">Expertise</h4>
+                          <p style="font-size: 15px; line-height: 1.7; color: #4c4d56;">We leverage our industry knowledge and technical skills to deliver tailored solutions for critical applications.</p>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="value-card card-panel" style="padding: 30px; border-radius: 8px; border: 1px solid #ebebeb; background: #ffffff;">
+                          <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #086ad8;">Innovation</h4>
+                          <p style="font-size: 15px; line-height: 1.7; color: #4c4d56;">Our R&D team continuously evolves our products to stay ahead of industry trends.</p>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="value-card card-panel" style="padding: 30px; border-radius: 8px; border: 1px solid #ebebeb; background: #ffffff;">
+                          <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #086ad8;">Collaboration</h4>
+                          <p style="font-size: 15px; line-height: 1.7; color: #4c4d56;">We believe in teamwork and open communication to achieve goals and drive mutual success.</p>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+
+
+                  <!-- ==========================================
+                       INDUSTRY BEST PRACTICES SECTION (From client's draft)
+                       ========================================== -->
+                  <div class="best-practices-section" id="best-practices" style="margin-top: 60px; margin-bottom: 80px;">
+                    <div class="techwix-container">
+                      <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+                        <span class="eyebrow">Standards</span>
+                        <h2 style="font-size: 36px; font-weight: 700; color: #0e0e0e; line-height: 1.3;">Industry Best Practices</h2>
+                        <p style="max-width: 600px; margin: 15px auto 0 auto; color: #4c4d56; font-size: 15px;">Our design processes incorporate standardized operations to meet modern audit compliance requirements.</p>
+                      </div>
+                      
+                      <div class="practices-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px;">
+                        <!-- KeyKnox column -->
+                        <div class="practices-column card-panel" style="padding: 40px; border-radius: 8px; border: 1px solid #ebebeb; background: #ffffff;">
+                          <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 30px; color: #021e40; border-bottom: 2px solid #086ad8; padding-bottom: 10px;">KeyKnox — Industry Best Practices</h3>
+                          <ul class="practices-list" style="list-style: none;">
+                            <li class="practice-item" style="margin-bottom: 20px;">
+                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #0e0e0e;">• Key Lifecycle Management</h5>
+                              <p style="font-size: 14px; line-height: 1.6; color: #4c4d56; padding-left: 10px;">Defines clear processes for key issuance, usage, return, and deactivation to ensure full lifecycle control of physical keys.</p>
+                            </li>
+                            <li class="practice-item" style="margin-bottom: 20px;">
+                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #0e0e0e;">• Segregation of Duties</h5>
+                              <p style="font-size: 14px; line-height: 1.6; color: #4c4d56; padding-left: 10px;">Ensures separation between administrators and users to reduce risk and enforce operational governance.</p>
+                            </li>
+                            <li class="practice-item" style="margin-bottom: 20px;">
+                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #0e0e0e;">• Compliance-Ready Reporting</h5>
+                              <p style="font-size: 14px; line-height: 1.6; color: #4c4d56; padding-left: 10px;">Provides structured reporting aligned with audit and compliance requirements, supporting internal and external audits.</p>
+                            </li>
+                            <li class="practice-item" style="margin-bottom: 20px;">
+                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #0e0e0e;">• Exception-Based Monitoring</h5>
+                              <p style="font-size: 14px; line-height: 1.6; color: #4c4d56; padding-left: 10px;">Flags unusual access patterns or deviations from defined policies to enable proactive security intervention.</p>
+                            </li>
+                            <li class="practice-item" style="margin-bottom: 20px;">
+                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #0e0e0e;">• Credential Management Standardization</h5>
+                              <p style="font-size: 14px; line-height: 1.6; color: #4c4d56; padding-left: 10px;">Supports consistent use of identity credentials across systems, reducing duplication and improving access control governance.</p>
+                            </li>
+                            <li class="practice-item" style="margin-bottom: 20px;">
+                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #0e0e0e;">• Centralised Policy Enforcement</h5>
+                              <p style="font-size: 14px; line-height: 1.6; color: #4c4d56; padding-left: 10px;">Enables uniform access rules and policies to be applied across all cabinets and locations from a central platform.</p>
+                            </li>
+                          </ul>
+                        </div>
+                        
+                        <!-- ArcaKnox column -->
+                        <div class="practices-column card-panel" style="padding: 40px; border-radius: 8px; border: 1px solid #ebebeb; background: #ffffff;">
+                          <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 30px; color: #021e40; border-bottom: 2px solid #086ad8; padding-bottom: 10px;">ArcaKnox — Industry Best Practices</h3>
+                          <ul class="practices-list" style="list-style: none;">
+                            <li class="practice-item" style="margin-bottom: 20px;">
+                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #0e0e0e;">• Demand-Based Locker Allocation</h5>
+                              <p style="font-size: 14px; line-height: 1.6; color: #4c4d56; padding-left: 10px;">Allocates lockers based on real-time demand and usage patterns to maximise utilisation efficiency.</p>
+                            </li>
+                            <li class="practice-item" style="margin-bottom: 20px;">
+                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #0e0e0e;">• Usage-Based Access Policies</h5>
+                              <p style="font-size: 14px; line-height: 1.6; color: #4c4d56; padding-left: 10px;">Defines locker access rules based on time, user type, and operational requirements to ensure controlled usage.</p>
+                            </li>
+                            <li class="practice-item" style="margin-bottom: 20px;">
+                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #0e0e0e;">• Integration with Workplace Ecosystem</h5>
+                              <p style="font-size: 14px; line-height: 1.6; color: #4c4d56; padding-left: 10px;">Ensures seamless coexistence with systems such as visitor management, access control, and workplace applications.</p>
+                            </li>
+                            <li class="practice-item" style="margin-bottom: 20px;">
+                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #0e0e0e;">• Resource Utilisation Optimisation</h5>
+                              <p style="font-size: 14px; line-height: 1.6; color: #4c4d56; padding-left: 10px;">Continuously monitors occupancy and usage trends to reduce idle capacity and improve infrastructure planning.</p>
+                            </li>
+                            <li class="practice-item" style="margin-bottom: 20px;">
+                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #0e0e0e;">• User Self-Service Enablement</h5>
+                              <p style="font-size: 14px; line-height: 1.6; color: #4c4d56; padding-left: 10px;">Empowers users to independently access, release, and manage locker usage, reducing dependency on administrative support.</p>
+                            </li>
+                            <li class="practice-item" style="margin-bottom: 20px;">
+                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #0e0e0e;">• Standardised Configuration Management</h5>
+                              <p style="font-size: 14px; line-height: 1.6; color: #4c4d56; padding-left: 10px;">Ensures consistent locker configurations and policies across multiple locations and deployments.</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ==========================================
+                       PAGE CTA SECTION (Schedule a Free Consultation)
+                       ========================================== -->
+                  <div class="elementor-element elementor-element-8b9e0b0 e-flex e-con-boxed e-con e-parent"
+                       data-id="8b9e0b0" data-element_type="container" data-e-type="container"
+                       style="margin-top: 60px; margin-bottom: 60px; width: 100%;">
+                    <div class="e-con-inner" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+                      <div style="background-color: #021e40; border-radius: 12px; padding: 80px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0px 10px 30px rgba(0,0,0,0.15);">
+                        <!-- Dot Grid Background Effect -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px); background-size: 20px 20px; opacity: 0.7; pointer-events: none;"></div>
+                        <div style="position: relative; z-index: 2;">
+                          <h2 style="font-family: 'Barlow', sans-serif; font-size: 38px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: -0.5px;">Ready to Strengthen your Access Control?</h2>
+                          <p style="font-family: 'Jost', sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.8); max-width: 650px; margin: 0 auto 35px auto; line-height: 1.6;">Connect with a Meclix specialist to define a solution tailored to your specific environment.</p>
+                          <div>
+                            <a class="techwix-btn style-1 btn-consultation-trigger" href="javascript:void(0);" style="padding: 16px 40px; font-size: 16px; font-weight: 600; border-radius: 6px; display: inline-block; background-color: #ff4830; color: #ffffff; text-decoration: none;">Schedule a Free Consultation</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ==========================================
+                       SECTION 4: WORLD EXPERT TEAM (SLIDER)
+                       ========================================== -->
+                  <div class="elementor-element elementor-element-fa702c7 e-flex e-con-boxed e-con e-parent" data-id="fa702c7" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-color: transparent !important; background-image: none !important; margin-bottom: 100px !important;">
+                    <div class="e-con-inner">
+                      <!-- Team Header -->
+                      <div class="elementor-element elementor-element-0823b01 elementor-invisible elementor-widget elementor-widget-custom-title-addons" data-id="0823b01" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;techwix--slide-up&quot;}" data-widget_type="custom-title-addons.default">
+                        <div class="elementor-widget-container">
+                          <div class="tpc-double_heading">
+                            <div class="dbl__subtitle"><span style="color: #ff4830 !important;">Our expert team</span></div>
+                            <h3 class="dbl__title-wrapper"><span class="dbl__title dbl-title_1" style="color: #0e0e0e !important;">We have world expert team</span></h3>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Swiper Slider Carousel -->
+                      <div class="elementor-element elementor-element-d04da5c elementor-widget elementor-widget-techwix-team-addons" data-id="d04da5c" data-element_type="widget" data-e-type="widget" data-widget_type="techwix-team-addons.default">
+                        <div class="elementor-widget-container">
+                          <div class="techwix_team_wrapper techwix-pagination techwix-navigation" data-settings="{&quot;infinite_loop&quot;:true,&quot;autoplay&quot;:false,&quot;autoplay_speed&quot;:0,&quot;display_columns&quot;:4,&quot;item_gap&quot;:0,&quot;center_slides&quot;:false,&quot;pause_on_hover&quot;:false,&quot;pause_on_interaction&quot;:false,&quot;display_columns_tablet&quot;:2,&quot;tablet_item_gap&quot;:20,&quot;center_slides_tablet&quot;:false,&quot;display_columns_mobile&quot;:1,&quot;mobile_item_gap&quot;:20,&quot;center_slides_mobile&quot;:false}">
+                            <div class="techwix-team-item swiper swiper-container padding-0">
+                              <div class="swiper-wrapper">
+                                <!-- Profile Card 1 -->
+                                <div class="swiper-slide">
+                                  <div class="techwix-single-team active-social">
+                                    <div class="team-image-wrap">
+                                      <a href="javascript:void(0);"><div class="team-image"><img loading="lazy" decoding="async" width="326" height="423" src="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0030.jpg" class="attachment-large size-large wp-image-640" alt="Andrew Max Fetcher" srcset="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0030.jpg 326w, https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0030-231x300.jpg 231w" sizes="(max-width: 326px) 100vw, 326px" /></div></a>
+                                    </div>
+                                    <div class="team-content">
+                                      <a href="javascript:void(0);"><h6 class="team-name">Andrew Max<br> Fetcher</h6></a>
+                                      <span class="team-degree">CEO ,Techwix</span>
+                                      <div class="team-social">
+                                        <a href="https://www.facebook.com" class="social-link"><i class="flaticon-facebook-logo" aria-hidden="true"></i></a>
+                                        <a href="https://www.twitter.com" class="social-link"><i class="flaticon-twitter" aria-hidden="true"></i></a>
+                                        <a href="https://www.linkedin.com" class="social-link"><i class="flaticon-linkedin" aria-hidden="true"></i></a>
+                                        <a href="https://www.youtube.com" class="social-link"><i class="flaticon-youtube" aria-hidden="true"></i></a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- Profile Card 2 -->
+                                <div class="swiper-slide">
+                                  <div class="techwix-single-team active-social">
+                                    <div class="team-image-wrap">
+                                      <a href="javascript:void(0);"><div class="team-image"><img loading="lazy" decoding="async" width="327" height="423" src="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0033.jpg" class="attachment-large size-large wp-image-642" alt="Arnold human" srcset="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0033.jpg 327w, https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0033-232x300.jpg 232w" sizes="(max-width: 327px) 100vw, 327px" /></div></a>
+                                    </div>
+                                    <div class="team-content">
+                                      <a href="javascript:void(0);"><h6 class="team-name"> Arnold <br> human</h6></a>
+                                      <span class="team-degree">Chairman, CFO</span>
+                                      <div class="team-social">
+                                        <a href="https://www.facebook.com" class="social-link"><i class="flaticon-facebook-logo" aria-hidden="true"></i></a>
+                                        <a href="https://www.twitter.com" class="social-link"><i class="flaticon-twitter" aria-hidden="true"></i></a>
+                                        <a href="https://www.linkedin.com" class="social-link"><i class="flaticon-linkedin" aria-hidden="true"></i></a>
+                                        <a href="https://www.youtube.com" class="social-link"><i class="flaticon-youtube" aria-hidden="true"></i></a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- Profile Card 3 -->
+                                <div class="swiper-slide">
+                                  <div class="techwix-single-team active-social">
+                                    <div class="team-image-wrap">
+                                      <a href="javascript:void(0);"><div class="team-image"><img loading="lazy" decoding="async" width="327" height="423" src="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0031.jpg" class="attachment-large size-large wp-image-641" alt="Mike Holder" srcset="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0031.jpg 327w, https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0031-232x300.jpg 232w" sizes="(max-width: 327px) 100vw, 327px" /></div></a>
+                                    </div>
+                                    <div class="team-content">
+                                      <a href="javascript:void(0);"><h6 class="team-name">Mike<br> Holder</h6></a>
+                                      <span class="team-degree">Director, Apple</span>
+                                      <div class="team-social">
+                                        <a href="https://www.facebook.com" class="social-link"><i class="flaticon-facebook-logo" aria-hidden="true"></i></a>
+                                        <a href="https://www.twitter.com" class="social-link"><i class="flaticon-twitter" aria-hidden="true"></i></a>
+                                        <a href="https://www.linkedin.com" class="social-link"><i class="flaticon-linkedin" aria-hidden="true"></i></a>
+                                        <a href="https://www.youtube.com" class="social-link"><i class="flaticon-youtube" aria-hidden="true"></i></a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- Profile Card 4 -->
+                                <div class="swiper-slide">
+                                  <div class="techwix-single-team active-social">
+                                    <div class="team-image-wrap">
+                                      <a href="javascript:void(0);"><div class="team-image"><img loading="lazy" decoding="async" width="327" height="423" src="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0034.jpg" class="attachment-large size-large wp-image-643" alt="Joakim Ken" srcset="https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0034.jpg 327w, https://thepixelcurve.com/wp/techwix/wp-content/uploads/2024/05/TECW0034-232x300.jpg 232w" sizes="(max-width: 327px) 100vw, 327px" /></div></a>
+                                    </div>
+                                    <div class="team-content">
+                                      <a href="javascript:void(0);"><h6 class="team-name">Joakim<br> Ken</h6></a>
+                                      <span class="team-degree">Manager, Space</span>
+                                      <div class="team-social">
+                                        <a href="https://www.facebook.com" class="social-link"><i class="flaticon-facebook-logo" aria-hidden="true"></i></a>
+                                        <a href="https://www.twitter.com" class="social-link"><i class="flaticon-twitter" aria-hidden="true"></i></a>
+                                        <a href="https://www.linkedin.com" class="social-link"><i class="flaticon-linkedin" aria-hidden="true"></i></a>
+                                        <a href="https://www.youtube.com" class="social-link"><i class="flaticon-youtube" aria-hidden="true"></i></a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="team-pagination swiper-pagination"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
+
   <!-- ==========================================================================
-       FOOTER
+       FOOTER (Consistent global footer matching keyknox, software, index)
+       ========================================================================== -->
+  <!-- ==========================================================================
+       FOOTER (Consistent global footer matching keyknox, lockers, software)
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo-link">
-            <div class="logo-icon">M</div>
-            <span class="logo-text">MECLIX<span>MECHATRONIX</span></span>
+          <a href="index.html" class="logo-link" style="display: inline-block; margin-bottom: 20px;">
+            <img src="assets/images/new_logo.png" alt="Meclix Mechatronix" style="height: 48px; width: auto; max-height: 100%; display: block;">
+          </a>
+          <p>Meclix Mechatronix delivers access-controlled storage and asset management solutions for modern enterprises. Backed by Smarti Electronics Systems Pvt. Ltd., with over 25 years of experience.</p>
+          <div class="footer-social-icons" style="margin-top: 20px; display: flex; gap: 12px;">
+            <a href="https://www.facebook.com" target="_blank" style="width: 36px; height: 36px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-primary); transition: var(--transition-normal);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com" target="_blank" style="width: 36px; height: 36px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-primary); transition: var(--transition-normal);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+            <a href="https://www.linkedin.com" target="_blank" style="width: 36px; height: 36px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-primary); transition: var(--transition-normal);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
-          <p>Advanced security engineering, physical key tracking systems, and secure smart lockers for modern industrial and corporate spaces.</p>
         </div>
         <div class="footer-col">
-          <h5>Product Lines</h5>
+          <h5>Useful Links</h5>
           <ul class="footer-links">
-            <li><a href='lockers.html'>ArcaKnox Smart Locker</a></li>
-            <li><a href='keyknox.html'>KeyKnox Key Cabinets</a></li>
-            <li><a href='software.html'>Shield Software Platforms</a></li>
-            <li><a href='software.html'>Technical Specifications</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="lockers.html">ArcaKnox System</a></li>
+            <li><a href="keyknox.html">KeyKnox System</a></li>
+            <li><a href="about.html">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Company</h5>
+          <h5>Our Products</h5>
           <ul class="footer-links">
-            <li><a href='about.html'>About Us</a></li>
-            <li><a href='about.html#mission-vision'>Mission & Values</a></li>
-            <li><a href='about.html#best-practices'>Best Practices</a></li>
-            <li><a href='index.html'>Careers</a></li>
+            <li><a href="lockers.html">ArcaKnox System</a></li>
+            <li><a href="keyknox.html">KeyKnox - Key Management</a></li>
+            <li><a href="software.html">Unified Management Platform</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Get In Touch</h5>
-          <ul class="footer-links">
-            <li><a href="#" class="btn-consultation-trigger">Schedule Consultation</a></li>
-            <li><a href="#">Submit Support Ticket</a></li>
-            <li><a href='about.html#smarti-backing'>Corporate Legacy</a></li>
+          <h5>Contact Information</h5>
+          <ul class="footer-links" style="display: flex; flex-direction: column; gap: 14px;">
+            <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: #ffffff;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+919876543210" style="color: #ffffff; text-decoration: none;">+91 98765 43210</a></li>
+            <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: #ffffff;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:info@meclix.in" style="color: #ffffff; text-decoration: none;">info@meclix.in</a></li>
+            <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: #ffffff;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span style="color: #ffffff;">Bangalore, Karnataka, India</span></li>
           </ul>
         </div>
       </div>
@@ -284,7 +683,6 @@
             </select>
           </div>
 
-          
           <div class="form-submit-row">
             <button type="submit" class="btn btn-primary" id="booking-submit-btn">Book Consultation Session</button>
           </div>
@@ -300,6 +698,79 @@
     </div>
   </div>
 
+  <!-- ==========================================================================
+       FOOTER JAVASCRIPT LIBRARIES & CONTROLLER LINKAGE
+       ========================================================================== -->
+  <script type="text/javascript" src="assets/js/jquery.min.js" id="jquery-core-js"></script>
+  <script type="text/javascript" src="assets/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+  <script type="text/javascript" src="assets/js/metisMenu.min.js" id="metismenu-js"></script>
+  <script type="text/javascript" src="assets/js/swiper-bundle.min.js" id="techwix-swiper-js"></script>
+  <script type="text/javascript" src="assets/js/techwix-mouse-move-animation.js" id="techwix-mouse-animation-js"></script>
+  <script type="text/javascript" src="assets/js/sal.min.js" id="techwix-sal-js-js"></script>
+  <script type="text/javascript" src="assets/js/isotope.min.js" id="jquery-isotope-js"></script>
+  <script type="text/javascript" src="assets/js/navigation.js" id="techwix-navigation-js"></script>
+  <script type="text/javascript" src="assets/js/skip-link-focus-fix.js" id="techwix-skip-link-focus-fix-js"></script>
+  <script type="text/javascript" src="assets/js/tipped.min.js" id="techwix-tipped-js"></script>
+  <script type="text/javascript" src="assets/js/nice-select.min.js" id="nice-select-js"></script>
+  <script type="text/javascript" src="assets/js/back-to-top.js" id="techwix-back-to-top-js"></script>
+  <script type="text/javascript" src="assets/js/youtube-popup.js" id="youtube-popup-js"></script>
+  <script type="text/javascript" src="assets/js/headroom.min.js" id="headroom-js"></script>
+  <script type="text/javascript" id="techwix-init-js-extra">
+    /* <![CDATA[ */
+    var techwix_sticky_data = { "mode": "smart" };
+    //# sourceURL=techwix-init-js-extra
+    /* ]]> */
+  </script>
+  <script type="text/javascript" src="assets/js/init.js" id="techwix-init-js"></script>
+  <script type="text/javascript" src="assets/js/tilt.jquery.min.js" id="jquery-tilt-js"></script>
+  <script type="text/javascript" src="assets/js/techwix-animation.min.js" id="techwix-animation-js"></script>
+  <script type="text/javascript" src="assets/js/webpack.runtime.min.js" id="elementor-webpack-runtime-js"></script>
+  <script type="text/javascript" src="assets/js/frontend-modules.min.js" id="elementor-frontend-modules-js"></script>
+  <script type="text/javascript" src="assets/js/core.min.js" id="jquery-ui-core-js"></script>
+  
+  <script type="text/javascript" id="elementor-frontend-js-before">
+    /* <![CDATA[ */
+    var elementorFrontendConfig = { 
+      "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, 
+      "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "download": "Download", "downloadImage": "Download image", "fullscreen": "Fullscreen", "zoom": "Zoom", "share": "Share", "playVideo": "Play Video", "previous": "Previous", "next": "Next", "close": "Close", "a11yCarouselPrevSlideMessage": "Previous slide", "a11yCarouselNextSlideMessage": "Next slide", "a11yCarouselFirstSlideMessage": "This is the first slide", "a11yCarouselLastSlideMessage": "This is the last slide", "a11yCarouselPaginationBulletMessage": "Go to slide" }, 
+      "is_rtl": false, 
+      "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, 
+      "responsive": { 
+        "breakpoints": { 
+          "mobile": { "label": "Mobile Portrait", "value": 767, "default_value": 767, "direction": "max", "is_enabled": true }, 
+          "mobile_extra": { "label": "Mobile Landscape", "value": 880, "default_value": 880, "direction": "max", "is_enabled": false }, 
+          "tablet": { "label": "Tablet Portrait", "value": 1024, "default_value": 1024, "direction": "max", "is_enabled": true }, 
+          "tablet_extra": { "label": "Tablet Landscape", "value": 1200, "default_value": 1200, "direction": "max", "is_enabled": true }, 
+          "laptop": { "label": "Laptop", "value": 1366, "default_value": 1366, "direction": "max", "is_enabled": false }, 
+          "widescreen": { "label": "Widescreen", "value": 2400, "default_value": 2400, "direction": "min", "is_enabled": false } 
+        }, 
+        "hasCustomBreakpoints": true 
+      }, 
+      "version": "4.0.1", 
+      "is_static": false, 
+      "experimentalFeatures": { "e_font_icon_svg": true, "additional_custom_breakpoints": true, "container": true, "nested-elements": true, "global_classes_should_enforce_capabilities": true, "e_variables": true, "e_opt_in_v4_page": true, "e_components": true, "e_interactions": true, "e_widget_creation": true, "import-export-customization": true }, 
+      "urls": { "assets": "https:\/\/thepixelcurve.com\/wp\/techwix\/wp-content\/plugins\/elementor\/assets\/", "ajaxurl": "https:\/\/thepixelcurve.com\/wp\/techwix\/wp-admin\/admin-ajax.php", "uploadUrl": "https:\/\/thepixelcurve.com\/wp\/techwix\/wp-content\/uploads" }, 
+      "nonces": { "floatingButtonsClickTracking": "167cc6247a", "atomicFormsSendForm": "e97ef76f18" }, 
+      "swiperClass": "swiper", 
+      "settings": { "page": [], "editorPreferences": [] }, 
+      "kit": { "active_breakpoints": ["viewport_mobile", "viewport_tablet", "viewport_tablet_extra"], "global_image_lightbox": "yes", "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description" }, 
+      "post": { "id": 2651, "title": "About%20Us%20%E2%80%93%20Techwix", "excerpt": "", "featuredImage": false } 
+    };
+    //# sourceURL=elementor-frontend-js-before
+  </script>
+  <script type="text/javascript" src="assets/js/frontend.min.js" id="elementor-frontend-js"></script>
+  <script type="text/javascript" src="assets/js/jquery.counterup.min.js" id="jquery-counterup-js"></script>
+  <script type="text/javascript" src="assets/js/jquery.waypoints.min.js" id="jquery-waypoints-js"></script>
+  <script type="text/javascript" src="assets/js/swiper.min.js" id="swiper-js"></script>
+  <script type="text/javascript" id="techwix-active-js-extra">
+    /* <![CDATA[ */
+    var techwix_frontend_ajax_object = { "ajaxurl": "#" };
+    //# sourceURL=techwix-active-js-extra
+    /* ]]> */
+  </script>
+  <script type="text/javascript" src="assets/js/techwix-active.js" id="techwix-active-js"></script>
+  
+  <!-- Global Controller Script -->
   <script src="index.js"></script>
 </body>
 </html>

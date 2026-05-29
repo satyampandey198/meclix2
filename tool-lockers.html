@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Locker for Employee Asset Management | Meclix Mechatronix</title>
-  <meta name="description" content="Meclix Smart Locker: Secure storage for employee assets, RFID-based access, real-time tracking, and audit-ready reporting.">
+  <title>Smart Locker for Tool Management | Meclix Mechatronix</title>
+  <meta name="description" content="Secure electronic tool lockers for industrial, assembly, and maintenance teams. Track checkout, returns, and damaged items with full shift accountability.">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -28,10 +28,10 @@
         <div class="nav-dropdown">
           <a class="nav-link dropdown-toggle active" href="lockers.html">ArcaKnox System</a>
           <ul class="dropdown-menu">
-            <li><a href="lockers.html" class="active">Employee Assets</a></li>
+            <li><a href="lockers.html">Employee Assets</a></li>
             <li><a href="it-lockers.html">IT Assets</a></li>
             <li><a href="visitor-lockers.html">Visitor Assets</a></li>
-            <li><a href="tool-lockers.html">Tool Kits</a></li>
+            <li><a href="tool-lockers.html" class="active">Tool Kits</a></li>
           </ul>
         </div>
         <div class="nav-dropdown">
@@ -156,21 +156,20 @@
 
       <!-- Use cases Blocks -->
       <div class="usecase-blocks">
-        <!-- Use Case 1: Employee Assets -->
+        <!-- Use Case 4: Tool Kits -->
         <div class="usecase-block">
           <div class="usecase-text">
-            <span class="eyebrow">Employee Asset Lockers</span>
-            <h3>EMPLOYEE ASSETS — Safe, Managed, Accountable</h3>
-            <p>Modern workplaces are characterized by dynamic seating and hot-desking, alongside shared co-working models. This requires secure, flexible lockers for employees. ArcaKnox replaces manual key allocation with instant card or biometric access.</p>
+            <span class="eyebrow">Tool Kit Lockers</span>
+            <h3>TOOL KITS — Reduced Loss. Full Shift Accountability.</h3>
+            <p>In manufacturing, maintenance, and utility environments, tool kits represent high-value assets and safety concerns. ArcaKnox enforces a digital chain of custody, ensuring that no tool is left untracked on the factory floor.</p>
             
             <div class="usecase-meta-group">
               <div class="meta-sub-header">Key Benefits</div>
               <ul class="benefits-list">
-                <li><strong>Dynamic assignment:</strong> Allocate and reassign from the dashboard without manual coordination.</li>
-                <li><strong>Multi-authorize access:</strong> Biometric, RFID card, or Mobile App configurations.</li>
-                <li><strong>Shift-aware scheduling:</strong> Prepares and releases lockers automatically at shift boundaries.</li>
-                <li><strong>Full usage history:</strong> Audit-ready logs for compliance reporting and HR reviews.</li>
-                <li><strong>Instant alerts:</strong> Tamper and forced-entry notifications sent to security.</li>
+                <li><strong>Kit-level accountability:</strong> Track checkout and returns mapped to technician ID.</li>
+                <li><strong>Role-based restrictions:</strong> Limit access to high-risk tools based on training levels.</li>
+                <li><strong>Damaged item logging:</strong> Technicians report issues directly at the HMI screen.</li>
+                <li><strong>Shift-end enforcement:</strong> Auto alerts to supervisors if critical tools are not returned.</li>
               </ul>
             </div>
           </div>
@@ -179,20 +178,20 @@
             <div class="meta-sub-header">Quick Specifications</div>
             <div class="specs-inline-grid">
               <div class="inline-spec-card card-panel">
-                <h5>Access Methods</h5>
-                <p>RFID card, Biometric fingerprint, PIN, Mobile App</p>
+                <h5>Tracking Level</h5>
+                <p>Compartment or specific tool tracking</p>
               </div>
               <div class="inline-spec-card card-panel">
-                <h5>Allocation Mode</h5>
-                <p>Dynamic or fixed assignment based on rules</p>
+                <h5>Handover Mode</h5>
+                <p>Technician-to-technician shift handovers</p>
               </div>
               <div class="inline-spec-card card-panel">
-                <h5>Shift Support</h5>
-                <p>Automated multi-shift allocation & scheduling</p>
+                <h5>Damaged Reports</h5>
+                <p>HMI interface fault logging workflow</p>
               </div>
               <div class="inline-spec-card card-panel">
-                <h5>System Alerts</h5>
-                <p>Tamper detection, non-released alarms</p>
+                <h5>Construction</h5>
+                <p>Industrial-grade heavy duty sheet metal</p>
               </div>
             </div>
             
@@ -200,11 +199,10 @@
               <div class="meta-sub-header">Target Industries</div>
               <div class="industry-list-tags">
                 <span class="industry-tag">Manufacturing</span>
-                <span class="industry-tag">Hospitals</span>
-                <span class="industry-tag">BPO & Call Centres</span>
-                <span class="industry-tag">Retail</span>
-                <span class="industry-tag">Warehousing</span>
-                <span class="industry-tag">Co-Working</span>
+                <span class="industry-tag">Automotive Assembly</span>
+                <span class="industry-tag">Aviation Hangers</span>
+                <span class="industry-tag">Defence</span>
+                <span class="industry-tag">Oil & Gas</span>
               </div>
             </div>
 
@@ -258,34 +256,64 @@
         <aside class="locker-sidebar">
           <div class="locker-sidebar-title">Stakeholders</div>
           <ul class="locker-sidebar-menu">
-            <li class="locker-sidebar-item active" data-tab="employees">
+            <li class="locker-sidebar-item active" data-tab="tool-users-technicians">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                Employees
+                Tool users / Technicians
               </button>
             </li>
-            <li class="locker-sidebar-item" data-tab="hr-admin-facility-managers">
+            <li class="locker-sidebar-item" data-tab="maintenance-team">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                HR/Admin / Facility Managers
+                Maintenance Team
               </button>
             </li>
-            <li class="locker-sidebar-item" data-tab="finance-compliance">
+            <li class="locker-sidebar-item" data-tab="site-supervisors-line-managers">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                Site Supervisors / Line Managers
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="stores-inventory-team">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                Stores / Inventory Team
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="operations-team">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                Operations Team
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="finance-procurement">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Finance / Procurement
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="compliance-audit-teams">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7z"/></svg>
-                Finance & Compliance
+                Compliance / Audit teams
               </button>
             </li>
-            <li class="locker-sidebar-item" data-tab="senior-management">
+            <li class="locker-sidebar-item" data-tab="facility-plant-managers">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                Senior Management
+                Facility / Plant Managers
               </button>
             </li>
-            <li class="locker-sidebar-item" data-tab="architects-interior-designers-consultants">
+            <li class="locker-sidebar-item" data-tab="contractors-temporary-workers">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Contractors / Temporary Workers
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="project-team-consultants">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.2 7.8-2 2-2.8 2.8-2 2 4 4 2-2 2.8-2.8 2-2-4-4z"/></svg>
-                Architects, Interior Designers & Consultants
+                Project Team / Consultants
               </button>
             </li>
           </ul>
@@ -293,77 +321,152 @@
 
         <!-- Stakeholder Content Area -->
         <div class="locker-content-area">
-          <!-- Pane: Employees -->
-          <div class="locker-pane active" id="pane-employees">
+          <!-- Pane: Tool users / Technicians -->
+          <div class="locker-pane active" id="pane-tool-users-technicians">
             <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
               <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
                 <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 </div>
-                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Employees</h4>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Tool users / Technicians</h4>
               </div>
               <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
-                Self-service access via Card, Biometric, PIN or Mobile App — eliminating dependency on staff assistance. Consistent locker availability across shift through automated allocation. Reduces reliance on padlock keys or shared combinations. Personal belongings are securely stored for the duration of use, with tamper alerts for continuous monitoring.
+                Quick access to assigned tool kits, reduced time spent searching for tools, safer handling of shared resources, and simplified return processes after use.
               </p>
             </div>
           </div>
 
-          <!-- Pane: HR/Admin / Facility Managers -->
-          <div class="locker-pane" id="pane-hr-admin-facility-managers">
+          <!-- Pane: Maintenance Team -->
+          <div class="locker-pane" id="pane-maintenance-team">
             <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
               <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
                 <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                 </div>
-                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">HR/Admin / Facility Managers</h4>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Maintenance Team</h4>
               </div>
               <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
-                Automated locker allocation eliminates manual assignment requests. Provides a real time digital record of locker usage per employee removing need for manual logging. Release of lockers on employee exit or end of contract minimizes the need for physical key collection during exit / off-boarding. Enables real-time visibility of locker status across floor and locations. Generates alerts for tampering, forced-access, and non-released lockers.
+                Improved control over tool kit availability, reduced instances of missing tools, faster issue and return cycles, and support for minimising downtime during maintenance activities.
               </p>
             </div>
           </div>
 
-          <!-- Pane: Finance & Compliance -->
-          <div class="locker-pane" id="pane-finance-compliance">
+          <!-- Pane: Site Supervisors / Line Managers -->
+          <div class="locker-pane" id="pane-site-supervisors-line-managers">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Site Supervisors / Line Managers</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Visibility into tool kit allocation and usage, improved accountability, and better coordination across shifts and job sites.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Stores / Inventory Team -->
+          <div class="locker-pane" id="pane-stores-inventory-team">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Stores / Inventory Team</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Tracking of tool kit movement and usage, streamlined reconciliation processes, reduced dependency on manual records, and improved planning for replacements or servicing. Controlled access to valuable tools and improved audit traceability of issuance and return activity.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Operations Team -->
+          <div class="locker-pane" id="pane-operations-team">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Operations Team</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                More efficient workflows, less asset loss, better utilization of shared kits, and fewer interruptions caused by unavailable tools.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Finance / Procurement -->
+          <div class="locker-pane" id="pane-finance-procurement">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Finance / Procurement</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Reduced replacement costs and shrinkage, improved utilisation of tool assets, and better support for procurement and budgeting decisions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Compliance / Audit teams -->
+          <div class="locker-pane" id="pane-compliance-audit-teams">
             <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
               <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
                 <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7z"/></svg>
                 </div>
-                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Finance & Compliance</h4>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Compliance / Audit teams</h4>
               </div>
               <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
-                Eliminates recurring costs associated with lost keys, damaged locks, and emergency lock replacements. Asset usage reports support internal audits and compliance requirements. Reduces risk exposure from unaccounted access to employee storage areas. Maintains a chain-of-custody for all stored assets.
+                Time-stamped usage records and traceability of tool kit allocation, supporting audit and safety requirements.
               </p>
             </div>
           </div>
 
-          <!-- Pane: Senior Management -->
-          <div class="locker-pane" id="pane-senior-management">
+          <!-- Pane: Facility / Plant Managers -->
+          <div class="locker-pane" id="pane-facility-plant-managers">
             <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
               <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
                 <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                 </div>
-                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Senior Management</h4>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Facility / Plant Managers</h4>
               </div>
               <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
-                Provides operational visibility across all locations through a centralised management platform. Strengthens access control governance through secure and accountable storage systems. Supports organisational efficiency through standardised processes and reduced manual intervention. Scales efficiently with organisational growth, without a proportional increase in administrative effort.
+                Centralised visibility of tool kit usage across departments, enabling better operational oversight and support for maintenance planning.
               </p>
             </div>
           </div>
 
-          <!-- Pane: Architects, Interior Designers & Consultants -->
-          <div class="locker-pane" id="pane-architects-interior-designers-consultants">
+          <!-- Pane: Contractors / Temporary Workers -->
+          <div class="locker-pane" id="pane-contractors-temporary-workers">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Contractors / Temporary Workers</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Controlled access to shared tool kits with clear allocation, supporting faster onboarding and improved accountability for issued equipment.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Project Team / Consultants -->
+          <div class="locker-pane" id="pane-project-team-consultants">
             <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
               <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
                 <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.2 7.8-2 2-2.8 2.8-2 2 4 4 2-2 2.8-2.8 2-2-4-4z"/></svg>
                 </div>
-                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Architects, Interior Designers & Consultants</h4>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Project Team / Consultants</h4>
               </div>
               <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
-                Vertical locker configurations optimise floor space, enabling flexible and open layout planning without compromising storage capacity. Clean, modular locker systems integrate seamlessly into modern office environments, with configurable finishes and dimensions that align with the overall design language. Eliminates the need to design dedicated, oversized storage rooms by making efficient use of corridor walls, lobby recesses, and underutilised vertical surfaces. Locker layouts can be reconfigured and scaled as workplace requirements evolve, extending the functional lifespan of the design without structural modifications.
+                Enables planning of locker zones within facility layouts to support efficient tool access and movement. Facilitates integration of locker infrastructure during project execution, reducing the need for post-installation modifications.
               </p>
             </div>
           </div>
