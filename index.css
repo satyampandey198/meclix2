@@ -2680,4 +2680,37 @@ main {
   }
 }
 
+/* ==========================================================================
+   GLOBAL TYPOGRAPHY OPTIMIZATIONS (Bold Text Size Reductions)
+   ========================================================================== */
+/* Homepage Hero title reduction to make it look premium and balanced */
+.elementor-element-af935fd .dbl__title {
+  font-size: 52px !important;
+  line-height: 60px !important;
+}
+
+/* Standard section titles reduction across the entire site (originally 48px) */
+.dbl__title {
+  font-size: 32px !important;
+  line-height: 40px !important;
+}
+
+/* Subheadings font-size adjustments for secondary title wrappers */
+.dbl__title-wrapper {
+  font-size: 32px !important;
+  line-height: 40px !important;
+}
+
+/* Ensure mobile responsiveness for headers */
+@media (max-width: 767px) {
+  .elementor-element-af935fd .dbl__title {
+    font-size: 36px !important;
+    line-height: 42px !important;
+  }
+  .dbl__title, .dbl__title-wrapper {
+    font-size: 26px !important;
+    line-height: 32px !important;
+  }
+}
+
 
