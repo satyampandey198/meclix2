@@ -342,7 +342,39 @@ const initMeclix = () => {
     }
   });
 
+  /* ==========================================================================
+     11. SPECIFICATIONS TAB SYSTEM (Locker & Cabinet Pages)
+     ========================================================================== */
+  const specsTabWrappers = document.querySelectorAll('.specs-tabs-wrapper');
+  specsTabWrappers.forEach(wrapper => {
+    const btns = wrapper.querySelectorAll('.specs-tab-btn');
+    const panes = wrapper.querySelectorAll('.specs-tab-pane');
+    
+    btns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetTabId = btn.getAttribute('data-tab');
+        
+        btns.forEach(b => b.classList.remove('active'));
+        panes.forEach(p => {
+          p.classList.remove('active');
+          p.style.display = 'none';
+        });
+        
+        btn.classList.add('active');
+        const targetPane = wrapper.querySelector('#' + targetTabId);
+        if (targetPane) {
+          targetPane.style.display = 'block';
+          // Force layout recalculation for transition
+          targetPane.offsetHeight;
+          targetPane.classList.add('active');
+        }
+      });
+    });
+  });
+
 };
+
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initMeclix);

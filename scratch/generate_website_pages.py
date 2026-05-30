@@ -26,6 +26,88 @@ def get_slug(name):
     slug = re.sub(r'[^a-z0-9]+', '-', slug)
     return slug.strip('-')
 
+def apply_footer(content):
+    # Clean up any legacy or duplicate footer comments first
+    content = re.sub(r'\s*<!--\s*={5,}\s*FOOTER.*?\s*={5,}\s*-->', '', content, flags=re.DOTALL | re.IGNORECASE)
+
+    footer_html = """  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-link" style="margin-bottom: 20px;">
+            <img src="assets/images/new_logo.png" alt="Meclix Mechatronix" style="max-height: 48px; width: auto; display: block;">
+          </div>
+          <p>Meclix Mechatronix delivers access-controlled storage and asset management solutions for modern enterprises. Backed by Smarti Electronics Systems Pvt. Ltd., with over 25 years of experience.</p>
+          <div class="footer-social-icons" style="margin-top: 20px; display: flex; gap: 12px;">
+            <a href="https://www.facebook.com" target="_blank" style="width: 36px; height: 36px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #086ad8; transition: all 0.3s ease;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com" target="_blank" style="width: 36px; height: 36px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #086ad8; transition: all 0.3s ease;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+            <a href="https://www.linkedin.com" target="_blank" style="width: 36px; height: 36px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #086ad8; transition: all 0.3s ease;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Useful Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="lockers.html">ArcaKnox System</a></li>
+            <li><a href="keyknox.html">KeyKnox System</a></li>
+            <li><a href="javascript:void(0);" class="btn-consultation-trigger">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Our Products</h5>
+          <ul class="footer-links">
+            <li><a href="lockers.html">ArcaKnox System Smart Locker</a></li>
+            <li><a href="keyknox.html">KeyKnox - Key Management</a></li>
+            <li><a href="software.html">ArcaKnox Shield and KeyKnox Shield</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact Information</h5>
+          <ul class="footer-links-contact" style="list-style: none;">
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+              <span style="color: #086ad8; display: flex; align-items: center; min-width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <a href="tel:+919876543210" style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">+91 98765 43210</a>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+              <span style="color: #086ad8; display: flex; align-items: center; min-width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+              <a href="mailto:info@meclix.in" style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">info@meclix.in</a>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; align-items: start; gap: 10px;">
+              <span style="color: #086ad8; display: flex; align-items: center; min-width: 16px; margin-top: 4px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <a href="https://maps.google.com/?q=Bangalore,Karnataka,India" target="_blank" style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; line-height: 1.4;">Bangalore, Karnataka, India</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Meclix Mechatronix. All rights reserved. Backed by Smarti Electronics Systems Pvt. Ltd.</p>
+        <p>India-First · SEO Optimised · AI Optimised</p>
+      </div>
+    </div>
+  </footer>"""
+
+    # Replace colophon/Elementor footer structure first (for index.html)
+    if '<footer id="colophon"' in content:
+        start_idx = content.find('<footer id="colophon"')
+        end_idx = content.find('</footer>', start_idx)
+        # Find outer footer closing tag
+        end_idx = content.find('</footer>', end_idx + 9) + 9
+        if start_idx != -1 and end_idx != -1:
+            return content[:start_idx] + footer_html + content[end_idx:]
+
+    # Replace standard footer
+    if '<footer class="site-footer">' in content:
+        start_idx = content.find('<footer class="site-footer">')
+        end_idx = content.find('</footer>', start_idx) + 9
+        if start_idx != -1 and end_idx != -1:
+            return content[:start_idx] + footer_html + content[end_idx:]
+
+    return content
+
 # Clean benefits from Draft content mapping
 benefits_data = {
     "employee": [
@@ -158,76 +240,96 @@ benefits_data = {
 
 # Recovered specs table layouts
 locker_specs_html = """
-                <!-- Integrated Technical & Software Specifications -->
-                <div class="specs-tables-container" style="margin-top: 30px; display: flex; flex-direction: column; gap: 20px;">
-                  <!-- Hardware Specs -->
-                  <div class="spec-table-block card-panel" style="padding: 20px; background: #ffffff; border-radius: 8px; border: 1px solid var(--border-light);">
-                    <h4 style="font-size: 1.05rem; color: var(--color-navy); margin-top: 0; margin-bottom: 12px; font-family: var(--font-secondary); border-bottom: 2px solid var(--border-light); padding-bottom: 8px; font-weight: 700;">Hardware & Physical Specifications</h4>
-                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; line-height: 1.5;">
-                      <tbody>
-                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Cabinet Material</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">CRCA Powder-Coated Steel</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Dimensions (Std Panel)</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">462 mm (W) x 414 mm (H) x 191 mm (D)</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Power Supply Input</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">230 V AC, 50 Hz</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Operating Voltage</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">12 V DC</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Max Power Draw</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">2 Amp</td></tr>
-                        <tr><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Mounting Options</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Wall-mounted or Floor-standing</td></tr>
-                      </tbody>
-                    </table>
+                <!-- Integrated Technical & Software Specifications (Tabbed) -->
+                <div class="specs-tabs-wrapper">
+                  <div class="specs-tab-nav">
+                    <button class="specs-tab-btn active" data-tab="specs-hw-locker">Hardware</button>
+                    <button class="specs-tab-btn" data-tab="specs-sw-locker">Software</button>
                   </div>
+                  <div class="specs-tab-content">
+                    <!-- Hardware Specs -->
+                    <div class="specs-tab-pane active" id="specs-hw-locker">
+                      <div class="spec-table-block card-panel" style="padding: 30px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-normal);">
+                        <h4 style="font-size: 1.2rem; color: var(--color-navy); margin-top: 0; margin-bottom: 20px; font-family: var(--font-secondary); border-bottom: 2px solid var(--border-light); padding-bottom: 12px; font-weight: 700;">Hardware & Physical Specifications</h4>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.8;">
+                          <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Cabinet Material</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">CRCA Powder-Coated Steel</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Dimensions (Std Panel)</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">462 mm (W) x 414 mm (H) x 191 mm (D)</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Power Supply Input</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">230 V AC, 50 Hz</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Operating Voltage</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">12 V DC</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Max Power Draw</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">2 Amp</td></tr>
+                            <tr><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Mounting Options</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Wall-mounted or Floor-standing</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
 
-                  <!-- Software Specs -->
-                  <div class="spec-table-block card-panel" style="padding: 20px; background: #ffffff; border-radius: 8px; border: 1px solid var(--border-light);">
-                    <h4 style="font-size: 1.05rem; color: var(--color-navy); margin-top: 0; margin-bottom: 12px; font-family: var(--font-secondary); border-bottom: 2px solid var(--border-light); padding-bottom: 8px; font-weight: 700;">Software & System Specifications</h4>
-                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; line-height: 1.5;">
-                      <tbody>
-                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Locker Allocation</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Dynamic & Fixed Assignment (Auto-scheduled)</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Access Modes</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">RFID Cards, Biometrics, PIN Pad, Mobile App (NFC/BLE)</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Access Levels</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Up to 5-tier role-based access control</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">System Integration</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">REST APIs, Active Directory, HRMS & ITSM</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Operational Mode</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Online with full Standalone Offline fallback mode</td></tr>
-                        <tr><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Real-Time Tracking</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Tamper notifications, status alerts, audit-ready logs</td></tr>
-                      </tbody>
-                    </table>
+                    <!-- Software Specs -->
+                    <div class="specs-tab-pane" id="specs-sw-locker">
+                      <div class="spec-table-block card-panel" style="padding: 30px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-normal);">
+                        <h4 style="font-size: 1.2rem; color: var(--color-navy); margin-top: 0; margin-bottom: 20px; font-family: var(--font-secondary); border-bottom: 2px solid var(--border-light); padding-bottom: 12px; font-weight: 700;">Software & System Specifications</h4>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.8;">
+                          <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Locker Allocation</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Dynamic & Fixed Assignment (Auto-scheduled)</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Access Modes</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">RFID Cards, Biometrics, PIN Pad, Mobile App (NFC/BLE)</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Access Levels</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Up to 5-tier role-based access control</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">System Integration</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">REST APIs, Active Directory, HRMS & ITSM</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Operational Mode</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Online with full Standalone Offline fallback mode</td></tr>
+                            <tr><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Real-Time Tracking</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Tamper notifications, status alerts, audit-ready logs</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </div>
                 </div>
 """
 
 keyknox_specs_html = """
-            <!-- Integrated Technical & Software Specifications -->
-            <div class="specs-tables-container" style="margin-top: 30px; display: flex; flex-direction: column; gap: 20px;">
-              <!-- Hardware Specs -->
-              <div class="spec-table-block card-panel" style="padding: 20px; background: #ffffff; border-radius: 8px; border: 1px solid var(--border-light);">
-                <h4 style="font-size: 1.05rem; color: var(--color-navy); margin-top: 0; margin-bottom: 12px; font-family: var(--font-secondary); border-bottom: 2px solid var(--border-light); padding-bottom: 8px; font-weight: 700;">Cabinet Hardware Specifications</h4>
-                <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; line-height: 1.5;">
-                  <tbody>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Cabinet Material</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Powder-coated mild steel (1 mm)</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Door Type</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Transparent polycarbonate with metal frame</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Capacity & Expandability</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">16 / 32 base keys, expandable to 128 keys</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Dimensions</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">745 × 614 × 175 mm</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Weight</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">21 kg (base unit)</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Power Supply Input</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">110V – 240V AC</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Power Supply Output</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">15V DC</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Power Consumption</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Approx. 20W per 32 keys</td></tr>
-                    <tr><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Compliance</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">BIS, CE</td></tr>
-                  </tbody>
-                </table>
+            <!-- Integrated Technical & Software Specifications (Tabbed) -->
+            <div class="specs-tabs-wrapper">
+              <div class="specs-tab-nav">
+                <button class="specs-tab-btn active" data-tab="specs-hw-cabinet">Hardware</button>
+                <button class="specs-tab-btn" data-tab="specs-sw-cabinet">Software</button>
               </div>
+              <div class="specs-tab-content">
+                <!-- Hardware Specs -->
+                <div class="specs-tab-pane active" id="specs-hw-cabinet">
+                  <div class="spec-table-block card-panel" style="padding: 30px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-normal);">
+                    <h4 style="font-size: 1.2rem; color: var(--color-navy); margin-top: 0; margin-bottom: 20px; font-family: var(--font-secondary); border-bottom: 2px solid var(--border-light); padding-bottom: 12px; font-weight: 700;">Cabinet Hardware Specifications</h4>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.8;">
+                      <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Cabinet Material</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Powder-coated mild steel (1 mm)</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Door Type</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Transparent polycarbonate with metal frame</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Capacity & Expandability</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">16 / 32 base keys, expandable to 128 keys</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Dimensions</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">745 × 614 × 175 mm</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Weight</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">21 kg (base unit)</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Power Supply Input</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">110V – 240V AC</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Power Supply Output</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">15V DC</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Power Consumption</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Approx. 20W per 32 keys</td></tr>
+                        <tr><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Compliance</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">BIS, CE</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
 
-              <!-- Software Specs -->
-              <div class="spec-table-block card-panel" style="padding: 20px; background: #ffffff; border-radius: 8px; border: 1px solid var(--border-light);">
-                <h4 style="font-size: 1.05rem; color: var(--color-navy); margin-top: 0; margin-bottom: 12px; font-family: var(--font-secondary); border-bottom: 2px solid var(--border-light); padding-bottom: 8px; font-weight: 700;">Software & System Specifications</h4>
-                <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; line-height: 1.5;">
-                  <tbody>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Locker Management Software</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">KeyKnox Shield</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">User Capacity</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Up to 500 users per system</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Event Storage Capacity</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">50,000 events</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Communication</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">TCP/IP</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">RFID Support</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">125kHz / 13.56MHz</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Multi-factor Authentication</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">RFID, PIN, optional biometric</td></tr>
-                    <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Key Position Tracking</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Hook positional sensors</td></tr>
-                    <tr><td style="padding: 6px 0; font-weight: 600; color: #4c4d56;">Compliance Reports</td><td style="padding: 6px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Excel and PDF export support</td></tr>
-                  </tbody>
-                </table>
+                <!-- Software Specs -->
+                <div class="specs-tab-pane" id="specs-sw-cabinet">
+                  <div class="spec-table-block card-panel" style="padding: 30px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-normal);">
+                    <h4 style="font-size: 1.2rem; color: var(--color-navy); margin-top: 0; margin-bottom: 20px; font-family: var(--font-secondary); border-bottom: 2px solid var(--border-light); padding-bottom: 12px; font-weight: 700;">Software & System Specifications</h4>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.8;">
+                      <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Locker Management Software</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">KeyKnox Shield</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">User Capacity</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Up to 500 users per system</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Event Storage Capacity</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">50,000 events</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Communication</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">TCP/IP</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">RFID Support</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">125kHz / 13.56MHz</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Multi-factor Authentication</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">RFID, PIN, optional biometric</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Key Position Tracking</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Hook positional sensors</td></tr>
+                        <tr><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Compliance Reports</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Excel and PDF export support</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
 """
@@ -264,7 +366,6 @@ def generate_header(active_page, active_sub):
             <li><a href="plant-maintenance.html"{" class=\"active\"" if active_sub == "plant" else ""}>Plant & Maintenance</a></li>
           </ul>
         </div>
-        <a class="nav-link{" active" if active_page == "software" else ""}" href="software.html">Software & Specs</a>
         <div class="nav-cta">
           <button class="btn btn-primary btn-sm btn-consultation-trigger">Book Consultation</button>
         </div>
@@ -345,6 +446,9 @@ def process_locker_page(filename, usecase_key, title, description):
     content = re.sub(r'<title>.*?</title>', f'<title>{title}</title>', content)
     content = re.sub(r'<meta name="description" content=".*?">', f'<meta name="description" content="{description}">', content)
     
+    # Replace CTA heading
+    content = content.replace("Find the Right Locker Solution", "Find the Right Smart Locker Management")
+    
     # Replace Header
     header_start = content.find('<header class="site-header" id="site-header">')
     header_end = content.find('</header>', header_start) + 9
@@ -353,7 +457,9 @@ def process_locker_page(filename, usecase_key, title, description):
     
     # Extract the isolated usecase block
     usecase_blocks_start = content.find('<div class="usecase-blocks">')
-    matrix_section_start = content.find('<div class="stakeholder-matrix-section">')
+    matrix_section_start = content.find('<!-- Value Matrix Section')
+    if matrix_section_start == -1:
+        matrix_section_start = content.find('<div class="stakeholder-matrix-section">')
     if matrix_section_start == -1:
         matrix_section_start = content.find('<!-- Stakeholder Matrix Section -->')
         
@@ -379,8 +485,8 @@ def process_locker_page(filename, usecase_key, title, description):
     
     active_pane_html = panes[usecase_key].strip()
     
-    # Insert Hardware and Software specs right before the closing tag of usecase-specs card-panel
-    active_pane_html = active_pane_html.replace('\n          </div>\n        </div>', '\n' + locker_specs_html + '\n          </div>\n        </div>')
+    # Place specs tabs OUTSIDE the usecase-block 2-column grid
+    active_pane_html = active_pane_html + '\n' + locker_specs_html
     
     # Locate redesign area: from start of usecase-blocks to start of Page CTA
     redesign_start = usecase_blocks_start
@@ -396,6 +502,7 @@ def process_locker_page(filename, usecase_key, title, description):
       """
       
     final_content = content[:redesign_start] + reconstructed_body + content[redesign_end:]
+    final_content = apply_footer(final_content)
     
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(final_content)
@@ -414,6 +521,9 @@ def process_keyknox_page(filename, usecase_key, title, description):
     content = re.sub(r'<title>.*?</title>', f'<title>{title}</title>', content)
     content = re.sub(r'<meta name="description" content=".*?">', f'<meta name="description" content="{description}">', content)
     
+    # Replace CTA Access Control to Asset Control
+    content = content.replace("Ready to Strengthen your Access Control?", "Ready to Strengthen your Asset Control?")
+    
     # Replace Header
     header_start = content.find('<header class="site-header" id="site-header">')
     header_end = content.find('</header>', header_start) + 9
@@ -421,7 +531,9 @@ def process_keyknox_page(filename, usecase_key, title, description):
     content = content[:header_start] + new_header + content[header_end:]
     
     # Extract the isolated usecase pane
-    usecases_start = content.find('<div class="key-use-cases-tabs">')
+    usecases_start = content.find('<!-- Sector-Specific Key Governance Content -->')
+    if usecases_start == -1:
+        usecases_start = content.find('<div class="key-use-cases-tabs')
     usecases_end = content.find('<!-- Page CTA -->')
     
     if usecases_start == -1 or usecases_end == -1:
@@ -447,8 +559,8 @@ def process_keyknox_page(filename, usecase_key, title, description):
     
     active_pane_html = panes[usecase_key].strip()
     
-    # Insert Hardware and Software specs inside the use-case-right card-panel
-    active_pane_html = active_pane_html.replace('\n            </div>\n          </div>', '\n' + keyknox_specs_html + '\n            </div>\n          </div>')
+    # Place specs tabs OUTSIDE the use-case-pane grid
+    active_pane_html = active_pane_html + '\n' + keyknox_specs_html
     
     # Make sure it's active
     if 'use-case-pane active' not in active_pane_html:
@@ -467,6 +579,7 @@ def process_keyknox_page(filename, usecase_key, title, description):
       """
       
     final_content = content[:usecases_start] + reconstructed_body + content[usecases_end:]
+    final_content = apply_footer(final_content)
     
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(final_content)
@@ -489,13 +602,14 @@ def update_global_page(filename, active_page):
     new_header = generate_header(active_page, None)
     
     final_content = content[:header_start] + new_header + content[header_end:]
+    final_content = apply_footer(final_content)
     
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(final_content)
-    print(f"Successfully updated header in {filename}")
+    print(f"Successfully updated header and footer in {filename}")
 
-# First reset lockers.html and keyknox.html to head using git to make sure we process the clean original base files!
-os.system("git checkout lockers.html keyknox.html")
+# First reset lockers.html and keyknox.html to commit c76b62b (which has all use cases) to make sure we process the clean original base files!
+os.system("git checkout c76b62b -- lockers.html keyknox.html")
 
 # Execute
 process_locker_page("it-lockers.html", "it", 
