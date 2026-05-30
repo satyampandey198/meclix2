@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Locker for Asset Management | Meclix Mechatronix</title>
-  <meta name="description" content="Meclix Smart Locker: Secure storage for employee assets, IT assets, visitor management, and tool kits. RFID-based access, real-time tracking, and audit-ready reporting.">
+  <title>Smart Locker for Employee Asset Management | Meclix Mechatronix</title>
+  <meta name="description" content="Meclix Smart Locker: Secure storage for employee assets, RFID-based access, real-time tracking, and audit-ready reporting.">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -12,11 +12,10 @@
   <!-- ==========================================================================
        HEADER & NAVIGATION
        ========================================================================== -->
-  <header class="site-header" id="site-header">
+    <header class="site-header" id="site-header">
     <div class="header-container">
-      <a href="index.html" class="logo-link">
-        <div class="logo-icon">M</div>
-        <span class="logo-text">MECLIX<span>MECHATRONIX</span></span>
+      <a class="logo-link" href="index.html" style="display: inline-block; padding: 5px 0;">
+        <img src="assets/images/new_logo.png" alt="Meclix Mechatronix" style="max-height: 48px; width: auto; display: block;">
       </a>
       
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
@@ -24,11 +23,26 @@
       </button>
 
       <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About Us</a>
-        <a href="lockers.html" class="nav-link active">Smart Locker</a>
-        <a href="keyknox.html" class="nav-link">KeyKnox System</a>
-        <a href="software.html" class="nav-link">Software & Specs</a>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <div class="nav-dropdown">
+          <a class="nav-link dropdown-toggle active" href="lockers.html">ArcaKnox System</a>
+          <ul class="dropdown-menu">
+            <li><a href="lockers.html" class="active">Employee Assets</a></li>
+            <li><a href="it-lockers.html">IT Assets</a></li>
+            <li><a href="visitor-lockers.html">Visitor Assets</a></li>
+            <li><a href="tool-lockers.html">Tool Kits</a></li>
+          </ul>
+        </div>
+        <div class="nav-dropdown">
+          <a class="nav-link dropdown-toggle" href="keyknox.html">KeyKnox System</a>
+          <ul class="dropdown-menu">
+            <li><a href="keyknox.html">Fleet & Vehicles</a></li>
+            <li><a href="server-racks.html">Server Racks</a></li>
+            <li><a href="premise-workplace.html">Premise & Workplace</a></li>
+            <li><a href="plant-maintenance.html">Plant & Maintenance</a></li>
+          </ul>
+        </div>
         <div class="nav-cta">
           <button class="btn btn-primary btn-sm btn-consultation-trigger">Book Consultation</button>
         </div>
@@ -141,7 +155,6 @@
 
       <!-- Use cases Blocks -->
       <div class="usecase-blocks">
-        
         <!-- Use Case 1: Employee Assets -->
         <div class="usecase-block">
           <div class="usecase-text">
@@ -196,208 +209,181 @@
           </div>
         </div>
 
-        <!-- Use Case 2: IT Assets -->
-        <div class="usecase-block">
-          <div class="usecase-text">
-            <span class="eyebrow">IT Asset Lockers</span>
-            <h3>IT ASSETS — Track Laptops, Devices, and Peripherals</h3>
-            <p>Valuable IT assets are frequently misplaced. ArcaKnox IT Asset Lockers provide a fully audited, self-service system for secure checkout and return of laptops, tablets, access tokens, and storage devices. Eliminates spreadsheet tracking and reduces losses.</p>
-            
-            <div class="usecase-meta-group">
-              <div class="meta-sub-header">Key Benefits</div>
-              <ul class="benefits-list">
-                <li><strong>Compartment-level tracking:</strong> Every device checkout is logged with timestamp and ID.</li>
-                <li><strong>ITSM Integration:</strong> Links with asset software to update CMDB records.</li>
-                <li><strong>Integrated Charging:</strong> charging-enabled slots keep devices powered between shifts.</li>
-                <li><strong>Overdue alerts:</strong> Notifications when devices are not returned within the window.</li>
-                <li><strong>Temporary access:</strong> Time-bounded credential provisioning for contractors.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="usecase-specs card-panel" style="padding: 30px;">
-            <div class="meta-sub-header">IT Team Workflows</div>
-            <div class="how-it-works-vertical">
-              <div class="how-step">
-                <h5>1. Verify & Access</h5>
-                <p>IT Admin grants role-based permissions or logs visitor ticket. Employee scans card to open compartment.</p>
-              </div>
-              <div class="how-step">
-                <h5>2. Always Charged</h5>
-                <p>Device charges inside locker via integrated USB/power distribution unit.</p>
-              </div>
-              <div class="how-step">
-                <h5>3. Asset Log Sync</h5>
-                <p>System syncs automatically with ITSM platform database on return.</p>
-              </div>
-            </div>
-            
-            <div class="usecase-meta-group" style="margin-top: 24px;">
-              <div class="meta-sub-header">Target Industries</div>
-              <div class="industry-list-tags">
-                <span class="industry-tag">IT Parks</span>
-                <span class="industry-tag">Data Centres</span>
-                <span class="industry-tag">Corporate HQs</span>
-                <span class="industry-tag">Universities</span>
-                <span class="industry-tag">Banking & BFSI</span>
-              </div>
-            </div>
-          </div>
-        </div>
+                <!-- Integrated Technical & Software Specifications (Tabbed) -->
+                <div class="specs-tabs-wrapper">
+                  <div class="specs-tab-nav">
+                    <button class="specs-tab-btn active" data-tab="specs-hw-locker">Hardware</button>
+                    <button class="specs-tab-btn" data-tab="specs-sw-locker">Software</button>
+                  </div>
+                  <div class="specs-tab-content">
+                    <!-- Hardware Specs -->
+                    <div class="specs-tab-pane active" id="specs-hw-locker">
+                      <div class="spec-table-block card-panel" style="padding: 30px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-normal);">
+                        <h4 style="font-size: 1.2rem; color: var(--color-navy); margin-top: 0; margin-bottom: 20px; font-family: var(--font-secondary); border-bottom: 2px solid var(--border-light); padding-bottom: 12px; font-weight: 700;">Hardware & Physical Specifications</h4>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.8;">
+                          <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Cabinet Material</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">CRCA Powder-Coated Steel</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Dimensions (Std Panel)</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">462 mm (W) x 414 mm (H) x 191 mm (D)</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Power Supply Input</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">230 V AC, 50 Hz</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Operating Voltage</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">12 V DC</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Max Power Draw</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">2 Amp</td></tr>
+                            <tr><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Mounting Options</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Wall-mounted or Floor-standing</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
 
-        <!-- Use Case 3: Visitor Assets -->
-        <div class="usecase-block">
-          <div class="usecase-text">
-            <span class="eyebrow">Visitor Locker Infrastructure</span>
-            <h3>VISITOR ASSETS — Secure Belongings. Elevate Experience.</h3>
-            <p>Improve building security and reduce front-desk workload in areas where guests must store laptops, phones, or luggage. ArcaKnox links locker allocation directly with visitor management systems (VMS).</p>
-            
-            <div class="usecase-meta-group">
-              <div class="meta-sub-header">Key Benefits</div>
-              <ul class="benefits-list">
-                <li><strong>Linked checkout:</strong> Locker assignments linked directly to QR codes or badges.</li>
-                <li><strong>Self-service operations:</strong> Visitors open lockers without receptionist support.</li>
-                <li><strong>Auto-release rules:</strong> Cabinets open and reset when a visitor badge is scanned for exit.</li>
-                <li><strong>Compact locker design:</strong> Fits perfectly in main reception and office lobbies.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="usecase-specs card-panel" style="padding: 30px;">
-            <div class="meta-sub-header">Visitor Journey</div>
-            <div class="how-it-works-vertical">
-              <div class="how-step">
-                <h5>1. QR Code Issuance</h5>
-                <p>Visitor checks in at VMS kiosk and receives a printout or digital QR credential.</p>
-              </div>
-              <div class="how-step">
-                <h5>2. Instant Allocation</h5>
-                <p>Scan QR at ArcaKnox Point terminal. Locker opens automatically. Belongings are stored securely.</p>
-              </div>
-              <div class="how-step">
-                <h5>3. Auto Release</h5>
-                <p>Visitor returns, retrieves assets, and logs out. System clears and opens locker slot for the next guest.</p>
-              </div>
-            </div>
-            
-            <div class="usecase-meta-group" style="margin-top: 24px;">
-              <div class="meta-sub-header">Target Industries</div>
-              <div class="industry-list-tags">
-                <span class="industry-tag">Corporate Campuses</span>
-                <span class="industry-tag">Government Offices</span>
-                <span class="industry-tag">Defence Sites</span>
-                <span class="industry-tag">Data Centres</span>
-                <span class="industry-tag">Refineries</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Use Case 4: Tool Kits -->
-        <div class="usecase-block">
-          <div class="usecase-text">
-            <span class="eyebrow">Tool Kit Lockers</span>
-            <h3>TOOL KITS — Reduced Loss. Full Shift Accountability.</h3>
-            <p>In manufacturing, maintenance, and utility environments, tool kits represent high-value assets and safety concerns. ArcaKnox enforces a digital chain of custody, ensuring that no tool is left untracked on the factory floor.</p>
-            
-            <div class="usecase-meta-group">
-              <div class="meta-sub-header">Key Benefits</div>
-              <ul class="benefits-list">
-                <li><strong>Kit-level accountability:</strong> Track checkout and returns mapped to technician ID.</li>
-                <li><strong>Role-based restrictions:</strong> Limit access to high-risk tools based on training levels.</li>
-                <li><strong>Damaged item logging:</strong> Technicians report issues directly at the HMI screen.</li>
-                <li><strong>Shift-end enforcement:</strong> Auto alerts to supervisors if critical tools are not returned.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="usecase-specs card-panel" style="padding: 30px;">
-            <div class="meta-sub-header">Quick Specifications</div>
-            <div class="specs-inline-grid">
-              <div class="inline-spec-card card-panel">
-                <h5>Tracking Level</h5>
-                <p>Compartment or specific tool tracking</p>
-              </div>
-              <div class="inline-spec-card card-panel">
-                <h5>Handover Mode</h5>
-                <p>Technician-to-technician shift handovers</p>
-              </div>
-              <div class="inline-spec-card card-panel">
-                <h5>Damaged Reports</h5>
-                <p>HMI interface fault logging workflow</p>
-              </div>
-              <div class="inline-spec-card card-panel">
-                <h5>Construction</h5>
-                <p>Industrial-grade heavy duty sheet metal</p>
-              </div>
-            </div>
-            
-            <div class="usecase-meta-group" style="margin-top: 24px;">
-              <div class="meta-sub-header">Target Industries</div>
-              <div class="industry-list-tags">
-                <span class="industry-tag">Manufacturing</span>
-                <span class="industry-tag">Automotive Assembly</span>
-                <span class="industry-tag">Aviation Hangers</span>
-                <span class="industry-tag">Defence</span>
-                <span class="industry-tag">Oil & Gas</span>
-              </div>
-            </div>
-          </div>
-        </div>
+                    <!-- Software Specs -->
+                    <div class="specs-tab-pane" id="specs-sw-locker">
+                      <div class="spec-table-block card-panel" style="padding: 30px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-normal);">
+                        <h4 style="font-size: 1.2rem; color: var(--color-navy); margin-top: 0; margin-bottom: 20px; font-family: var(--font-secondary); border-bottom: 2px solid var(--border-light); padding-bottom: 12px; font-weight: 700;">Software & System Specifications</h4>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.8;">
+                          <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Locker Allocation</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Dynamic & Fixed Assignment (Auto-scheduled)</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Access Modes</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">RFID Cards, Biometrics, PIN Pad, Mobile App (NFC/BLE)</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Access Levels</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Up to 5-tier role-based access control</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">System Integration</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">REST APIs, Active Directory, HRMS & ITSM</td></tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Operational Mode</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Online with full Standalone Offline fallback mode</td></tr>
+                            <tr><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Real-Time Tracking</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Tamper notifications, status alerts, audit-ready logs</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
       </div>
-
-      <!-- Stakeholder Matrix Section -->
-      <div class="stakeholder-matrix-section">
-        <div class="section-header">
-          <span class="eyebrow">Value Matrix</span>
-          <h2>Who Benefits & How</h2>
-          <p>Select your operational role below to see how ArcaKnox Smart Lockers streamline your workflows.</p>
-        </div>
-        
-        <div class="matrix-filters" id="stakeholder-filters">
-          <button class="matrix-btn active" data-stakeholder="all">All Stakeholders</button>
-          <button class="matrix-btn" data-stakeholder="endusers">Employees & Visitors</button>
-          <button class="matrix-btn" data-stakeholder="facility">Facility & IT Managers</button>
-          <button class="matrix-btn" data-stakeholder="compliance">Finance & Compliance</button>
-          <button class="matrix-btn" data-stakeholder="designers">Architects & Consultants</button>
-        </div>
-        
-        <div class="matrix-table-container card-panel">
-          <table class="matrix-table">
-            <thead>
-              <tr>
-                <th>Stakeholder</th>
-                <th>Key Operational Benefits</th>
-              </tr>
-            </thead>
-            <tbody id="stakeholder-matrix-body">
-              <tr data-groups="endusers">
-                <td class="stakeholder-col">Employees & Visitors</td>
-                <td class="benefits-col">Self-service access via Card, Biometrics, or QR code — eliminating reception delays. Safe storage of personal items with instant status monitoring and zero dependency on padlock keys.</td>
-              </tr>
-              <tr data-groups="facility">
-                <td class="stakeholder-col">HR, IT & Facility Managers</td>
-                <td class="benefits-col">Automated locker allocation removes administrative overhead. Real-time cabinet inventory reports, digital transaction history, and instant alerts for tampering or non-released compartments.</td>
-              </tr>
-              <tr data-groups="compliance">
-                <td class="stakeholder-col">Finance & Compliance</td>
-                <td class="benefits-col">Minimizes cost leakages from lock changes or key replacements. Digital check-out lists provide internal chain-of-custody data required for audits and standard corporate security policies.</td>
-              </tr>
-              <tr data-groups="designers">
-                <td class="stakeholder-col">Architects & Interior Designers</td>
-                <td class="benefits-col">Vertical configurations optimize floor layouts. Modular, configurable locker banks integrate cleanly into lobby designs or corridors without requiring dedicated, oversized storage rooms.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      
+      
+      <!-- Value Matrix Section (Interactive Stakeholder Classification) -->
+      <div class="section-header" style="margin-top: 60px; margin-bottom: 30px; text-align: center;">
+        <span class="eyebrow" style="font-size: 0.85rem; letter-spacing: 1px;">Value Matrix</span>
+        <h2 style="font-size: 2rem; color: #021e40; margin: 5px 0 10px 0;">Who Benefits & How</h2>
+        <p style="color: var(--color-body); font-size: 1rem; max-width: 600px; margin: 0 auto;">Select a stakeholder from the left menu to view detailed operational benefits.</p>
       </div>
 
+      <div class="locker-redesign-container" style="margin-top: 30px;">
+        <!-- Stakeholder Sidebar Menu -->
+        <aside class="locker-sidebar">
+          <div class="locker-sidebar-title">Stakeholders</div>
+          <ul class="locker-sidebar-menu">
+            <li class="locker-sidebar-item active" data-tab="employees">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Employees
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="hr-admin-facility-managers">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                HR/Admin / Facility Managers
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="finance-compliance">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7z"/></svg>
+                Finance & Compliance
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="senior-management">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                Senior Management
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="architects-interior-designers-consultants">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.2 7.8-2 2-2.8 2.8-2 2 4 4 2-2 2.8-2.8 2-2-4-4z"/></svg>
+                Architects, Interior Designers & Consultants
+              </button>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Stakeholder Content Area -->
+        <div class="locker-content-area">
+          <!-- Pane: Employees -->
+          <div class="locker-pane active" id="pane-employees">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Employees</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Self-service access via Card, Biometric, PIN or Mobile App — eliminating dependency on staff assistance. Consistent locker availability across shift through automated allocation. Reduces reliance on padlock keys or shared combinations. Personal belongings are securely stored for the duration of use, with tamper alerts for continuous monitoring.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: HR/Admin / Facility Managers -->
+          <div class="locker-pane" id="pane-hr-admin-facility-managers">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">HR/Admin / Facility Managers</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Automated locker allocation eliminates manual assignment requests. Provides a real time digital record of locker usage per employee removing need for manual logging. Release of lockers on employee exit or end of contract minimizes the need for physical key collection during exit / off-boarding. Enables real-time visibility of locker status across floor and locations. Generates alerts for tampering, forced-access, and non-released lockers.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Finance & Compliance -->
+          <div class="locker-pane" id="pane-finance-compliance">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7z"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Finance & Compliance</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Eliminates recurring costs associated with lost keys, damaged locks, and emergency lock replacements. Asset usage reports support internal audits and compliance requirements. Reduces risk exposure from unaccounted access to employee storage areas. Maintains a chain-of-custody for all stored assets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Senior Management -->
+          <div class="locker-pane" id="pane-senior-management">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Senior Management</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Provides operational visibility across all locations through a centralised management platform. Strengthens access control governance through secure and accountable storage systems. Supports organisational efficiency through standardised processes and reduced manual intervention. Scales efficiently with organisational growth, without a proportional increase in administrative effort.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Architects, Interior Designers & Consultants -->
+          <div class="locker-pane" id="pane-architects-interior-designers-consultants">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.2 7.8-2 2-2.8 2.8-2 2 4 4 2-2 2.8-2.8 2-2-4-4z"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Architects, Interior Designers & Consultants</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Vertical locker configurations optimise floor space, enabling flexible and open layout planning without compromising storage capacity. Clean, modular locker systems integrate seamlessly into modern office environments, with configurable finishes and dimensions that align with the overall design language. Eliminates the need to design dedicated, oversized storage rooms by making efficient use of corridor walls, lobby recesses, and underutilised vertical surfaces. Locker layouts can be reconfigured and scaled as workplace requirements evolve, extending the functional lifespan of the design without structural modifications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
       <!-- Page CTA -->
       <div class="global-page-cta">
         <div class="cta-box">
           <div class="tech-grid-bg"></div>
-          <h2>Find the Right Locker Solution</h2>
+          <h2>Find the Right Smart Locker Management</h2>
           <p>Every Meclix Locker solution is configured to meet your operational needs. Speak to a solutions specialist today.</p>
           <button class="btn btn-primary btn-consultation-trigger">Schedule a Free Consultation</button>
         </div>
@@ -405,44 +391,56 @@
 
     </div>
   </main>
-
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        FOOTER
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo-link">
-            <div class="logo-icon">M</div>
-            <span class="logo-text">MECLIX<span>MECHATRONIX</span></span>
+          <div class="logo-link" style="margin-bottom: 20px;">
+            <img src="assets/images/new_logo.png" alt="Meclix Mechatronix" style="max-height: 48px; width: auto; display: block;">
           </div>
-          <p>Advanced security engineering, physical key tracking systems, and secure smart lockers for modern industrial and corporate spaces.</p>
+          <p>Meclix Mechatronix delivers access-controlled storage and asset management solutions for modern enterprises. Backed by Smarti Electronics Systems Pvt. Ltd., with over 25 years of experience.</p>
+          <div class="footer-social-icons" style="margin-top: 20px; display: flex; gap: 12px;">
+            <a href="https://www.facebook.com" target="_blank" style="width: 36px; height: 36px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #086ad8; transition: all 0.3s ease;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com" target="_blank" style="width: 36px; height: 36px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #086ad8; transition: all 0.3s ease;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+            <a href="https://www.linkedin.com" target="_blank" style="width: 36px; height: 36px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #086ad8; transition: all 0.3s ease;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
         </div>
         <div class="footer-col">
-          <h5>Product Lines</h5>
+          <h5>Useful Links</h5>
           <ul class="footer-links">
-            <li><a href="lockers.html">ArcaKnox Smart Locker</a></li>
-            <li><a href="keyknox.html">KeyKnox Key Cabinets</a></li>
-            <li><a href="software.html">Shield Software Platforms</a></li>
-            <li><a href="software.html">Technical Specifications</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="about.html#mission-vision">Mission & Values</a></li>
-            <li><a href="about.html#best-practices">Best Practices</a></li>
-            <li><a href="index.html">Careers</a></li>
+            <li><a href="lockers.html">ArcaKnox System</a></li>
+            <li><a href="keyknox.html">KeyKnox System</a></li>
+            <li><a href="javascript:void(0);" class="btn-consultation-trigger">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Get In Touch</h5>
+          <h5>Our Products</h5>
           <ul class="footer-links">
-            <li><a href="#" class="btn-consultation-trigger">Schedule Consultation</a></li>
-            <li><a href="#">Submit Support Ticket</a></li>
-            <li><a href="about.html#smarti-backing">Corporate Legacy</a></li>
+            <li><a href="lockers.html">ArcaKnox System Smart Locker</a></li>
+            <li><a href="keyknox.html">KeyKnox - Key Management</a></li>
+            <li><a href="software.html">ArcaKnox Shield and KeyKnox Shield</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact Information</h5>
+          <ul class="footer-links-contact" style="list-style: none;">
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+              <span style="color: #086ad8; display: flex; align-items: center; min-width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <a href="tel:+919876543210" style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">+91 98765 43210</a>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+              <span style="color: #086ad8; display: flex; align-items: center; min-width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+              <a href="mailto:info@meclix.in" style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">info@meclix.in</a>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; align-items: start; gap: 10px;">
+              <span style="color: #086ad8; display: flex; align-items: center; min-width: 16px; margin-top: 4px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <a href="https://maps.google.com/?q=Bangalore,Karnataka,India" target="_blank" style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; line-height: 1.4;">Bangalore, Karnataka, India</a>
+            </li>
           </ul>
         </div>
       </div>

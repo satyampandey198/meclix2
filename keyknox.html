@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KeyKnox Electronic Key Management System | Meclix Mechatronix</title>
-  <meta name="description" content="KeyKnox by Meclix is an advanced Electronic Key Management System. Biometric authentication, key usage tracking, audit-ready logs, and multi-site management.">
+  <title>KeyKnox Electronic Key Management for Fleet Management | Meclix Mechatronix</title>
+  <meta name="description" content="Secure, track, and manage vehicle keys for logistics, showrooms, and corporate fleets. RFID tracking, driver authentication, and audit trails.">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -12,11 +12,10 @@
   <!-- ==========================================================================
        HEADER & NAVIGATION
        ========================================================================== -->
-  <header class="site-header" id="site-header">
+    <header class="site-header" id="site-header">
     <div class="header-container">
-      <a href="index.html" class="logo-link">
-        <div class="logo-icon">M</div>
-        <span class="logo-text">MECLIX<span>MECHATRONIX</span></span>
+      <a class="logo-link" href="index.html" style="display: inline-block; padding: 5px 0;">
+        <img src="assets/images/new_logo.png" alt="Meclix Mechatronix" style="max-height: 48px; width: auto; display: block;">
       </a>
       
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
@@ -24,11 +23,26 @@
       </button>
 
       <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About Us</a>
-        <a href="lockers.html" class="nav-link">Smart Locker</a>
-        <a href="keyknox.html" class="nav-link active">KeyKnox System</a>
-        <a href="software.html" class="nav-link">Software & Specs</a>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <div class="nav-dropdown">
+          <a class="nav-link dropdown-toggle" href="lockers.html">ArcaKnox System</a>
+          <ul class="dropdown-menu">
+            <li><a href="lockers.html">Employee Assets</a></li>
+            <li><a href="it-lockers.html">IT Assets</a></li>
+            <li><a href="visitor-lockers.html">Visitor Assets</a></li>
+            <li><a href="tool-lockers.html">Tool Kits</a></li>
+          </ul>
+        </div>
+        <div class="nav-dropdown">
+          <a class="nav-link dropdown-toggle active" href="keyknox.html">KeyKnox System</a>
+          <ul class="dropdown-menu">
+            <li><a href="keyknox.html" class="active">Fleet & Vehicles</a></li>
+            <li><a href="server-racks.html">Server Racks</a></li>
+            <li><a href="premise-workplace.html">Premise & Workplace</a></li>
+            <li><a href="plant-maintenance.html">Plant & Maintenance</a></li>
+          </ul>
+        </div>
         <div class="nav-cta">
           <button class="btn btn-primary btn-sm btn-consultation-trigger">Book Consultation</button>
         </div>
@@ -128,22 +142,9 @@
       </div>
 
       <!-- Tabbed Industry Use Cases -->
-      <div class="key-use-cases-tabs">
-        <div class="section-header">
-          <span class="eyebrow">Applications</span>
-          <h2>Sector-Specific Key Governance</h2>
-          <p>See how KeyKnox adapts to security requirements across specialized enterprise environments.</p>
-        </div>
-        
-        <div class="use-case-tab-nav" id="key-usecase-nav">
-          <button class="active" data-keyuse="fleet">Fleet & Vehicles</button>
-          <button data-keyuse="servers">Server Racks</button>
-          <button data-keyuse="workplace">Premise & Offices</button>
-          <button data-keyuse="plant">Plant & Maintenance</button>
-        </div>
-        
+      <!-- Sector-Specific Key Governance Content -->
+      <div class="key-use-cases-tabs" style="margin-top: 40px;">
         <div class="use-case-tab-content">
-          
           <!-- Fleet & Vehicles -->
           <div class="use-case-pane active" id="key-usecase-fleet">
             <div class="use-case-left">
@@ -171,84 +172,229 @@
             </div>
           </div>
 
-          <!-- Server Racks -->
-          <div class="use-case-pane" id="key-usecase-servers">
-            <div class="use-case-left">
-              <h3>Electronic Key Management for Server Racks</h3>
-              <p style="margin: 16px 0;">Server racks contain networking hardware, business-critical database backups, and applications. Unmanaged rack keys increase risk. KeyKnox controls and logs access to critical IT cabinets, maintaining compliance logs for datacenters.</p>
-              
-              <h5 style="color: var(--color-primary); margin-bottom: 12px; font-family: var(--font-body);">Key Benefits for Datacenter Teams</h5>
-              <ul class="benefits-list">
-                <li><strong>IT Admins:</strong> Fast access during hardware swap, troubleshooting, or emergencies.</li>
-                <li><strong>Security Teams:</strong> Restricts access to sensitive zones based on shift rules.</li>
-                <li><strong>Compliance:</strong> Verifiable audit-ready trails, supporting SOC2 and ISO certifications.</li>
-                <li><strong>Operations:</strong> Ensures third-party contractors can only access designated racks.</li>
-              </ul>
-              <p style="margin-top: 16px; font-size: 0.9rem; color: var(--color-text-muted);"><strong>Applicable for:</strong> Data Centres, Server Rooms, Telecom Closets, BFSI Server Facilities.</p>
-            </div>
-            <div class="use-case-right card-panel" style="padding: 24px;">
-              <h5 style="font-family: var(--font-body); color: var(--color-text-headings); margin-bottom: 16px;">Compliance Verification</h5>
-              <p style="font-size: 0.9rem; margin-bottom: 16px;">Positional tracking records precisely which rack keys are removed, closing audit gaps in server room environments.</p>
-              <div style="background: var(--bg-body); padding:16px; border: 1px solid var(--border-light); border-radius:8px; font-family: var(--font-mono); font-size:0.75rem;">
-                <span style="color:var(--color-primary);">[SOC2 Audit Trail Active]</span><br>
-                - Hook #14 (Server Rack C2): Verified<br>
-                - Removed: 05:40:12<br>
-                - Returned: 06:12:45<br>
-                - User: Admin #24 (Biometric Verified)
+            <!-- Integrated Technical & Software Specifications (Tabbed) -->
+            <div class="specs-tabs-wrapper">
+              <div class="specs-tab-nav">
+                <button class="specs-tab-btn active" data-tab="specs-hw-cabinet">Hardware</button>
+                <button class="specs-tab-btn" data-tab="specs-sw-cabinet">Software</button>
+              </div>
+              <div class="specs-tab-content">
+                <!-- Hardware Specs -->
+                <div class="specs-tab-pane active" id="specs-hw-cabinet">
+                  <div class="spec-table-block card-panel" style="padding: 30px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-normal);">
+                    <h4 style="font-size: 1.2rem; color: var(--color-navy); margin-top: 0; margin-bottom: 20px; font-family: var(--font-secondary); border-bottom: 2px solid var(--border-light); padding-bottom: 12px; font-weight: 700;">Cabinet Hardware Specifications</h4>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.8;">
+                      <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Cabinet Material</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Powder-coated mild steel (1 mm)</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Door Type</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Transparent polycarbonate with metal frame</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Capacity & Expandability</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">16 / 32 base keys, expandable to 128 keys</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Dimensions</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">745 × 614 × 175 mm</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Weight</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">21 kg (base unit)</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Power Supply Input</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">110V – 240V AC</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Power Supply Output</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">15V DC</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Power Consumption</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Approx. 20W per 32 keys</td></tr>
+                        <tr><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Compliance</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">BIS, CE</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Software Specs -->
+                <div class="specs-tab-pane" id="specs-sw-cabinet">
+                  <div class="spec-table-block card-panel" style="padding: 30px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-normal);">
+                    <h4 style="font-size: 1.2rem; color: var(--color-navy); margin-top: 0; margin-bottom: 20px; font-family: var(--font-secondary); border-bottom: 2px solid var(--border-light); padding-bottom: 12px; font-weight: 700;">Software & System Specifications</h4>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.8;">
+                      <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Locker Management Software</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">KeyKnox Shield</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">User Capacity</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Up to 500 users per system</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Event Storage Capacity</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">50,000 events</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Communication</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">TCP/IP</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">RFID Support</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">125kHz / 13.56MHz</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Multi-factor Authentication</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">RFID, PIN, optional biometric</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Key Position Tracking</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Hook positional sensors</td></tr>
+                        <tr><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Compliance Reports</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Excel and PDF export support</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-
-          <!-- Premise / Workplace -->
-          <div class="use-case-pane" id="key-usecase-workplace">
-            <div class="use-case-left">
-              <h3>Electronic Key Management for Premises & Offices</h3>
-              <p style="margin: 16px 0;">The missing server room key that delays technicians for an hour. The resigned employee whose drawer key was never recovered. KeyKnox closes the physical security gaps in corporate environments, replacing insecure hook boards.</p>
-              
-              <h5 style="color: var(--color-primary); margin-bottom: 12px; font-family: var(--font-body);">Key Benefits for Corporate Offices</h5>
-              <ul class="benefits-list">
-                <li><strong>Facilities:</strong> Reduced administrative time spent tracking keys across departments.</li>
-                <li><strong>HR:</strong> Integrates with onboarding/offboarding workflows via HRMS database.</li>
-                <li><strong>Security:</strong> Restricts master keys to designated security personnel.</li>
-                <li><strong>Vendors:</strong> Limits contractors to temporary, self-expiring access schedules.</li>
-              </ul>
-              <p style="margin-top: 16px; font-size: 0.9rem; color: var(--color-text-muted);"><strong>Applicable for:</strong> Corporate Headquarters, Co-Working Facilities, Institutional Campus Premises.</p>
-            </div>
-            <div class="use-case-right card-panel" style="padding: 24px;">
-              <h5 style="font-family: var(--font-body); color: var(--color-text-headings); margin-bottom: 16px;">Office Key Lifecycle</h5>
-              <p style="font-size: 0.9rem; margin-bottom: 16px;">Link cabinet configuration with office directories. Revoke vendor access profiles instantly on exit.</p>
-            </div>
-          </div>
-
-          <!-- Plant & Maintenance -->
-          <div class="use-case-pane" id="key-usecase-plant">
-            <div class="use-case-left">
-              <h3>Plant & Maintenance Key Custody Control</h3>
-              <p style="margin: 16px 0;">Keys to critical isolation points, restricted chemical stores, or high-voltage panels are often shared across shifts. Lost keys lead to safety hazards and operational delays. KeyKnox enforces structured key custody across shifts.</p>
-              
-              <h5 style="color: var(--color-primary); margin-bottom: 12px; font-family: var(--font-body);">Key Benefits for Industrial Sites</h5>
-              <ul class="benefits-list">
-                <li><strong>Technicians:</strong> Keys issued based on roles, ensuring correct equipment access.</li>
-                <li><strong>Supervisors:</strong> Shift-end dashboard reveals outstanding keys instantly.</li>
-                <li><strong>EHS Teams:</strong> High-risk keys configured to require dual-authorisation approval.</li>
-                <li><strong>Contractors:</strong> Activity logged against contractor profiles for safety tracking.</li>
-              </ul>
-              <p style="margin-top: 16px; font-size: 0.9rem; color: var(--color-text-muted);"><strong>Applicable for:</strong> Industrial Plants, Pharma Manufacturing, Refineries, Utilities.</p>
-            </div>
-            <div class="use-case-right card-panel" style="padding: 24px;">
-              <h5 style="font-family: var(--font-body); color: var(--color-text-headings); margin-bottom: 16px;">Dual-Authorisation Rules</h5>
-              <p style="font-size: 0.9rem; margin-bottom: 16px;">For high-risk zones (e.g. electrical substations), the cabinet only unlocks when both a technician and a supervisor scan their credentials.</p>
-            </div>
-          </div>
 
         </div>
       </div>
+      
+      
+      <!-- Value Matrix Section (Interactive Stakeholder Classification) -->
+      <div class="section-header" style="margin-top: 60px; margin-bottom: 30px; text-align: center;">
+        <span class="eyebrow" style="font-size: 0.85rem; letter-spacing: 1px;">Value Matrix</span>
+        <h2 style="font-size: 2rem; color: #021e40; margin: 5px 0 10px 0;">Who Benefits & How</h2>
+        <p style="color: var(--color-body); font-size: 1rem; max-width: 600px; margin: 0 auto;">Select a stakeholder from the left menu to view detailed operational benefits.</p>
+      </div>
 
+      <div class="locker-redesign-container" style="margin-top: 30px;">
+        <!-- Stakeholder Sidebar Menu -->
+        <aside class="locker-sidebar">
+          <div class="locker-sidebar-title">Stakeholders</div>
+          <ul class="locker-sidebar-menu">
+            <li class="locker-sidebar-item active" data-tab="fleet-managers">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                Fleet managers
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="drivers">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Drivers
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="operations-team">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                Operations team
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="security-team">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7z"/></svg>
+                Security team
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="finance-team">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Finance team
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="maintenance-team">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                Maintenance team
+              </button>
+            </li>
+            <li class="locker-sidebar-item" data-tab="senior-management">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                Senior management
+              </button>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Stakeholder Content Area -->
+        <div class="locker-content-area">
+          <!-- Pane: Fleet managers -->
+          <div class="locker-pane active" id="pane-fleet-managers">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Fleet managers</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Full visibility into who has which vehicle key, faster allocation, fewer manual sign-outs, and better control across locations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Drivers -->
+          <div class="locker-pane" id="pane-drivers">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Drivers</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Quick and secure access to assigned vehicles, less waiting time, and a smoother start to shifts or trips.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Operations team -->
+          <div class="locker-pane" id="pane-operations-team">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Operations team</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Better coordination, lower downtime, improved vehicle rotation, and more efficient day-to-day fleet movement.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Security team -->
+          <div class="locker-pane" id="pane-security-team">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7z"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Security team</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Controlled access, reduced risk of lost or stolen keys, and a clear audit trail for every key transaction. Time-stamped records, stronger accountability, and easier reporting for internal audits and regulatory checks.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Finance team -->
+          <div class="locker-pane" id="pane-finance-team">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Finance team</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Lower replacement and rekeying costs, reduced losses, and improved fleet asset protection.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Maintenance team -->
+          <div class="locker-pane" id="pane-maintenance-team">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Maintenance team</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Easier control over service vehicles, clearer handover records, and fewer delays in vehicle availability.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pane: Senior management -->
+          <div class="locker-pane" id="pane-senior-management">
+            <div class="stakeholder-card card-panel" style="padding: 35px; background: #ffffff; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-normal);">
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 24px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px;">
+                <div style="width: 48px; height: 48px; background: rgba(8, 106, 216, 0.08); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h4 style="margin: 0; font-size: 1.35rem; color: var(--color-navy); font-weight: 700;">Senior management</h4>
+              </div>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-body); font-weight: 500; margin: 0;">
+                Higher productivity, better fleet utilization, reduced liability, and stronger governance over company assets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
       <!-- Page CTA -->
       <div class="global-page-cta">
         <div class="cta-box">
           <div class="tech-grid-bg"></div>
-          <h2>Ready to Strengthen your Access Control?</h2>
+          <h2>Ready to Strengthen your Asset Control?</h2>
           <p>Connect with a Meclix specialist to define a solution tailored to your specific environment.</p>
           <button class="btn btn-primary btn-consultation-trigger">Schedule a Free Consultation</button>
         </div>
@@ -256,44 +402,56 @@
 
     </div>
   </main>
-
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        FOOTER
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo-link">
-            <div class="logo-icon">M</div>
-            <span class="logo-text">MECLIX<span>MECHATRONIX</span></span>
+          <div class="logo-link" style="margin-bottom: 20px;">
+            <img src="assets/images/new_logo.png" alt="Meclix Mechatronix" style="max-height: 48px; width: auto; display: block;">
           </div>
-          <p>Advanced security engineering, physical key tracking systems, and secure smart lockers for modern industrial and corporate spaces.</p>
+          <p>Meclix Mechatronix delivers access-controlled storage and asset management solutions for modern enterprises. Backed by Smarti Electronics Systems Pvt. Ltd., with over 25 years of experience.</p>
+          <div class="footer-social-icons" style="margin-top: 20px; display: flex; gap: 12px;">
+            <a href="https://www.facebook.com" target="_blank" style="width: 36px; height: 36px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #086ad8; transition: all 0.3s ease;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com" target="_blank" style="width: 36px; height: 36px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #086ad8; transition: all 0.3s ease;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+            <a href="https://www.linkedin.com" target="_blank" style="width: 36px; height: 36px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #086ad8; transition: all 0.3s ease;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
         </div>
         <div class="footer-col">
-          <h5>Product Lines</h5>
+          <h5>Useful Links</h5>
           <ul class="footer-links">
-            <li><a href="lockers.html">ArcaKnox Smart Locker</a></li>
-            <li><a href="keyknox.html">KeyKnox Key Cabinets</a></li>
-            <li><a href="software.html">Shield Software Platforms</a></li>
-            <li><a href="software.html">Technical Specifications</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="about.html#mission-vision">Mission & Values</a></li>
-            <li><a href="about.html#best-practices">Best Practices</a></li>
-            <li><a href="index.html">Careers</a></li>
+            <li><a href="lockers.html">ArcaKnox System</a></li>
+            <li><a href="keyknox.html">KeyKnox System</a></li>
+            <li><a href="javascript:void(0);" class="btn-consultation-trigger">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Get In Touch</h5>
+          <h5>Our Products</h5>
           <ul class="footer-links">
-            <li><a href="#" class="btn-consultation-trigger">Schedule Consultation</a></li>
-            <li><a href="#">Submit Support Ticket</a></li>
-            <li><a href="about.html#smarti-backing">Corporate Legacy</a></li>
+            <li><a href="lockers.html">ArcaKnox System Smart Locker</a></li>
+            <li><a href="keyknox.html">KeyKnox - Key Management</a></li>
+            <li><a href="software.html">ArcaKnox Shield and KeyKnox Shield</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact Information</h5>
+          <ul class="footer-links-contact" style="list-style: none;">
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+              <span style="color: #086ad8; display: flex; align-items: center; min-width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <a href="tel:+919876543210" style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">+91 98765 43210</a>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+              <span style="color: #086ad8; display: flex; align-items: center; min-width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+              <a href="mailto:info@meclix.in" style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">info@meclix.in</a>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; align-items: start; gap: 10px;">
+              <span style="color: #086ad8; display: flex; align-items: center; min-width: 16px; margin-top: 4px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <a href="https://maps.google.com/?q=Bangalore,Karnataka,India" target="_blank" style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; line-height: 1.4;">Bangalore, Karnataka, India</a>
+            </li>
           </ul>
         </div>
       </div>

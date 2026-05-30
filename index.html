@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<script>
 		// Define global consultation modal functions at the very top to prevent any race conditions or ReferenceErrors
-		window.openConsultationModal = function(e) {
+		window.openConsultationModal = function (e) {
 			if (e) {
 				e.preventDefault();
 				e.stopPropagation();
@@ -14,14 +14,14 @@
 			const formContainer = document.getElementById('booking-form-container');
 			const successContainer = document.getElementById('booking-success-container');
 			const form = document.getElementById('consultation-form');
-			
+
 			if (modal) modal.classList.add('open');
 			if (formContainer) formContainer.style.display = 'block';
 			if (successContainer) successContainer.style.display = 'none';
 			if (form) form.reset();
 		};
 
-		window.closeConsultationModal = function(e) {
+		window.closeConsultationModal = function (e) {
 			if (e) {
 				e.preventDefault();
 				e.stopPropagation();
@@ -416,9 +416,16 @@
 			font-size: 1.5em;
 			line-height: 1.6;
 		}
+
 		/*# sourceURL=global-styles-inline-css */
 	</style>
-	<link rel='stylesheet' id='woocommerce-layout-css' href='assets/css/woocommerce-layout.css' type='text/css' media='all' /><link rel='stylesheet' id='woocommerce-smallscreen-css' href='assets/css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)' /><link rel='stylesheet' id='woocommerce-general-css' href='assets/css/woocommerce.css' type='text/css' media='all' /><style id='woocommerce-inline-inline-css' type='text/css'>.woocommerce form .form-row .required {
+	<link rel='stylesheet' id='woocommerce-layout-css' href='assets/css/woocommerce-layout.css' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='woocommerce-smallscreen-css' href='assets/css/woocommerce-smallscreen.css'
+		type='text/css' media='only screen and (max-width: 768px)' />
+	<link rel='stylesheet' id='woocommerce-general-css' href='assets/css/woocommerce.css' type='text/css' media='all' />
+	<style id='woocommerce-inline-inline-css' type='text/css'>
+		.woocommerce form .form-row .required {
 			visibility: visible;
 		}
 
@@ -428,7 +435,7 @@
 		media='all' />
 	<link rel='stylesheet' id='elementor-post-3317-css' href='assets/css/post-3317.css' type='text/css' media='all' />
 	<link rel='stylesheet' id='techwix-main-fonts-css'
-		href='https://fonts.googleapis.com/css?family=Jost%3A300%2C400%2C500%2C600%2C700%2C800%7CPoppins%3A300%2C400%2C500%2C600%2C700%2C800&#038;subset=latin%2Clatin-ext&#038;ver=1.1.6'
+		href='https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600%2C700%2C800&#038;subset=latin%2Clatin-ext&#038;ver=1.1.6'
 		type='text/css' media='all' />
 	<link rel='stylesheet' id='techwix-flaticon-css' href='assets/css/flaticon_techwix.css' type='text/css'
 		media='all' />
@@ -478,7 +485,7 @@
 			--techwix-shadow-dark: 0px 10px 30px 0px rgba(20, 36, 66, 0.15);
 			--techwix-shadow-darkest: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
 			--techwix-transition: 0.3s;
-			--techwix-font-primary: 'Jost', sans-serif;
+			--techwix-font-primary: 'Mortane', 'Poppins', sans-serif;
 			--techwix-font-secondary: 'Poppins', sans-serif;
 			--techwix-font-size-b1: 16px;
 			--techwix-font-size-b2: 13px;
@@ -554,8 +561,7 @@
 		type='text/css' media='all' />
 	<link rel='stylesheet' id='elementor-post-22-css' href='assets/css/post-22.css' type='text/css' media='all' />
 	<link rel='stylesheet' id='techwix-custom-css' href='assets/css/custom.css' type='text/css' media='all' />
-	<link rel='stylesheet' id='elementor-gf-local-barlow-css' href='assets/css/barlow.css' type='text/css'
-		media='all' />
+	
 	<link rel='stylesheet' id='elementor-icons-techwix-custom-icons-css' href='assets/css/flaticon_techwix.css'
 		type='text/css' media='all' />
 	<script type="text/javascript" src="assets/js/jquery.min.js" id="jquery-core-js"></script>
@@ -740,7 +746,7 @@
 	</style>
 	<style id="kirki-inline-styles">
 		body {
-			font-family: Jost;
+			font-family: 'Mortane', 'Poppins', sans-serif;
 		}
 
 		h1,
@@ -788,7 +794,7 @@
 
 		/* cyrillic */
 		@font-face {
-			font-family: 'Jost';
+			font-family: 'Mortane', 'Poppins', sans-serif;
 			font-style: normal;
 			font-weight: 400;
 			font-display: swap;
@@ -798,7 +804,7 @@
 
 		/* latin-ext */
 		@font-face {
-			font-family: 'Jost';
+			font-family: 'Mortane', 'Poppins', sans-serif;
 			font-style: normal;
 			font-weight: 400;
 			font-display: swap;
@@ -808,7 +814,7 @@
 
 		/* latin */
 		@font-face {
-			font-family: 'Jost';
+			font-family: 'Mortane', 'Poppins', sans-serif;
 			font-style: normal;
 			font-weight: 400;
 			font-display: swap;
@@ -968,7 +974,7 @@
 
 		/* cyrillic */
 		@font-face {
-			font-family: 'Jost';
+			font-family: 'Mortane', 'Poppins', sans-serif;
 			font-style: normal;
 			font-weight: 400;
 			font-display: swap;
@@ -978,7 +984,7 @@
 
 		/* latin-ext */
 		@font-face {
-			font-family: 'Jost';
+			font-family: 'Mortane', 'Poppins', sans-serif;
 			font-style: normal;
 			font-weight: 400;
 			font-display: swap;
@@ -988,7 +994,7 @@
 
 		/* latin */
 		@font-face {
-			font-family: 'Jost';
+			font-family: 'Mortane', 'Poppins', sans-serif;
 			font-style: normal;
 			font-weight: 400;
 			font-display: swap;
@@ -1148,7 +1154,7 @@
 
 		/* cyrillic */
 		@font-face {
-			font-family: 'Jost';
+			font-family: 'Mortane', 'Poppins', sans-serif;
 			font-style: normal;
 			font-weight: 400;
 			font-display: swap;
@@ -1158,7 +1164,7 @@
 
 		/* latin-ext */
 		@font-face {
-			font-family: 'Jost';
+			font-family: 'Mortane', 'Poppins', sans-serif;
 			font-style: normal;
 			font-weight: 400;
 			font-display: swap;
@@ -1168,7 +1174,7 @@
 
 		/* latin */
 		@font-face {
-			font-family: 'Jost';
+			font-family: 'Mortane', 'Poppins', sans-serif;
 			font-style: normal;
 			font-weight: 400;
 			font-display: swap;
@@ -1340,7 +1346,7 @@
 		</div>
 	</div>
 	<div id="page" class="site"><a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-		                                <header class="site-header" id="site-header">
+		    <header class="site-header" id="site-header">
     <div class="header-container">
       <a class="logo-link" href="index.html" style="display: inline-block; padding: 5px 0;">
         <img src="assets/images/new_logo.png" alt="Meclix Mechatronix" style="max-height: 48px; width: auto; display: block;">
@@ -1378,7 +1384,7 @@
     </div>
   </header>
 
-  <div id="content" class="tpc-site-content">
+		<div id="content" class="tpc-site-content">
 			<div class="tpc-site-content-inner techwix-page-container techwix-container">
 				<div class="techwix-main-content-inner techwix-row">
 					<div id="primary" class="content-area techwix-col-lg-12">
@@ -1449,12 +1455,12 @@
 														<div class="elementor-widget-container">
 															<div class="tpc-double_heading">
 																<div class="dbl__subtitle"><span
-																		style="color: #ff4830; font-weight: 700;">— MADE
+																		style="color: white; font-weight: 700;"> MADE
 																		IN INDIA · BUILT FOR SCALE</span></div>
 																<h1 class="dbl__title-wrapper"
 																	style="font-size: var(--techwix-h1); line-height: var(--techwix-h1-lineHeight); font-family: var(--techwix-font-secondary); font-weight: 800; margin: 0 0 20px;">
 																	<span class="dbl__title dbl-title_1">Smarter
-																		Control<br>Over Every Key and<br>Every
+																		Control<br>Over Every Key and Every
 																		Locker</span>
 																</h1>
 															</div>
@@ -1480,7 +1486,8 @@
 														<div class="elementor-widget-container">
 															<div style="display: flex; gap: 15px; flex-wrap: wrap;"><a
 																	class="techwix-btn techwix-btn-size-custom style-1 btn-consultation-trigger"
-																	href="javascript:void(0);" onclick="openConsultationModal(event)">Schedule
+																	href="javascript:void(0);"
+																	onclick="openConsultationModal(event)">Schedule
 																	Consultation</a></div>
 														</div>
 													</div>
@@ -1660,9 +1667,12 @@
 															Meclix exists to fix that — with hardware and software
 															purpose-built for enterprise environments. </div>
 													</div>
-													<div class="elementor-element elementor-widget elementor-widget-techwix-button" style="margin-top: 35px;">
+													<div class="elementor-element elementor-widget elementor-widget-techwix-button"
+														style="margin-top: 35px;">
 														<div class="elementor-widget-container">
-															<a class="techwix-btn style-1" href="about.html" style="padding: 16px 40px; font-size: 16px; font-weight: 600; border-radius: 6px; display: inline-block;">Learn More About Us</a>
+															<a class="techwix-btn style-1" href="about.html"
+																style="padding: 16px 40px; font-size: 16px; font-weight: 600; border-radius: 6px; display: inline-block;">Learn
+																More About Us</a>
 														</div>
 													</div>
 												</div>
@@ -1732,7 +1742,7 @@
 										<!-- Scoped Styles for Landing Products Section -->
 										<style>
 											.landing-products-section {
-												--font-primary: 'Jost', sans-serif;
+												--font-primary: 'Mortane', 'Poppins', sans-serif;
 												--font-secondary: 'Poppins', sans-serif;
 												--color-primary: var(--techwix-primary-color, #086ad8);
 												--color-secondary: var(--techwix-primary-color-alt, #ff4830);
@@ -1779,7 +1789,7 @@
 											}
 
 											.landing-products-section .section-header .dbl__title {
-												font-family: 'Jost', sans-serif !important;
+												font-family: 'Mortane', 'Poppins', sans-serif !important;
 												font-size: 48px !important;
 												font-weight: 600 !important;
 												line-height: 54px !important;
@@ -1807,7 +1817,7 @@
 											.landing-products-section .tab-btn {
 												background: transparent;
 												border: none;
-												font-family: 'Jost', sans-serif !important;
+												font-family: 'Mortane', 'Poppins', sans-serif !important;
 												font-size: 16px !important;
 												font-weight: 600 !important;
 												color: var(--color-body);
@@ -1857,7 +1867,7 @@
 											}
 
 											.landing-products-section .tab-text h3 {
-												font-family: 'Jost', sans-serif !important;
+												font-family: 'Mortane', 'Poppins', sans-serif !important;
 												font-size: 28px !important;
 												margin-bottom: 16px;
 												color: var(--color-dark);
@@ -1910,7 +1920,7 @@
 											}
 
 											.landing-products-section .techwix-btn {
-												font-family: 'Jost', sans-serif !important;
+												font-family: 'Mortane', 'Poppins', sans-serif !important;
 											}
 
 											/* Responsive styles */
@@ -2116,7 +2126,7 @@
 										<!-- Scoped Styles for Sectors Section -->
 										<style>
 											.sectors-section {
-												--font-primary: 'Jost', sans-serif;
+												--font-primary: 'Mortane', 'Poppins', sans-serif;
 												--font-secondary: 'Poppins', sans-serif;
 												--color-primary: var(--techwix-primary-color, #086ad8);
 												--color-secondary: var(--techwix-primary-color-alt, #ff4830);
@@ -2132,18 +2142,21 @@
 												overflow: hidden;
 												box-sizing: border-box;
 											}
+
 											.sectors-section .container {
 												max-width: var(--techwix-elementor-container-width, 1270px);
 												margin: 0 auto;
 												padding: 0 15px;
 												box-sizing: border-box;
 											}
+
 											.sectors-section .section-header {
 												text-align: center;
 												margin-bottom: 50px;
 											}
+
 											.sectors-section .section-header .sub-title {
-												font-family: 'Jost', sans-serif !important;
+												font-family: 'Mortane', 'Poppins', sans-serif !important;
 												font-size: 14px;
 												font-weight: 700;
 												text-transform: uppercase;
@@ -2152,14 +2165,16 @@
 												margin-bottom: 12px;
 												display: inline-block;
 											}
+
 											.sectors-section .section-header .title {
-												font-family: 'Jost', sans-serif !important;
+												font-family: 'Mortane', 'Poppins', sans-serif !important;
 												font-size: 48px !important;
 												font-weight: 600 !important;
 												line-height: 54px !important;
 												color: var(--color-dark);
 												margin: 0 0 20px 0;
 											}
+
 											.sectors-section .section-header .description {
 												font-family: 'Poppins', sans-serif !important;
 												font-size: 16px;
@@ -2168,7 +2183,8 @@
 												margin: 0 auto;
 												line-height: 1.63;
 											}
-																						/* Marquee Carousel Styles */
+
+											/* Marquee Carousel Styles */
 											.sectors-marquee-container {
 												overflow: hidden;
 												width: 100%;
@@ -2176,27 +2192,28 @@
 												position: relative;
 												padding: 30px 0 0 0;
 											}
-											
+
 											.sectors-marquee-track {
 												display: flex;
 												gap: 30px;
 												width: max-content;
 												animation: sectorsMarqueeAnimation 45s linear infinite;
 											}
-											
+
 											.sectors-marquee-track:hover {
 												animation-play-state: paused;
 											}
-											
+
 											@keyframes sectorsMarqueeAnimation {
 												0% {
 													transform: translateX(0);
 												}
+
 												100% {
 													transform: translateX(-50%);
 												}
 											}
-											
+
 											.sector-card {
 												width: 310px;
 												flex-shrink: 0;
@@ -2209,20 +2226,21 @@
 												display: flex;
 												flex-direction: column;
 											}
-											
+
 											.sector-card:hover {
 												transform: translateY(-8px);
 												box-shadow: 0px 20px 45px rgba(0, 0, 0, 0.08);
 												border-color: var(--color-primary);
 											}
-											
+
 											.sector-img-wrapper {
 												position: relative;
 												overflow: hidden;
-												padding-bottom: 65%; /* 1.5 aspect ratio */
+												padding-bottom: 65%;
+												/* 1.5 aspect ratio */
 												width: 100%;
 											}
-											
+
 											.sector-img-wrapper img {
 												position: absolute;
 												top: 0;
@@ -2232,11 +2250,11 @@
 												object-fit: cover;
 												transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 											}
-											
+
 											.sector-card:hover .sector-img-wrapper img {
 												transform: scale(1.08);
 											}
-											
+
 											.sector-content {
 												padding: 24px 20px;
 												text-align: center;
@@ -2246,16 +2264,16 @@
 												align-items: center;
 												justify-content: center;
 											}
-											
+
 											.sector-content h4 {
-												font-family: 'Jost', sans-serif !important;
+												font-family: 'Mortane', 'Poppins', sans-serif !important;
 												font-size: 20px;
 												font-weight: 600;
 												color: var(--color-navy);
 												margin: 0;
 												transition: color 0.3s ease;
 											}
-											
+
 											.sector-card:hover .sector-content h4 {
 												color: var(--color-primary);
 											}
@@ -2264,27 +2282,32 @@
 											.elementor-element.elementor-element-6d38999 {
 												padding-top: 30px !important;
 											}
-											
+
 											@media (max-width: 991px) {
 												.sectors-section .section-header .title {
 													font-size: 38px !important;
 													line-height: 44px !important;
 												}
 											}
+
 											@media (max-width: 767px) {
 												.sectors-section {
 													padding: 60px 0 0 0;
 												}
+
 												.sectors-section .section-header .title {
 													font-size: 32px !important;
 													line-height: 38px !important;
 												}
+
 												.sector-card {
 													width: 270px;
 												}
+
 												.sectors-marquee-track {
 													gap: 20px;
 												}
+
 												.elementor-element.elementor-element-6d38999 {
 													padding-top: 20px !important;
 												}
@@ -2298,47 +2321,53 @@
 													<span class="sub-title">— ENTERPRISE READY</span>
 													<h2 class="title">Built for Every Sector That Values Security</h2>
 													<p class="description">
-														Meclix Mechatronics solutions can be deployed across demanding operational environments – from critical infrastructure to manufacturing, from healthcare to IT parks.
+														Meclix Mechatronics solutions can be deployed across demanding
+														operational environments – from critical infrastructure to
+														manufacturing, from healthcare to IT parks.
 													</p>
 												</div>
 											</div> <!-- closes .container -->
-											
+
 											<div class="sectors-marquee-container">
 												<div class="sectors-marquee-track">
 													<!-- Sector 1: Healthcare -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_healthcare.png" alt="Hospitals & Healthcare" loading="lazy">
+															<img src="assets/sector_healthcare.png"
+																alt="Hospitals & Healthcare" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Hospitals & Healthcare</h4>
 														</div>
 													</div>
-													
+
 													<!-- Sector 2: Manufacturing -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_manufacturing.png" alt="Manufacturing Units" loading="lazy">
+															<img src="assets/sector_manufacturing.png"
+																alt="Manufacturing Units" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Manufacturing Units</h4>
 														</div>
 													</div>
-													
+
 													<!-- Sector 3: Hotels & Hospitality -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_hotels.png" alt="Hotels & Hospitality" loading="lazy">
+															<img src="assets/sector_hotels.png"
+																alt="Hotels & Hospitality" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Hotels & Hospitality</h4>
 														</div>
 													</div>
-													
+
 													<!-- Sector 4: Educational Institutions -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_education.png" alt="Educational Institutions" loading="lazy">
+															<img src="assets/sector_education.png"
+																alt="Educational Institutions" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Educational Institutions</h4>
@@ -2348,7 +2377,8 @@
 													<!-- Sector 5: Corporate Offices -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_corporate.png" alt="Corporate Offices" loading="lazy">
+															<img src="assets/sector_corporate.png"
+																alt="Corporate Offices" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Corporate Offices</h4>
@@ -2358,7 +2388,8 @@
 													<!-- Sector 6: IT Parks & Datacenters -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_it_parks.png" alt="IT Parks & Datacenters" loading="lazy">
+															<img src="assets/sector_it_parks.png"
+																alt="IT Parks & Datacenters" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>IT Parks & Datacenters</h4>
@@ -2368,7 +2399,8 @@
 													<!-- Sector 7: Critical Infrastructure -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_infrastructure.png" alt="Critical Infrastructure" loading="lazy">
+															<img src="assets/sector_infrastructure.png"
+																alt="Critical Infrastructure" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Critical Infrastructure</h4>
@@ -2378,7 +2410,8 @@
 													<!-- Sector 8: Banking & Finance -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_banking.png" alt="Banking & Finance" loading="lazy">
+															<img src="assets/sector_banking.png" alt="Banking & Finance"
+																loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Banking & Finance</h4>
@@ -2388,7 +2421,8 @@
 													<!-- Sector 9: Logistics & Warehouses -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_logistics.png" alt="Logistics & Warehouses" loading="lazy">
+															<img src="assets/sector_logistics.png"
+																alt="Logistics & Warehouses" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Logistics & Warehouses</h4>
@@ -2398,51 +2432,56 @@
 													<!-- Sector 10: Government & Public Sector -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_government.png" alt="Government & Public Sector" loading="lazy">
+															<img src="assets/sector_government.png"
+																alt="Government & Public Sector" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Government & Public Sector</h4>
 														</div>
 													</div>
-													
+
 													<!-- ============================================ -->
 													<!-- DUPLICATE SET FOR SEAMLESS INFINITE LOOP -->
 													<!-- ============================================ -->
-													
+
 													<!-- Sector 1: Healthcare -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_healthcare.png" alt="Hospitals & Healthcare" loading="lazy">
+															<img src="assets/sector_healthcare.png"
+																alt="Hospitals & Healthcare" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Hospitals & Healthcare</h4>
 														</div>
 													</div>
-													
+
 													<!-- Sector 2: Manufacturing -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_manufacturing.png" alt="Manufacturing Units" loading="lazy">
+															<img src="assets/sector_manufacturing.png"
+																alt="Manufacturing Units" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Manufacturing Units</h4>
 														</div>
 													</div>
-													
+
 													<!-- Sector 3: Hotels & Hospitality -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_hotels.png" alt="Hotels & Hospitality" loading="lazy">
+															<img src="assets/sector_hotels.png"
+																alt="Hotels & Hospitality" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Hotels & Hospitality</h4>
 														</div>
 													</div>
-													
+
 													<!-- Sector 4: Educational Institutions -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_education.png" alt="Educational Institutions" loading="lazy">
+															<img src="assets/sector_education.png"
+																alt="Educational Institutions" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Educational Institutions</h4>
@@ -2452,7 +2491,8 @@
 													<!-- Sector 5: Corporate Offices -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_corporate.png" alt="Corporate Offices" loading="lazy">
+															<img src="assets/sector_corporate.png"
+																alt="Corporate Offices" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Corporate Offices</h4>
@@ -2462,7 +2502,8 @@
 													<!-- Sector 6: IT Parks & Datacenters -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_it_parks.png" alt="IT Parks & Datacenters" loading="lazy">
+															<img src="assets/sector_it_parks.png"
+																alt="IT Parks & Datacenters" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>IT Parks & Datacenters</h4>
@@ -2472,7 +2513,8 @@
 													<!-- Sector 7: Critical Infrastructure -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_infrastructure.png" alt="Critical Infrastructure" loading="lazy">
+															<img src="assets/sector_infrastructure.png"
+																alt="Critical Infrastructure" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Critical Infrastructure</h4>
@@ -2482,7 +2524,8 @@
 													<!-- Sector 8: Banking & Finance -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_banking.png" alt="Banking & Finance" loading="lazy">
+															<img src="assets/sector_banking.png" alt="Banking & Finance"
+																loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Banking & Finance</h4>
@@ -2492,7 +2535,8 @@
 													<!-- Sector 9: Logistics & Warehouses -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_logistics.png" alt="Logistics & Warehouses" loading="lazy">
+															<img src="assets/sector_logistics.png"
+																alt="Logistics & Warehouses" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Logistics & Warehouses</h4>
@@ -2502,7 +2546,8 @@
 													<!-- Sector 10: Government & Public Sector -->
 													<div class="sector-card">
 														<div class="sector-img-wrapper">
-															<img src="assets/sector_government.png" alt="Government & Public Sector" loading="lazy">
+															<img src="assets/sector_government.png"
+																alt="Government & Public Sector" loading="lazy">
 														</div>
 														<div class="sector-content">
 															<h4>Government & Public Sector</h4>
@@ -2709,11 +2754,13 @@
 															style="font-family: 'Poppins', sans-serif; font-size: 38px; font-weight: 700; color: #ffffff; margin-bottom: 20px; letter-spacing: -0.5px;">
 															Ready to Strengthen your Asset Control?</h2>
 														<p
-															style="font-family: 'Jost', sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.8); max-width: 650px; margin: 0 auto 35px auto; line-height: 1.6;">
+															style="font-family: 'Mortane', 'Poppins', sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.8); max-width: 650px; margin: 0 auto 35px auto; line-height: 1.6;">
 															Connect with a Meclix specialist to define a solution
 															tailored to your specific environment.</p>
 														<div>
-															<a class="techwix-btn style-1 btn-consultation-trigger" href="javascript:void(0);" onclick="openConsultationModal(event)"
+															<a class="techwix-btn style-1 btn-consultation-trigger"
+																href="javascript:void(0);"
+																onclick="openConsultationModal(event)"
 																style="padding: 16px 40px; font-size: 16px; font-weight: 600; border-radius: 6px; display: inline-block;">Schedule
 																a Free Consultation</a>
 														</div>
@@ -2992,7 +3039,7 @@
 		}
 
 		.modal-header h3 {
-			font-family: 'Jost', sans-serif !important;
+			font-family: 'Mortane', 'Poppins', sans-serif !important;
 			font-size: 28px !important;
 			font-weight: 700 !important;
 			margin-top: 0;
@@ -3031,6 +3078,7 @@
 				grid-template-columns: 1fr !important;
 				gap: 0 !important;
 			}
+
 			.modal-box {
 				padding: 24px 20px !important;
 			}
@@ -3101,7 +3149,7 @@
 		}
 
 		.booking-success-message h4 {
-			font-family: 'Jost', sans-serif !important;
+			font-family: 'Mortane', 'Poppins', sans-serif !important;
 			font-size: 24px !important;
 			margin-top: 0;
 			margin-bottom: 12px;
@@ -3125,33 +3173,38 @@
 					<h3>Schedule a Consultation</h3>
 					<p>Book a free technical consultation with a Meclix solutions specialist.</p>
 				</div>
-				
+
 				<form id="consultation-form" novalidate>
 					<div class="modal-form-row">
 						<div class="modal-form-group">
 							<label class="modal-form-label" for="booking-name">Full Name *</label>
-							<input type="text" id="booking-name" class="modal-form-input" required placeholder="John Doe">
+							<input type="text" id="booking-name" class="modal-form-input" required
+								placeholder="John Doe">
 						</div>
 						<div class="modal-form-group">
 							<label class="modal-form-label" for="booking-company">Company *</label>
-							<input type="text" id="booking-company" class="modal-form-input" required placeholder="Enterprise Corp">
+							<input type="text" id="booking-company" class="modal-form-input" required
+								placeholder="Enterprise Corp">
 						</div>
 					</div>
-					
+
 					<div class="modal-form-row">
 						<div class="modal-form-group">
 							<label class="modal-form-label" for="booking-email">Work Email *</label>
-							<input type="email" id="booking-email" class="modal-form-input" required placeholder="john@company.com">
+							<input type="email" id="booking-email" class="modal-form-input" required
+								placeholder="john@company.com">
 						</div>
 						<div class="modal-form-group">
 							<label class="modal-form-label" for="booking-phone">Phone Number *</label>
-							<input type="tel" id="booking-phone" class="modal-form-input" required placeholder="+91 99999 99999">
+							<input type="tel" id="booking-phone" class="modal-form-input" required
+								placeholder="+91 99999 99999">
 						</div>
 					</div>
-					
+
 					<div class="modal-form-group">
 						<label class="modal-form-label" for="booking-product">Product of Interest *</label>
-						<select id="booking-product" class="modal-form-input" required style="appearance: auto; -webkit-appearance: auto;">
+						<select id="booking-product" class="modal-form-input" required
+							style="appearance: auto; -webkit-appearance: auto;">
 							<option value="" disabled selected>Select a product...</option>
 							<option value="keyknox">KeyKnox (Electronic Key Management System)</option>
 							<option value="arcaknox">ArcaKnox (Smart Locker Systems)</option>
@@ -3159,9 +3212,11 @@
 							<option value="software">Shield Software / Integrations</option>
 						</select>
 					</div>
-					
+
 					<div class="modal-form-submit-row">
-						<button type="submit" class="techwix-btn style-1" id="booking-submit-btn" style="border: none; padding: 14px 35px; font-weight: 600; cursor: pointer; border-radius: 6px;">Book Consultation Session</button>
+						<button type="submit" class="techwix-btn style-1" id="booking-submit-btn"
+							style="border: none; padding: 14px 35px; font-weight: 600; cursor: pointer; border-radius: 6px;">Book
+							Consultation Session</button>
 					</div>
 				</form>
 			</div>
@@ -3169,8 +3224,11 @@
 			<div id="booking-success-container" class="booking-success-message">
 				<div class="success-icon">✓</div>
 				<h4>Consultation Scheduled!</h4>
-				<p>Thank you for reaching out. A Meclix Mechatronix security specialist will review your request and contact you shortly.</p>
-				<button class="techwix-btn style-1" id="success-done-btn" style="border: none; padding: 14px 35px; font-weight: 600; cursor: pointer; border-radius: 6px;">Back to Website</button>
+				<p>Thank you for reaching out. A Meclix Mechatronix security specialist will review your request and
+					contact you shortly.</p>
+				<button class="techwix-btn style-1" id="success-done-btn"
+					style="border: none; padding: 14px 35px; font-weight: 600; cursor: pointer; border-radius: 6px;">Back
+					to Website</button>
 			</div>
 		</div>
 	</div>

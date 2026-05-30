@@ -611,9 +611,6 @@ def update_global_page(filename, active_page):
 # First reset lockers.html and keyknox.html to commit c76b62b (which has all use cases) to make sure we process the clean original base files!
 os.system("git checkout c76b62b -- lockers.html keyknox.html")
 
-# Run font migration on the base template files
-os.system("python scratch/change_font_to_poppins.py")
-
 # Execute
 process_locker_page("it-lockers.html", "it", 
                    "Smart Locker for IT Asset Management | Meclix Mechatronix",
