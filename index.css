@@ -166,7 +166,7 @@ a {
 }
 
 .btn-primary {
-  background: #ff4830;
+  background: var(--color-primary);
   color: #fff;
 }
 
