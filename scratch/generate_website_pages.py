@@ -26,6 +26,44 @@ def get_slug(name):
     slug = re.sub(r'[^a-z0-9]+', '-', slug)
     return slug.strip('-')
 
+def clean_em_dashes(content):
+    # Perform specific cleanups of the em-dash (—)
+    replacements = {
+        "KeyKnox — Electronic Key": "KeyKnox: Electronic Key",
+        "ArcaKnox — Smart Locker": "ArcaKnox: Smart Locker",
+        "Meclix Mechatronix — Electronic Key": "Meclix Mechatronix: Electronic Key",
+        "VISITOR ASSETS — Secure Belongings": "Visitor Assets: Secure Belongings",
+        "VISITOR ASSETS — SECURE BELONGINGS": "Visitor Assets: Secure Belongings",
+        "TOOL KITS — Reduced Loss": "Tool Kits: Reduced Loss",
+        "TOOL KITS — REDUCED LOSS": "Tool Kits: Reduced Loss",
+        "EMPLOYEE ASSETS — Safe, Managed": "Employee Assets: Safe, Managed",
+        "EMPLOYEE ASSETS — SAFE, MANAGED": "Employee Assets: Safe, Managed",
+        "IT ASSETS — Track Laptops": "IT Assets: Track Laptops",
+        "IT ASSETS — TRACK LAPTOPS": "IT Assets: Track Laptops",
+        "Access Security Gap Is Closing — Fast": "Access Security Gap Is Closing Fast",
+        "Meclix exists to fix that — with hardware": "Meclix exists to fix that with hardware",
+        "systems — replacing fragmented": "systems, replacing fragmented",
+        "retrieval — with real-time": "retrieval with real-time",
+        "facility — every metre": "facility. Every metre",
+        "needs grow — without ever": "needs grow, without ever",
+        "enterprises — combining secure": "enterprises, combining secure",
+        "workflows — from reception": "workflows, from reception",
+        "— ENTERPRISE READY": "ENTERPRISE READY",
+        "operations — with": "operations with",
+        "sleep — every access": "sleep. Every access",
+        "locker opened — fully accounted": "locker opened, fully accounted",
+        "security – across": "security across",
+        "110V – 240V": "110V to 240V",
+    }
+    for old, new in replacements.items():
+        content = content.replace(old, new)
+        
+    # Also generic regex replacements for lingering pattern cases if any
+    content = re.sub(r'\s*—\s*with\s+', ' with ', content)
+    content = re.sub(r'\s*—\s*including\s+', ', including ', content)
+    content = re.sub(r'\s*—\s*such as\s+', ', such as ', content)
+    return content
+
 def apply_footer(content):
     # Clean up any legacy or duplicate footer comments first
     content = re.sub(r'\s*<!--\s*={5,}\s*FOOTER.*?\s*={5,}\s*-->', '', content, flags=re.DOTALL | re.IGNORECASE)
@@ -61,7 +99,7 @@ def apply_footer(content):
           <h5>Our Products</h5>
           <ul class="footer-links">
             <li><a href="lockers.html">ArcaKnox System Smart Locker</a></li>
-            <li><a href="keyknox.html">KeyKnox - Key Management</a></li>
+            <li><a href="keyknox.html">KeyKnox Key Management</a></li>
             <li><a href="software.html">ArcaKnox Shield and KeyKnox Shield</a></li>
           </ul>
         </div>
@@ -85,7 +123,7 @@ def apply_footer(content):
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Meclix Mechatronix. All rights reserved. Backed by Smarti Electronics Systems Pvt. Ltd.</p>
-        <p>India-First · SEO Optimised · AI Optimised</p>
+        <p>India First · SEO Optimised · AI Optimised</p>
       </div>
     </div>
   </footer>"""
@@ -112,7 +150,7 @@ def apply_footer(content):
 benefits_data = {
     "employee": [
         ("Employees", 
-         "Self-service access via Card, Biometric, PIN or Mobile App — eliminating dependency on staff assistance. Consistent locker availability across shift through automated allocation. Reduces reliance on padlock keys or shared combinations. Personal belongings are securely stored for the duration of use, with tamper alerts for continuous monitoring."),
+         "Self-service access via Card, Biometric, PIN or Mobile App, eliminating dependency on staff assistance. Consistent locker availability across shift through automated allocation. Reduces reliance on padlock keys or shared combinations. Personal belongings are securely stored for the duration of use, with tamper alerts for continuous monitoring."),
         ("HR/Admin / Facility Managers",
          "Automated locker allocation eliminates manual assignment requests. Provides a real time digital record of locker usage per employee removing need for manual logging. Release of lockers on employee exit or end of contract minimizes the need for physical key collection during exit / off-boarding. Enables real-time visibility of locker status across floor and locations. Generates alerts for tampering, forced-access, and non-released lockers."),
         ("Finance & Compliance",
@@ -208,7 +246,7 @@ benefits_data = {
     ],
     "premise": [
         ("Facility & Admin Managers",
-         "Visibility into key usage across the workplace — including which keys are issued, to whom, and for how long. Alerts and system records help reduce manual follow-up on returns. Key-related administrative effort is reduced, and lost key incidents are documented with traceability."),
+         "Visibility into key usage across the workplace, including which keys are issued, to whom, and for how long. Alerts and system records help reduce manual follow-up on returns. Key-related administrative effort is reduced, and lost key incidents are documented with traceability."),
         ("IT & Security Teams",
          "Controlled access to server room, network room, and data centre keys based on defined permissions for authorised personnel. Access logs are maintained for all key usage related to sensitive infrastructure areas. Access permissions can be updated or revoked as part of administrative workflows."),
         ("HR & Operations Teams",
@@ -224,11 +262,11 @@ benefits_data = {
         ("Maintenance Technicians",
          "Access to keys aligned with defined roles and job requirements, helping reduce the risk of incorrect key usage during operations. Shift handovers are supported with time-stamped records, improving clarity of key custody. Access history is recorded and available for reference when required."),
         ("Maintenance Supervisors",
-         "Visibility into key usage across teams — including allocation and duration. Shift activity records support reconciliation during handovers. Outstanding key usage can be identified through system reports, helping improve follow-up and accountability."),
+         "Visibility into key usage across teams, including allocation and duration. Shift activity records support reconciliation during handovers. Outstanding key usage can be identified through system reports, helping improve follow-up and accountability."),
         ("Plant & Operations Managers",
          "Improved control over access to critical plant areas across shifts and contractor teams. Key usage records provide visibility into access patterns, helping reduce operational delays associated with untracked keys and improving overall coordination."),
         ("Environment, Health & Safety (EHS) Teams",
-         "Access to keys for critical areas — such as chemical stores, electrical rooms, and confined spaces — can be configured with controlled access workflows to strengthen governance. Key access records support incident investigations, safety reviews, and regulatory inspections. Alignment with permit and operational processes improves visibility into access control practices."),
+         "Access to keys for critical areas, such as chemical stores, electrical rooms, and confined spaces, can be configured with controlled access workflows to strengthen governance. Key access records support incident investigations, safety reviews, and regulatory inspections. Alignment with permit and operational processes improves visibility into access control practices."),
         ("Contractors & Third-Party Teams",
          "Access to keys can be configured based on defined scope and duration aligned with approved work. Reduces dependency on manual key handling by site personnel, while ensuring that activity is recorded for traceability and review."),
         ("HR & Compliance Teams",
@@ -303,7 +341,7 @@ keyknox_specs_html = """
                         <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Capacity & Expandability</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">16 / 32 base keys, expandable to 128 keys</td></tr>
                         <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Dimensions</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">745 × 614 × 175 mm</td></tr>
                         <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Weight</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">21 kg (base unit)</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Power Supply Input</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">110V – 240V AC</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Power Supply Input</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">110V to 240V AC</td></tr>
                         <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Power Supply Output</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">15V DC</td></tr>
                         <tr style="border-bottom: 1px solid var(--border-light);"><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Power Consumption</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">Approx. 20W per 32 keys</td></tr>
                         <tr><td style="padding: 10px 0; font-weight: 600; color: #4c4d56;">Compliance</td><td style="padding: 10px 0; text-align: right; color: #0e0e0e; font-weight: 500;">BIS, CE</td></tr>
@@ -503,6 +541,7 @@ def process_locker_page(filename, usecase_key, title, description):
       
     final_content = content[:redesign_start] + reconstructed_body + content[redesign_end:]
     final_content = apply_footer(final_content)
+    final_content = clean_em_dashes(final_content)
     
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(final_content)
@@ -580,6 +619,7 @@ def process_keyknox_page(filename, usecase_key, title, description):
       
     final_content = content[:usecases_start] + reconstructed_body + content[usecases_end:]
     final_content = apply_footer(final_content)
+    final_content = clean_em_dashes(final_content)
     
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(final_content)
@@ -603,6 +643,7 @@ def update_global_page(filename, active_page):
     
     final_content = content[:header_start] + new_header + content[header_end:]
     final_content = apply_footer(final_content)
+    final_content = clean_em_dashes(final_content)
     
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(final_content)
